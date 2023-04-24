@@ -9,6 +9,8 @@ namespace Logica
     public interface ICliente<T>
     {
         void Agregar(T cliente);        
-        List<T> Consultar();                       
+        List<T> Consultar();
+        T Buscar(string dato);
+        void Borrar(string dato);        
     }
 }

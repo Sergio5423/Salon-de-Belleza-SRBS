@@ -7,25 +7,21 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class GestionColor : ICliente<Color>
+    public class GestionIrregulares : ICliente<Irregulares>
     {
-        List<Color> listaColor = null;
+        List<Irregulares> listaIrregulares = null;
 
-        public GestionColor() 
+        public void Agregar(Irregulares cliente)
         {
-            listaColor = new List<Color>();
+            listaIrregulares = new List<Irregulares>();
         }
 
-        public void Agregar(Color cliente)
+        public List<Irregulares> Consultar()
         {
-            listaColor.Add(cliente);
-        }
-        public List<Color> Consultar()
-        {
-            return listaColor;
+            return listaIrregulares;
         }
 
-        public Color Buscar(string dato)
+        public Irregulares Buscar(string dato)
         {
             foreach (var item in Consultar())
             {
@@ -61,7 +57,7 @@ namespace Logica
         public void Borrar(string dato)
         {
             var Cliente = Buscar(dato);
-            listaColor.Remove(Cliente);
-        }              
+            listaIrregulares.Remove(Cliente);
+        }                
     }
 }

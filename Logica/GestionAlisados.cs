@@ -21,9 +21,48 @@ namespace Logica
             listaAlisados.Add(cliente);
         }
 
-        public List<Alisados> Consultar() 
+        public List<Alisados> Consultar()
         {
             return listaAlisados;
         }
+
+        public Alisados Buscar(string dato)
+        {
+            foreach (var item in Consultar())
+            {
+                if (item.Id.ToString() == dato)
+                {
+                    return item;
+                }
+                else
+                {
+                    if (item.Nombre == dato)
+                    {
+                        return item;
+                    }
+                    else
+                    {
+                        if (item.Telefono.ToString() == dato)
+                        {
+                            return item;
+                        }
+                        else
+                        {
+                            if (item.Correo == dato)
+                            {
+                                return item;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public void Borrar(string dato)
+        {
+            var Cliente = Buscar(dato);
+            listaAlisados.Remove(Cliente);
+        }                
     }
 }

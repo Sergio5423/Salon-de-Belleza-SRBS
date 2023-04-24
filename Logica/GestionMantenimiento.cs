@@ -7,25 +7,21 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class GestionColor : ICliente<Color>
+    public class GestionMantenimiento : ICliente<Mantenimiento>
     {
-        List<Color> listaColor = null;
+        List<Mantenimiento> listaMantenimiento = null;
 
-        public GestionColor() 
+        public void Agregar(Mantenimiento cliente)
         {
-            listaColor = new List<Color>();
+            listaMantenimiento = new List<Mantenimiento>();
         }
 
-        public void Agregar(Color cliente)
+        public List<Mantenimiento> Consultar()
         {
-            listaColor.Add(cliente);
-        }
-        public List<Color> Consultar()
-        {
-            return listaColor;
+            return listaMantenimiento;
         }
 
-        public Color Buscar(string dato)
+        public Mantenimiento Buscar(string dato)
         {
             foreach (var item in Consultar())
             {
@@ -61,7 +57,7 @@ namespace Logica
         public void Borrar(string dato)
         {
             var Cliente = Buscar(dato);
-            listaColor.Remove(Cliente);
-        }              
+            listaMantenimiento.Remove(Cliente);
+        }                
     }
 }

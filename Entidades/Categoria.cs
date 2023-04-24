@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Categoria
+    public abstract class Categoria
     {
         public Categoria() 
         {
             
         }
 
-        public Categoria(int id, string nombre, long telefono, string correo, DateTime ultimaVisita, DateTime cumpleaños) 
+        public Categoria(int id,
+                         string nombre,
+                         long telefono,
+                         string correo,
+                         DateTime ultimaVisita,
+                         DateTime cumpleaños,
+                         int tiempoRegreso) 
         {
             Id = id;
             Nombre = nombre;
@@ -21,6 +27,7 @@ namespace Entidades
             Correo = correo;
             UltimaVisita = ultimaVisita;
             Cumpleaños = cumpleaños;
+            TiempoRegreso = tiempoRegreso;
         }
 
         public int Id { get; set; }
@@ -29,5 +36,8 @@ namespace Entidades
         public string Correo { get; set;}
         public DateTime UltimaVisita { get; set;}
         public DateTime Cumpleaños { get; set;}
+        public int TiempoRegreso { get; set; }
+
+        public abstract DateTime Regreso(DateTime ultimaVisita);
     }
 }
