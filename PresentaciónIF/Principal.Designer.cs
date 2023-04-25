@@ -54,6 +54,13 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnElminar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.gridCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridUltimaVisita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridCumpleaños = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridRegreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -212,7 +219,7 @@
             this.groupBox3.Controls.Add(this.gridViewClientes);
             this.groupBox3.Location = new System.Drawing.Point(23, 294);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(755, 265);
+            this.groupBox3.Size = new System.Drawing.Size(849, 265);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
@@ -266,9 +273,17 @@
             // gridViewClientes
             // 
             this.gridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridViewClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridCategoria,
+            this.gridNombre,
+            this.gridTelefono,
+            this.gridCorreo,
+            this.gridUltimaVisita,
+            this.gridCumpleaños,
+            this.gridRegreso});
             this.gridViewClientes.Location = new System.Drawing.Point(33, 65);
             this.gridViewClientes.Name = "gridViewClientes";
-            this.gridViewClientes.Size = new System.Drawing.Size(695, 167);
+            this.gridViewClientes.Size = new System.Drawing.Size(796, 167);
             this.gridViewClientes.TabIndex = 0;
             // 
             // groupBox4
@@ -308,18 +323,54 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Registro de Clientes Salon de Belleza";
             // 
-            // Form1
+            // gridCategoria
+            // 
+            this.gridCategoria.HeaderText = "Categoria";
+            this.gridCategoria.Name = "gridCategoria";
+            // 
+            // gridNombre
+            // 
+            this.gridNombre.HeaderText = "Nombre";
+            this.gridNombre.Name = "gridNombre";
+            // 
+            // gridTelefono
+            // 
+            this.gridTelefono.HeaderText = "Telefono";
+            this.gridTelefono.Name = "gridTelefono";
+            // 
+            // gridCorreo
+            // 
+            this.gridCorreo.HeaderText = "Correo";
+            this.gridCorreo.Name = "gridCorreo";
+            // 
+            // gridUltimaVisita
+            // 
+            this.gridUltimaVisita.HeaderText = "Ultima Visita";
+            this.gridUltimaVisita.Name = "gridUltimaVisita";
+            // 
+            // gridCumpleaños
+            // 
+            this.gridCumpleaños.HeaderText = "Cumpleaños";
+            this.gridCumpleaños.Name = "gridCumpleaños";
+            // 
+            // gridRegreso
+            // 
+            this.gridRegreso.HeaderText = "Regreso";
+            this.gridRegreso.Name = "gridRegreso";
+            // 
+            // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 650);
+            this.ClientSize = new System.Drawing.Size(908, 650);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "Principal";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -361,6 +412,13 @@
         private System.Windows.Forms.Button btnElminar;
         private System.Windows.Forms.DateTimePicker dtFechaCumpleaños;
         private System.Windows.Forms.DateTimePicker dtUltimaVisita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridCorreo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridUltimaVisita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridCumpleaños;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridRegreso;
     }
 }
 

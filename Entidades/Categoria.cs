@@ -13,30 +13,27 @@ namespace Entidades
             
         }
 
-        public Categoria(int id,
+        public Categoria(string categori,
                          string nombre,
                          long telefono,
                          string correo,
                          DateTime ultimaVisita,
-                         DateTime cumpleaños,
-                         int tiempoRegreso) 
+                         DateTime cumpleaños) 
         {
-            Id = id;
+            Categori = categori;
             Nombre = nombre;
             Telefono = telefono;
             Correo = correo;
             UltimaVisita = ultimaVisita;
-            Cumpleaños = cumpleaños;
-            TiempoRegreso = tiempoRegreso;
+            Cumpleaños = cumpleaños;            
         }
 
-        public int Id { get; set; }
+        public string Categori { get; set; }
         public string Nombre { get; set;}
         public long Telefono { get; set;}
         public string Correo { get; set;}
         public DateTime UltimaVisita { get; set;}
-        public DateTime Cumpleaños { get; set;}
-        public int TiempoRegreso { get; set; }
+        public DateTime Cumpleaños { get; set;}        
 
         public abstract DateTime Regreso(DateTime ultimaVisita);
     }

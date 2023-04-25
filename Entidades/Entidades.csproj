@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Categoria.cs" />
     <Compile Include="Alisados.cs" />
+    <Compile Include="CategoriaDto.cs" />
     <Compile Include="Irregulares.cs" />
     <Compile Include="Mantenimiento.cs" />
     <Compile Include="TrabajoColor.cs" />

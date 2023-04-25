@@ -9,35 +9,35 @@ namespace Entidades
 {
     public class Alisados : Categoria
     {
+        public int tiempoRegreso = 3;
+
         public Alisados()
         {
         }
-        public Alisados(int id,
+        public Alisados(string categori,
                         string nombre,
                         long telefono,
                         string correo,
                         DateTime ultimaVisita,
-                        DateTime cumpleaños,
-                        int tiempoRegreso = 3) : base(id,
-                                                      nombre,
-                                                      telefono,
-                                                      correo,
-                                                      ultimaVisita,
-                                                      cumpleaños,
-                                                      tiempoRegreso)
+                        DateTime cumpleaños) : base(categori,
+                                                    nombre,
+                                                    telefono,
+                                                    correo,
+                                                    ultimaVisita,
+                                                    cumpleaños)
         {
             
         }        
 
         public override DateTime Regreso(DateTime ultimaVisita)
         {
-            DateTime regreso = ultimaVisita.AddMonths(TiempoRegreso);
+            DateTime regreso = ultimaVisita.AddMonths(tiempoRegreso);
             return regreso;
         }
 
         public override string ToString()
         {
-            return $"{Id};{Nombre};{Telefono};{Correo};{UltimaVisita};{Cumpleaños}";
+            return $"{Categori};{Nombre};{Telefono};{Correo};{UltimaVisita};{Cumpleaños}";
         }
     }
 }

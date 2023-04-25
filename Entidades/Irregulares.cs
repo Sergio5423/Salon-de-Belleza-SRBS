@@ -8,35 +8,35 @@ namespace Entidades
 {
     public class Irregulares : Categoria
     {
+        public int tiempoRegreso = 20;
+
         public Irregulares()
         {
         }
-        public Irregulares(int id,
+        public Irregulares(string categori,
                            string nombre,
                            long telefono,
                            string correo,
                            DateTime ultimaVisita,
-                           DateTime cumpleaños,
-                           int tiempoRegreso = 20) : base(id,
-                                                          nombre,
-                                                          telefono,
-                                                          correo,
-                                                          ultimaVisita,
-                                                          cumpleaños,
-                                                          tiempoRegreso)
+                           DateTime cumpleaños) : base(categori,
+                                                       nombre,
+                                                       telefono,
+                                                       correo,
+                                                       ultimaVisita,
+                                                       cumpleaños)
         {
             
         }        
 
         public override DateTime Regreso(DateTime ultimaVisita)
         {
-            DateTime regreso = ultimaVisita.AddDays(TiempoRegreso);
+            DateTime regreso = ultimaVisita.AddDays(tiempoRegreso);
             return regreso;
         }
 
         public override string ToString()
         {
-            return $"{Id};{Nombre};{Telefono};{Correo};{UltimaVisita};{Cumpleaños}";
+            return $"{Categori};{Nombre};{Telefono};{Correo};{UltimaVisita};{Cumpleaños}";
         }
     }
 }

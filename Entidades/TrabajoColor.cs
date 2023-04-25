@@ -8,35 +8,35 @@ namespace Entidades
 {
     public class TrabajoColor : Categoria
     {
+        public int tiempoRegreso = 4;
+
         public TrabajoColor()
         {
         }
-        public TrabajoColor(int id,
+        public TrabajoColor(string categori,
                      string nombre,
                      long telefono,
                      string correo,
                      DateTime ultimaVisita,
-                     DateTime cumpleaños,
-                     int tiempoRegreso = 4) : base(id,
-                                                   nombre,
-                                                   telefono,
-                                                   correo,
-                                                   ultimaVisita,
-                                                   cumpleaños,
-                                                   tiempoRegreso)
+                     DateTime cumpleaños) : base(categori,
+                                                 nombre,
+                                                 telefono,
+                                                 correo,
+                                                 ultimaVisita,
+                                                 cumpleaños)
         {
             
         }        
 
         public override DateTime Regreso(DateTime ultimaVisita)
         {
-            DateTime regreso = ultimaVisita.AddMonths(TiempoRegreso);
+            DateTime regreso = ultimaVisita.AddMonths(tiempoRegreso);
             return regreso;
         }
 
         public override string ToString()
         {
-            return $"{Id};{Nombre};{Telefono};{Correo};{UltimaVisita};{Cumpleaños}";
+            return $"{Categori};{Nombre};{Telefono};{Correo};{UltimaVisita};{Cumpleaños}";
         }
     }
 }

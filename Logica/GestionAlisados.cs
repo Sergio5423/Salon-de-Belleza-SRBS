@@ -9,7 +9,7 @@ namespace Logica
 {
     public class GestionAlisados : ICliente<Alisados>
     {
-        List<Alisados> listaAlisados = null;
+        public List<Alisados> listaAlisados = null;
 
         public GestionAlisados()
         {
@@ -23,14 +23,21 @@ namespace Logica
 
         public List<Alisados> Consultar()
         {
-            return listaAlisados;
+            if (listaAlisados.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return listaAlisados;
+            }
         }
 
         public Alisados Buscar(string dato)
         {
             foreach (var item in Consultar())
             {
-                if (item.Id.ToString() == dato)
+                if (item.Categori == dato)
                 {
                     return item;
                 }

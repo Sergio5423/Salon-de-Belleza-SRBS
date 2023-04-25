@@ -10,22 +10,33 @@ namespace Logica
     public class GestionMantenimiento : ICliente<Mantenimiento>
     {
         List<Mantenimiento> listaMantenimiento = null;
-
-        public void Agregar(Mantenimiento cliente)
+        public GestionMantenimiento()
         {
             listaMantenimiento = new List<Mantenimiento>();
         }
 
+        public void Agregar(Mantenimiento cliente)
+        {
+            listaMantenimiento.Add(cliente);
+        }
+
         public List<Mantenimiento> Consultar()
         {
-            return listaMantenimiento;
+            if (listaMantenimiento.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return listaMantenimiento;
+            }
         }
 
         public Mantenimiento Buscar(string dato)
         {
             foreach (var item in Consultar())
             {
-                if (item.Id.ToString() == dato)
+                if (item.Categori == dato)
                 {
                     return item;
                 }

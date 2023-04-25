@@ -22,14 +22,21 @@ namespace Logica
         }
         public List<TrabajoColor> Consultar()
         {
-            return listaColor;
+            if (listaColor.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return listaColor;
+            }
         }
 
         public TrabajoColor Buscar(string dato)
         {
             foreach (var item in Consultar())
             {
-                if (item.Id.ToString() == dato)
+                if (item.Categori == dato)
                 {
                     return item;
                 }

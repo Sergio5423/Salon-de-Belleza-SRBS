@@ -10,22 +10,33 @@ namespace Logica
     public class GestionIrregulares : ICliente<Irregulares>
     {
         List<Irregulares> listaIrregulares = null;
-
-        public void Agregar(Irregulares cliente)
+        public GestionIrregulares()
         {
             listaIrregulares = new List<Irregulares>();
         }
 
+        public void Agregar(Irregulares cliente)
+        {
+            listaIrregulares.Add(cliente);
+        }
+
         public List<Irregulares> Consultar()
         {
-            return listaIrregulares;
+            if (listaIrregulares.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return listaIrregulares;
+            }
         }
 
         public Irregulares Buscar(string dato)
         {
             foreach (var item in Consultar())
             {
-                if (item.Id.ToString() == dato)
+                if (item.Categori == dato)
                 {
                     return item;
                 }
