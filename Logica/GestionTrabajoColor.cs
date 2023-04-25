@@ -7,25 +7,25 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class GestionColor : ICliente<Color>
+    public class GestionTrabajoColor : ICliente<TrabajoColor>
     {
-        List<Color> listaColor = null;
+        List<TrabajoColor> listaColor = null;
 
-        public GestionColor() 
+        public GestionTrabajoColor() 
         {
-            listaColor = new List<Color>();
+            listaColor = new List<TrabajoColor>();
         }
 
-        public void Agregar(Color cliente)
+        public void Agregar(TrabajoColor cliente)
         {
             listaColor.Add(cliente);
         }
-        public List<Color> Consultar()
+        public List<TrabajoColor> Consultar()
         {
             return listaColor;
         }
 
-        public Color Buscar(string dato)
+        public TrabajoColor Buscar(string dato)
         {
             foreach (var item in Consultar())
             {

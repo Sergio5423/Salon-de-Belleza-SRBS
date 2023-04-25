@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Color : Categoria
+    public class TrabajoColor : Categoria
     {
-        public Color()
+        public TrabajoColor()
         {
         }
-        public Color(int id,
+        public TrabajoColor(int id,
                      string nombre,
                      long telefono,
                      string correo,

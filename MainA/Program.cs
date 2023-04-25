@@ -11,7 +11,7 @@ namespace Presentacion
     public class Program
     {
         GestionAlisados gestionAlisados = new GestionAlisados();
-        GestionColor gestionColor = new GestionColor();
+        GestionTrabajoColor gestionColor = new GestionTrabajoColor();
         int d, m, a, cat;
         int i = 1;        
 
@@ -69,7 +69,7 @@ namespace Presentacion
                     break;
 
                 case 2:
-                    var color = new Color();
+                    var color = new TrabajoColor();
 
                     Console.Clear();
                     Console.WriteLine("DATOS DE CLIENTES CON ALISADO");

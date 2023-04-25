@@ -45,7 +45,7 @@
     <Compile Include="Alisados.cs" />
     <Compile Include="Irregulares.cs" />
     <Compile Include="Mantenimiento.cs" />
-    <Compile Include="Color.cs" />
+    <Compile Include="TrabajoColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
