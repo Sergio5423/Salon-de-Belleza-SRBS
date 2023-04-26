@@ -9,7 +9,7 @@ namespace Logica
 {
     public class GestionIrregulares : ICliente<Irregulares>
     {
-        List<Irregulares> listaIrregulares = null;
+        public List<Irregulares> listaIrregulares = null;
         public GestionIrregulares()
         {
             listaIrregulares = new List<Irregulares>();

@@ -17,8 +17,7 @@ namespace PresentaciónIF
         GestionAlisados gestionAlisados = new GestionAlisados();
         GestionTrabajoColor gestionTrabajoColor = new GestionTrabajoColor();
         GestionMantenimiento gestionMantenimiento = new GestionMantenimiento();
-        GestionIrregulares gestionIrregulares = new GestionIrregulares();
-        GestionListasDto gestionListasDto = new GestionListasDto();
+        GestionIrregulares gestionIrregulares = new GestionIrregulares();       
         Confirmacion confirmacion;
 
         public Principal()
@@ -34,8 +33,7 @@ namespace PresentaciónIF
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Capturar();
-            Limpiar();
-            LlenarGridView();
+            Limpiar();            
             /*Aqui va cargar lista con el llenar grid view 3 para
             usar el bin.Filter()*/
         }
@@ -150,7 +148,8 @@ namespace PresentaciónIF
             if (gestionAlisados.Consultar() == null)
             {
 
-            } else
+            }
+            else
             {
                 foreach (var item in gestionAlisados.Consultar())
                 {
@@ -161,12 +160,13 @@ namespace PresentaciónIF
                                               item.UltimaVisita,
                                               item.Cumpleaños,
                                               item.Regreso(item.UltimaVisita));
-                }                
+                }
             }
             if (gestionIrregulares.Consultar() == null)
             {
 
-            } else
+            }
+            else
             {
                 foreach (var item in gestionIrregulares.Consultar())
                 {
@@ -182,11 +182,12 @@ namespace PresentaciónIF
             if (gestionMantenimiento.Consultar() == null)
             {
 
-            } else
+            }
+            else
             {
                 foreach (var item in gestionMantenimiento.Consultar())
                 {
-                    gridViewClientes.Rows.Add(item.Categori, 
+                    gridViewClientes.Rows.Add(item.Categori,
                                               item.Nombre,
                                               item.Telefono,
                                               item.Correo,
@@ -198,11 +199,12 @@ namespace PresentaciónIF
             if (gestionTrabajoColor.Consultar() == null)
             {
 
-            } else
+            }
+            else
             {
                 foreach (var item in gestionTrabajoColor.Consultar())
                 {
-                    gridViewClientes.Rows.Add(item.Categori, 
+                    gridViewClientes.Rows.Add(item.Categori,
                                               item.Nombre,
                                               item.Telefono,
                                               item.Correo,
@@ -211,6 +213,63 @@ namespace PresentaciónIF
                                               item.Regreso(item.UltimaVisita));
                 }
             }
+            //var listaGrid = (from alisado in gestionAlisados.Consultar()
+
+            //                 select new
+            //                 {
+            //                     Categoria = alisado.Categori,
+            //                     Nombre = alisado.Nombre,
+            //                     Telefono = alisado.Telefono.ToString(),
+            //                     Correo = alisado.Correo,
+            //                     UltimaVisita = alisado.UltimaVisita.ToString(),
+            //                     Cumpleaños = alisado.Cumpleaños.ToString(),
+            //                     Regreso = alisado.Regreso(alisado.UltimaVisita)
+            //                 })
+            //                 .Concat(from irregulares in gestionIrregulares.Consultar()
+
+            //                         select new
+            //                         {
+            //                             Categoria = irregulares.Categori,
+            //                             Nombre = irregulares.Nombre,
+            //                             Telefono = irregulares.Telefono.ToString(),
+            //                             Correo = irregulares.Correo,
+            //                             UltimaVisita = irregulares.UltimaVisita.ToString(),
+            //                             Cumpleaños = irregulares.Cumpleaños.ToString(),
+            //                             Regreso = irregulares.Regreso(irregulares.UltimaVisita)
+            //                         })
+            //                         .Concat(from mantenimiento in gestionMantenimiento.Consultar()
+
+            //                                 select new
+            //                                 {
+            //                                     Categoria = mantenimiento.Categori,
+            //                                     Nombre = mantenimiento.Nombre,
+            //                                     Telefono = mantenimiento.Telefono.ToString(),
+            //                                     Correo = mantenimiento.Correo,
+            //                                     UltimaVisita = mantenimiento.UltimaVisita.ToString(),
+            //                                     Cumpleaños = mantenimiento.Cumpleaños.ToString(),
+            //                                     Regreso = mantenimiento.Regreso(mantenimiento.UltimaVisita)
+            //                                 })
+            //                                 .Concat(from color in gestionTrabajoColor.Consultar()
+
+            //                                         select new
+            //                                         {
+            //                                             Categoria = color.Categori,
+            //                                             Nombre = color.Nombre,
+            //                                             Telefono = color.Telefono.ToString(),
+            //                                             Correo = color.Correo,
+            //                                             UltimaVisita = color.UltimaVisita.ToString(),
+            //                                             Cumpleaños = color.Cumpleaños.ToString(),
+            //                                             Regreso = color.Regreso(color.UltimaVisita)
+            //                                         });
+            //BindingSource bin = new BindingSource();
+            //bin.DataSource = listaGrid;
+            //gridViewClientes.DataSource = bin;
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            LlenarGridView();
         }
     }
 }

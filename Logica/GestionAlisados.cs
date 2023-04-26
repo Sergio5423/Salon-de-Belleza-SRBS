@@ -23,14 +23,14 @@ namespace Logica
 
         public List<Alisados> Consultar()
         {
-            if (listaAlisados.Count == 0)
-            {
-                return null;
-            }
-            else
-            {
+            //if (listaAlisados.Count == 0)
+            //{
+            //    return null;
+            //}
+            //else
+            //{
                 return listaAlisados;
-            }
+            //}
         }
 
         public Alisados Buscar(string dato)

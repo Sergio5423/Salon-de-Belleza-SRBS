@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GestionListasDto.cs" />
     <Compile Include="GestionTrabajoColor.cs" />
     <Compile Include="GestionAlisados.cs" />
     <Compile Include="GestionMantenimiento.cs" />

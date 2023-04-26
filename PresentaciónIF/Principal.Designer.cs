@@ -50,10 +50,6 @@
             this.tbBusqueda = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.gridViewClientes = new System.Windows.Forms.DataGridView();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnElminar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.gridCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +57,11 @@
             this.gridUltimaVisita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridCumpleaños = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridRegreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnElminar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCargar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -286,43 +287,6 @@
             this.gridViewClientes.Size = new System.Drawing.Size(796, 167);
             this.gridViewClientes.TabIndex = 0;
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btnActualizar);
-            this.groupBox4.Controls.Add(this.btnElminar);
-            this.groupBox4.Location = new System.Drawing.Point(23, 581);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(229, 49);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(130, 15);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 14;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            // 
-            // btnElminar
-            // 
-            this.btnElminar.Location = new System.Drawing.Point(23, 15);
-            this.btnElminar.Name = "btnElminar";
-            this.btnElminar.Size = new System.Drawing.Size(75, 23);
-            this.btnElminar.TabIndex = 13;
-            this.btnElminar.Text = "Eliminar";
-            this.btnElminar.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Registro de Clientes Salon de Belleza";
-            // 
             // gridCategoria
             // 
             this.gridCategoria.HeaderText = "Categoria";
@@ -357,6 +321,54 @@
             // 
             this.gridRegreso.HeaderText = "Regreso";
             this.gridRegreso.Name = "gridRegreso";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnCargar);
+            this.groupBox4.Controls.Add(this.btnActualizar);
+            this.groupBox4.Controls.Add(this.btnElminar);
+            this.groupBox4.Location = new System.Drawing.Point(23, 581);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(334, 49);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(130, 15);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 14;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            // 
+            // btnElminar
+            // 
+            this.btnElminar.Location = new System.Drawing.Point(23, 15);
+            this.btnElminar.Name = "btnElminar";
+            this.btnElminar.Size = new System.Drawing.Size(75, 23);
+            this.btnElminar.TabIndex = 13;
+            this.btnElminar.Text = "Eliminar";
+            this.btnElminar.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Registro de Clientes Salon de Belleza";
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.Location = new System.Drawing.Point(238, 15);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(75, 23);
+            this.btnCargar.TabIndex = 12;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // Principal
             // 
@@ -419,6 +431,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gridUltimaVisita;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridCumpleaños;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridRegreso;
+        private System.Windows.Forms.Button btnCargar;
     }
 }
 
