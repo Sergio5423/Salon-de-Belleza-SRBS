@@ -41,12 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GestionTrabajoColor.cs" />
-    <Compile Include="GestionAlisados.cs" />
-    <Compile Include="GestionMantenimiento.cs" />
-    <Compile Include="ICliente.cs" />
-    <Compile Include="GestionIrregulares.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicioXcliente.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

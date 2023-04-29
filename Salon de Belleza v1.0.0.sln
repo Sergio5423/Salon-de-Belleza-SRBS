@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{C4641106-CB35-4232-9020-3A0847DE65FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "MainA\Presentacion.csproj", "{DFD94461-A0FA-43A9-9C1D-24E6DFCD4EB5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentaciónIF", "PresentaciónIF\PresentaciónIF.csproj", "{D73707A8-9917-47D3-9AD6-43B5A92EBBA5}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{C4641106-CB35-4232-9020-3A0847DE65FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4641106-CB35-4232-9020-3A0847DE65FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4641106-CB35-4232-9020-3A0847DE65FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DFD94461-A0FA-43A9-9C1D-24E6DFCD4EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DFD94461-A0FA-43A9-9C1D-24E6DFCD4EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DFD94461-A0FA-43A9-9C1D-24E6DFCD4EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DFD94461-A0FA-43A9-9C1D-24E6DFCD4EB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D73707A8-9917-47D3-9AD6-43B5A92EBBA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D73707A8-9917-47D3-9AD6-43B5A92EBBA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D73707A8-9917-47D3-9AD6-43B5A92EBBA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
