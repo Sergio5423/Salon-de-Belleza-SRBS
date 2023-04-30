@@ -12,6 +12,7 @@ namespace PresentaciónIF
     {
         ServicioXcliente servicioXcliente = new ServicioXcliente();
         Confirmacion confirmacion;
+        ServiciosForm serviciosForm;
 
         public Principal()
         {
@@ -21,6 +22,7 @@ namespace PresentaciónIF
         private void Principal_Load(object sender, EventArgs e)
         {
             confirmacion = new Confirmacion();
+            serviciosForm = new ServiciosForm();
         }
         
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -49,8 +51,7 @@ namespace PresentaciónIF
         {
             tbNombre.Text = string.Empty;
             tbCorreo.Text = string.Empty;
-            tbTelefono.Text = string.Empty;
-            cbServicio.SelectedIndex = -1;
+            tbTelefono.Text = string.Empty;            
             dtUltimaVisita.Value = DateTime.Now;
             dtFechaCumpleaños.Value = DateTime.Now;
             tbNombre.Focus();
@@ -99,7 +100,7 @@ namespace PresentaciónIF
         }
 
         public void LlenarGridView()
-        {
+        {         
             BindingSource bin = new BindingSource();
             bin.DataSource = servicioXcliente.ConsultarClientes();
             dgvClientes.DataSource = bin;
@@ -160,94 +161,23 @@ namespace PresentaciónIF
             }
         }
 
-        public void CrearServicioAlisado(dynamic Cliente)
-        {
-            if (cbServicio.SelectedIndex == 0)
-            {
-                var Servicio = new Servicios
-                {
-                    Id = Cliente.Id,
-                    Nombre = cbServicio.SelectedItem.ToString(),
-                    Valor = 0,
-                    Duracion = 3,
-                };
-                Servicio.Regreso = servicioXcliente.FechaRegresoMeses(Servicio.Duracion);
-                servicioXcliente.AgregarServicio(Servicio);
-            }
-        }
-
-        public void CrearServicioColor(dynamic Cliente)
-        {
-            if (cbServicio.SelectedIndex == 1)
-            {
-                var Servicio = new Servicios
-                {
-                    Id = Cliente.Id,
-                    Nombre = cbServicio.SelectedItem.ToString(),
-                    Valor = 0,
-                    Duracion = 4,
-                };
-
-                Servicio.Regreso = servicioXcliente.FechaRegresoMeses(Servicio.Duracion);
-                servicioXcliente.AgregarServicio(Servicio);
-            }
-        }
-
-        public void CrearServicioMantenimiento(dynamic Cliente)
-        {
-            if (cbServicio.SelectedIndex == 2)
-            {
-                var Servicio = new Servicios
-                {
-                    Id = Cliente.Id,
-                    Nombre = cbServicio.SelectedItem.ToString(),
-                    Valor = 0,
-                    Duracion = 15,
-                };
-
-                Servicio.Regreso = servicioXcliente.FechaRegresoDias(Servicio.Duracion);
-                servicioXcliente.AgregarServicio(Servicio);
-            }
-        }
-
-        public void CrearServicioIrregular(dynamic Cliente)
-        {
-            if (cbServicio.SelectedIndex == 3)
-            {
-                var Servicio = new Servicios
-                {
-                    Id = Cliente.Id,
-                    Nombre = cbServicio.SelectedItem.ToString(),
-                    Valor = 0,
-                    Duracion = 20,
-                };
-
-                Servicio.Regreso = servicioXcliente.FechaRegresoDias(Servicio.Duracion);
-                servicioXcliente.AgregarServicio(Servicio);
-            }
-        }
-
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
-            var Cliente = servicioXcliente.ConsultarClientes()[i];
-            lbId.Text = Cliente.Id.ToString();
-            tbNombre.Text = Cliente.Nombre;
-            tbTelefono.Text = Cliente.Telefono;
-            tbCorreo.Text = Cliente.Correo;
-            dtFechaCumpleaños.Value = Cliente.Cumpleaños;
-            dtUltimaVisita.Value = Cliente.UltimaVisita;
+            var cliente = servicioXcliente.ConsultarClientes()[i];
+            //lbId.Text = Cliente.Id.ToString();
+            //tbNombre.Text = Cliente.Nombre;
+            //tbTelefono.Text = Cliente.Telefono;
+            //tbCorreo.Text = Cliente.Correo;
+            //dtFechaCumpleaños.Value = Cliente.Cumpleaños;
+            //dtUltimaVisita.Value = Cliente.UltimaVisita;
+            serviciosForm.SetCliente(cliente);
+            serviciosForm.ShowDialog();
         }
 
-        private void tbBuscarClientes_TextChanged(object sender, EventArgs e)
+        private void tbBuscarClientes_TextChanged_1(object sender, EventArgs e)
         {
             Filtrar();
         }
-
-        private void tbBuscarClientes_ControlRemoved(object sender, ControlEventArgs e)
-        {
-            LlenarGridView();
-        }
-        
     }
 }

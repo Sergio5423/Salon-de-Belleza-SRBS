@@ -1,25 +1,24 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entidades;
 
 namespace Logica
 {
     public class ServicioXcliente
     {
+        List<Servicios> listaFiltrada = null;
+        List<Servicios> listaBuscada = null;
         List<Clientes> listaClientes = null;
         List<Servicios> listaServicios = null;
-
-        Servicios servicios = new Servicios();
+        
         Clientes clientes = new Clientes();
 
         public ServicioXcliente()
         {
             listaClientes = new List<Clientes>();
             listaServicios = new List<Servicios>();
+            listaFiltrada = new List<Servicios>();
+            listaBuscada = new List<Servicios>();
         }
 
         public void AgregarCliente(Clientes cliente)
@@ -39,14 +38,7 @@ namespace Logica
 
         public List<Servicios> ConsultarServicios()
         {
-            if (listaServicios.Count == 0)
-            {
-                return null;
-            }
-            else
-            {
-                return listaServicios;
-            }
+            return listaServicios;
         }
 
         public Clientes BuscarCliente(string dato)
@@ -63,7 +55,7 @@ namespace Logica
                 }
                 catch (Exception ex)
                 {
-                    
+
                 }
 
                 if (item.Nombre == dato)
@@ -84,84 +76,79 @@ namespace Logica
                         }
                     }
                 }
-            }        
+            }
             return null;
         }
 
-    //public DataTable ConvertirListaClientesAdataTable(List<Clientes> lista)
-    //{
-    //    DataTable table = new DataTable();
-
-    //    int columns = 0;
-    //    foreach (var item in lista)
-    //    {
-    //        if (lista.Count > columns)
-    //        {
-    //            columns = lista.Count;
-    //        }
-    //    }
-
-    //    for (int i = 0; i < columns; i++)
-    //    {
-    //        table.Columns.Add();
-    //    }
-
-    //    foreach (var item2 in lista)
-    //    {
-    //        table.Rows.Add(item2);
-    //    }                            
-    //    return table;
-    //}
-
-    public Servicios BuscarServicio(string dato)
-    {
-        foreach (var item in ConsultarServicios())
+        public List<Servicios> BuscarServicio(string dato)
         {
-            if (item.Id == int.Parse(dato))
+            
+            foreach (var item in ConsultarServicios())
             {
-                return item;
-            }
-            else
-            {
-                if (item.Nombre == dato)
+                try
                 {
-                    return item;
+                    if (item.Nombre == dato)
+                    {
+                        listaBuscada.Add(item);
+                    }
+                }
+                catch (Exception ex)
+                {
+
                 }
             }
+            return listaBuscada;
         }
-        return null;
-    }
 
-    public void BorrarCliente(string dato)
-    {
-        var Cliente = BuscarCliente(dato);
-        listaClientes.Remove(Cliente);
-    }
+        public List<Servicios> FiltrarServicio(string dato)
+        {
+            foreach (var item in ConsultarServicios())
+            {
+                try
+                {
+                    if (item.Id == int.Parse(dato))
+                    {
+                        listaFiltrada.Add(item);
+                    }
+                }
+                catch (Exception ex)
+                {
 
-    public void BorrarServicio(string dato)
-    {
-        var Cliente = BuscarServicio(dato);
-        listaServicios.Remove(Cliente);
-    }
+                }
+            }
+            return listaFiltrada;
+        }
 
-    public DateTime FechaRegresoDias(int duracion)
-    {
-        DateTime regreso = clientes.UltimaVisita.AddDays(duracion);
-        return regreso;
-    }
+        public void BorrarCliente(string dato)
+        {
+            var Cliente = BuscarCliente(dato);
+            listaClientes.Remove(Cliente);
+        }
 
-    public DateTime FechaRegresoMeses(int duracion)
-    {
-        DateTime regreso = clientes.UltimaVisita.AddMonths(duracion);
-        return regreso;
-    }
+        public void BorrarServicio(int i)
+        {
+            var servicio = listaServicios[i];
+            listaServicios.Remove(servicio);
+        }
 
-    public int UltimoIdClientes()
-    {
-        int Id;
-        Id = ConsultarClientes().Count;
-        Id++;
-        return Id;
+        public DateTime FechaRegresoDias(int duracion)
+        {
+            DateTime regreso = clientes.UltimaVisita.AddDays(duracion);
+            return regreso;
+        }
+
+        public DateTime FechaRegresoMeses(int duracion)
+        {
+            DateTime regreso = clientes.UltimaVisita.AddMonths(duracion);
+            return regreso;
+        }
+
+        public int UltimoIdClientes()
+        {
+            int Id;
+            Id = ConsultarClientes().Count;
+            Id++;
+            return Id;
+        }
     }
-}
 }
