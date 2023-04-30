@@ -39,6 +39,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cbBusqueda = new System.Windows.Forms.ComboBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.lbIdServicio = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbServicio = new System.Windows.Forms.ComboBox();
-            this.cbBusqueda = new System.Windows.Forms.ComboBox();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -168,6 +168,20 @@
             this.groupBox6.Size = new System.Drawing.Size(835, 232);
             this.groupBox6.TabIndex = 26;
             this.groupBox6.TabStop = false;
+            // 
+            // cbBusqueda
+            // 
+            this.cbBusqueda.FormattingEnabled = true;
+            this.cbBusqueda.Items.AddRange(new object[] {
+            "Alisado Profesional",
+            "Trabajo de Color",
+            "Mantenimiento de Químicos",
+            "Cliente Irregular"});
+            this.cbBusqueda.Location = new System.Drawing.Point(93, 23);
+            this.cbBusqueda.Name = "cbBusqueda";
+            this.cbBusqueda.Size = new System.Drawing.Size(158, 21);
+            this.cbBusqueda.TabIndex = 23;
+            this.cbBusqueda.SelectedIndexChanged += new System.EventHandler(this.cbBusqueda_SelectedIndexChanged);
             // 
             // dgvClientes
             // 
@@ -308,20 +322,6 @@
             this.cbServicio.Size = new System.Drawing.Size(158, 21);
             this.cbServicio.TabIndex = 14;
             this.cbServicio.SelectedIndexChanged += new System.EventHandler(this.cbServicio_SelectedIndexChanged);
-            // 
-            // cbBusqueda
-            // 
-            this.cbBusqueda.FormattingEnabled = true;
-            this.cbBusqueda.Items.AddRange(new object[] {
-            "Alisado Profesional",
-            "Trabajo de Color",
-            "Mantenimiento de Químicos",
-            "Cliente Irregular"});
-            this.cbBusqueda.Location = new System.Drawing.Point(93, 23);
-            this.cbBusqueda.Name = "cbBusqueda";
-            this.cbBusqueda.Size = new System.Drawing.Size(158, 21);
-            this.cbBusqueda.TabIndex = 23;
-            this.cbBusqueda.SelectedIndexChanged += new System.EventHandler(this.cbBusqueda_SelectedIndexChanged);
             // 
             // ServiciosForm
             // 

@@ -131,18 +131,6 @@ namespace Logica
             listaServicios.Remove(servicio);
         }
 
-        public DateTime FechaRegresoDias(int duracion)
-        {
-            DateTime regreso = clientes.UltimaVisita.AddDays(duracion);
-            return regreso;
-        }
-
-        public DateTime FechaRegresoMeses(int duracion)
-        {
-            DateTime regreso = clientes.UltimaVisita.AddMonths(duracion);
-            return regreso;
-        }
-
         public int UltimoIdClientes()
         {
             int Id;

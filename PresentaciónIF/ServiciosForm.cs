@@ -16,7 +16,6 @@ namespace PresentaciónIF
     {
         ServicioXcliente servicioXcliente = new ServicioXcliente();
         Clientes clienteServicio = null;
-        //List<Servicios> listaFiltrada = null;
 
         public ServiciosForm()
         {
@@ -24,8 +23,7 @@ namespace PresentaciónIF
         }
 
         private void ServiciosForm_Load(object sender, EventArgs e)
-        {
-            //listaFiltrada = new List<Servicios>();
+        {            
             Presentar();
             Limpiar();
         }

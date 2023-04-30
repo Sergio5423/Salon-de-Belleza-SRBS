@@ -39,14 +39,6 @@ namespace PresentaciónIF
             LlenarGridView();
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            Eliminar();
-            Actualizar();
-            Limpiar();
-            LlenarGridView();
-        }
-
         public void Limpiar()
         {
             tbNombre.Text = string.Empty;
@@ -115,31 +107,7 @@ namespace PresentaciónIF
             {
                 servicioXcliente.BorrarCliente(lbId.Text);
             }
-        }
-
-        public void Actualizar()
-        {
-            if (lbId.Text == String.Empty)
-            {
-
-            } else
-            {
-                var ClienteA = new Clientes
-                {
-                    Id = int.Parse(lbId.Text),
-                    Nombre = tbNombre.Text,
-                    Telefono = tbTelefono.Text,
-                    Correo = tbCorreo.Text,
-                    UltimaVisita = dtUltimaVisita.Value,
-                    Cumpleaños = dtFechaCumpleaños.Value
-                };
-
-                servicioXcliente.AgregarCliente(ClienteA);
-
-                Confirmacion(ClienteA);
-                confirmacion.ShowDialog();
-            }
-        }
+        }        
 
         public void Filtrar()
         {
@@ -165,12 +133,6 @@ namespace PresentaciónIF
         {
             int i = e.RowIndex;
             var cliente = servicioXcliente.ConsultarClientes()[i];
-            //lbId.Text = Cliente.Id.ToString();
-            //tbNombre.Text = Cliente.Nombre;
-            //tbTelefono.Text = Cliente.Telefono;
-            //tbCorreo.Text = Cliente.Correo;
-            //dtFechaCumpleaños.Value = Cliente.Cumpleaños;
-            //dtUltimaVisita.Value = Cliente.UltimaVisita;
             serviciosForm.SetCliente(cliente);
             serviciosForm.ShowDialog();
         }

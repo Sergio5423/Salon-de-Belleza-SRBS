@@ -9,16 +9,6 @@ namespace PresentaciónIF
             InitializeComponent();
         }
 
-        public void SetCategoria(string categoria)
-        {
-            lbCategoria.Text = categoria;
-        }
-
-        public string GetCategoria()
-        {
-            return lbCategoria.Text;
-        }
-
         public void SetNombre(string nombre)
         {
             lbNombre.Text = nombre;
@@ -42,11 +32,6 @@ namespace PresentaciónIF
         public void SetCumpleaños(string cumpleaños)
         {
             lbCumpleaños.Text = cumpleaños;
-        }
-
-        public void SetVolver(string volver)
-        {
-            lbVolver.Text = volver;
         }
     }
 }
