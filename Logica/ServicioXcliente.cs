@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Datos;
 using System;
 using System.Collections.Generic;
 
@@ -53,7 +54,7 @@ namespace Logica
                         return item;
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }
@@ -92,7 +93,7 @@ namespace Logica
                         listaBuscada.Add(item);
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }
@@ -111,7 +112,7 @@ namespace Logica
                         listaFiltrada.Add(item);
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }

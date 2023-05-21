@@ -14,7 +14,7 @@ namespace PresentaciónIF
 {
     public partial class ServiciosForm : Form
     {
-        ServicioXcliente servicioXcliente = new ServicioXcliente();
+        GestionServicios gestionServicios = new GestionServicios();
         Clientes clienteServicio = null;
 
         public ServiciosForm()
@@ -25,6 +25,7 @@ namespace PresentaciónIF
         private void ServiciosForm_Load(object sender, EventArgs e)
         {            
             Presentar();
+            LlenarGridView();
             Limpiar();
         }
 
@@ -36,7 +37,6 @@ namespace PresentaciónIF
         public void Presentar()
         {
             lbIdServicio.Text = clienteServicio.Id.ToString();
-
             lbNombre.Text = clienteServicio.Nombre;
             lbTelefono.Text = clienteServicio.Telefono;
             lbCorreo.Text = clienteServicio.Correo;
@@ -58,7 +58,7 @@ namespace PresentaciónIF
 
                 Servicio.Regreso = Cliente.UltimaVisita.AddMonths(Servicio.Duracion);
                 lbRegreso.Text = Servicio.Regreso.ToString();
-                servicioXcliente.AgregarServicio(Servicio);
+                gestionServicios.Agregar(Servicio);
             }
         }
 
@@ -77,7 +77,7 @@ namespace PresentaciónIF
 
                 Servicio.Regreso = Cliente.UltimaVisita.AddMonths(Servicio.Duracion);
                 lbRegreso.Text = Servicio.Regreso.ToString();
-                servicioXcliente.AgregarServicio(Servicio);
+                gestionServicios.Agregar(Servicio);
             }
         }
 
@@ -96,7 +96,7 @@ namespace PresentaciónIF
 
                 Servicio.Regreso = Cliente.UltimaVisita.AddMonths(Servicio.Duracion);
                 lbRegreso.Text = Servicio.Regreso.ToString();
-                servicioXcliente.AgregarServicio(Servicio);
+                gestionServicios.Agregar(Servicio);
             }
         }
 
@@ -115,37 +115,22 @@ namespace PresentaciónIF
 
                 Servicio.Regreso = Cliente.UltimaVisita.AddMonths(Servicio.Duracion);
                 lbRegreso.Text = Servicio.Regreso.ToString();
-                servicioXcliente.AgregarServicio(Servicio);
+                gestionServicios.Agregar(Servicio);
             }
         }
 
         public void LlenarGridView()
         {
-            dgvClientes.Rows.Clear();
             BindingSource bin = new BindingSource();
-            bin.DataSource = servicioXcliente.FiltrarServicio(lbIdServicio.Text);
-            dgvClientes.DataSource = bin;
+            bin.DataSource = gestionServicios.Consultar();
+            dgvServicios.DataSource = bin;
         }
 
         public void Filtrar()
-        {
-            var lista = servicioXcliente.BuscarServicio(cbBusqueda.Text);
-            if (cbBusqueda.Text == string.Empty)
-            {
-                lista = null;
-            }
-
-            if (lista == null)
-            {
-                LlenarGridView();
-            }
-            else
-            {
-                dgvClientes.Rows.Clear();
-                BindingSource bin = new BindingSource();
-                bin.DataSource = lista;
-                dgvClientes.DataSource = bin;
-            }
+        {        
+            BindingSource bin = new BindingSource();
+            bin.DataSource = gestionServicios.Filtrar(cbBusqueda.Text);
+            dgvServicios.DataSource = bin;
         }
 
         public void Limpiar()
@@ -158,7 +143,7 @@ namespace PresentaciónIF
 
         public void Eliminar()
         {            
-            servicioXcliente.BorrarServicio(dgvClientes.CurrentRow.Index);
+            gestionServicios.Borrar(dgvServicios.CurrentRow.Index);
         }
 
         private void btnGuardarServicio_Click(object sender, EventArgs e)

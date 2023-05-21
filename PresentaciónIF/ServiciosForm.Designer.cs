@@ -40,7 +40,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cbBusqueda = new System.Windows.Forms.ComboBox();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.dgvServicios = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -54,10 +54,11 @@
             this.lbIdServicio = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbServicio = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,7 +162,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.cbBusqueda);
-            this.groupBox6.Controls.Add(this.dgvClientes);
+            this.groupBox6.Controls.Add(this.dgvServicios);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Location = new System.Drawing.Point(21, 298);
             this.groupBox6.Name = "groupBox6";
@@ -183,13 +184,13 @@
             this.cbBusqueda.TabIndex = 23;
             this.cbBusqueda.SelectedIndexChanged += new System.EventHandler(this.cbBusqueda_SelectedIndexChanged);
             // 
-            // dgvClientes
+            // dgvServicios
             // 
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(23, 55);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(796, 167);
-            this.dgvClientes.TabIndex = 14;
+            this.dgvServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvServicios.Location = new System.Drawing.Point(23, 55);
+            this.dgvServicios.Name = "dgvServicios";
+            this.dgvServicios.Size = new System.Drawing.Size(796, 167);
+            this.dgvServicios.TabIndex = 14;
             // 
             // label16
             // 
@@ -211,6 +212,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Controls.Add(this.btnGuardarServicio);
             this.groupBox5.Controls.Add(this.lbRegreso);
             this.groupBox5.Controls.Add(this.label15);
@@ -294,7 +296,7 @@
             // lbIdServicio
             // 
             this.lbIdServicio.AutoSize = true;
-            this.lbIdServicio.Location = new System.Drawing.Point(17, 31);
+            this.lbIdServicio.Location = new System.Drawing.Point(82, 29);
             this.lbIdServicio.Name = "lbIdServicio";
             this.lbIdServicio.Size = new System.Drawing.Size(273, 13);
             this.lbIdServicio.TabIndex = 15;
@@ -323,6 +325,15 @@
             this.cbServicio.TabIndex = 14;
             this.cbServicio.SelectedIndexChanged += new System.EventHandler(this.cbServicio_SelectedIndexChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "ID";
+            // 
             // ServiciosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,7 +352,7 @@
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
@@ -375,7 +386,8 @@
         private System.Windows.Forms.ComboBox cbServicio;
         private System.Windows.Forms.Label lbDuracion;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridView dgvServicios;
         private System.Windows.Forms.ComboBox cbBusqueda;
+        private System.Windows.Forms.Label label1;
     }
 }

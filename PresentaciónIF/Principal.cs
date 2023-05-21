@@ -10,7 +10,8 @@ namespace PresentaciónIF
 {
     public partial class Principal : Form
     {
-        ServicioXcliente servicioXcliente = new ServicioXcliente();
+        GestionClientes gestionClientes = new GestionClientes();
+        GestionServicios gestionServicios = new GestionServicios();
         Confirmacion confirmacion;
         ServiciosForm serviciosForm;
 
@@ -23,6 +24,7 @@ namespace PresentaciónIF
         {
             confirmacion = new Confirmacion();
             serviciosForm = new ServiciosForm();
+            LlenarGridView();
         }
         
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -65,9 +67,8 @@ namespace PresentaciónIF
 
         public void CrearCliente()
         {
-            var Cliente = new Clientes
-            {
-                Id = servicioXcliente.UltimoIdClientes(),
+            var cliente = new Clientes
+            {                
                 Nombre = tbNombre.Text,
                 Telefono = tbTelefono.Text,
                 Correo = tbCorreo.Text,
@@ -75,9 +76,9 @@ namespace PresentaciónIF
                 Cumpleaños = dtFechaCumpleaños.Value
             };
 
-            servicioXcliente.AgregarCliente(Cliente);
+            gestionClientes.Agregar(cliente);
 
-            Confirmacion(Cliente);
+            Confirmacion(cliente);
             confirmacion.ShowDialog();
 
         }        
@@ -94,7 +95,7 @@ namespace PresentaciónIF
         public void LlenarGridView()
         {         
             BindingSource bin = new BindingSource();
-            bin.DataSource = servicioXcliente.ConsultarClientes();
+            bin.DataSource = gestionClientes.Consultar();
             dgvClientes.DataSource = bin;
         }
 
@@ -105,34 +106,22 @@ namespace PresentaciónIF
 
             } else
             {
-                servicioXcliente.BorrarCliente(lbId.Text);
+                gestionClientes.Borrar(int.Parse(lbId.Text));
             }
         }        
 
         public void Filtrar()
         {
-            var cliente = servicioXcliente.BuscarCliente(tbBuscarClientes.Text);
-            if (tbBuscarClientes.Text == string.Empty)
-            {
-                cliente = null;
-            }
-
-            if (cliente == null)
-            {
-                LlenarGridView();
-            }
-            else
-            {
-                BindingSource bin = new BindingSource();
-                bin.DataSource = cliente;
-                dgvClientes.DataSource = bin;
-            }
+            var listaFiltrada = gestionClientes.Filtrar(tbBuscarClientes.Text);
+            BindingSource bin = new BindingSource();
+            bin.DataSource = listaFiltrada;
+            dgvClientes.DataSource = bin;
         }
 
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
-            var cliente = servicioXcliente.ConsultarClientes()[i];
+            var cliente = gestionClientes.Consultar()[i];
             serviciosForm.SetCliente(cliente);
             serviciosForm.ShowDialog();
         }
