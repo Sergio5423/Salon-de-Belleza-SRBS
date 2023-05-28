@@ -34,9 +34,9 @@ namespace Logica
             repositorioClientes.Actualizar(cliente);
         }
 
-        public List<Clientes> Filtrar(string dato)
+        public List<Clientes> Filtrar(string nombre)
         {
-            return repositorioClientes.Filtrar(dato);
+            return repositorioClientes.Filtrar(nombre);
         }
 
         public Clientes ConsultarUno(int id)

@@ -13,6 +13,6 @@ namespace Datos
         void Agregar(T t);
         void Actualizar(T t);
         void Borrar(int id);
-        T Mapeador(SqlDataReader dataReader);
+        //Mapeador(SqlDataReader dataReader);
     }
 }

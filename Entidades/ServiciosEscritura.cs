@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Servicios
+    public class ServiciosEscritura
     {
 
-        public Servicios()
+        public ServiciosEscritura()
         {
 
         }
 
-        public Servicios(int id, int vinculo, string nombre, int valor, int duracion, DateTime regreso)
+        public ServiciosEscritura(int id, int vinculo, string nombre, int valor, int duracion, DateTime regreso)
         {
             Id = id;
             Vinculo = vinculo;

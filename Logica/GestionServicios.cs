@@ -9,15 +9,13 @@ using System.Data.SqlClient;
 
 namespace Logica
 {
-    public class GestionServicios : IOperaciones<Servicios>
+    public class GestionServicios : IOperaciones<ServiciosEscritura>
     {        
         RepositorioServicios repositorioServicios = new RepositorioServicios();
-        List<Servicios> listaServicios;
         Clientes clienteServicio;
 
         public GestionServicios()
         {
-            listaServicios = new List<Servicios>();
             clienteServicio = new Clientes();
         }
 
@@ -26,7 +24,7 @@ namespace Logica
             clienteServicio = cliente;
         }
 
-        public void Agregar(Servicios servicio)
+        public void Agregar(ServiciosEscritura servicio)
         {
             if (servicio.Nombre == "Alisado Profesional")
                 servicio.Regreso = CalcularRegresoMeses(servicio.Duracion);
@@ -56,19 +54,19 @@ namespace Logica
             repositorioServicios.Borrar(id);
         }
 
-        public void Actualizar(Servicios servicio)
+        public void Actualizar(ServiciosEscritura servicio)
         {
             repositorioServicios.Actualizar(servicio);
         }
 
-        public List<Servicios> Filtrar(string nombre, int vinculo)
+        public List<ServiciosLectura> Filtrar(string nombre, int vinculo)
         {            
             return repositorioServicios.Filtrar(nombre,vinculo);
         }
 
-        public List<Servicios> Consultar(int vinculo)
+        public List<ServiciosLectura> Consultar(int vinculo)
         {
-            return listaServicios = repositorioServicios.Consultar(vinculo);
+            return repositorioServicios.Consultar(vinculo);
         }
     }
 }

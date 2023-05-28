@@ -54,6 +54,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbEstilista = new System.Windows.Forms.TextBox();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -110,7 +112,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(25, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(300, 190);
+            this.groupBox1.Size = new System.Drawing.Size(300, 214);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -250,6 +252,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tbEstilista);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.dtFechaCumpleaños);
             this.groupBox2.Controls.Add(this.dtUltimaVisita);
             this.groupBox2.Controls.Add(this.btnGuardarCliente);
@@ -257,7 +261,7 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(376, 43);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(406, 190);
+            this.groupBox2.Size = new System.Drawing.Size(406, 213);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -270,14 +274,14 @@
             // 
             // dtUltimaVisita
             // 
-            this.dtUltimaVisita.Location = new System.Drawing.Point(164, 98);
+            this.dtUltimaVisita.Location = new System.Drawing.Point(164, 79);
             this.dtUltimaVisita.Name = "dtUltimaVisita";
             this.dtUltimaVisita.Size = new System.Drawing.Size(215, 20);
             this.dtUltimaVisita.TabIndex = 10;
             // 
             // btnGuardarCliente
             // 
-            this.btnGuardarCliente.Location = new System.Drawing.Point(305, 152);
+            this.btnGuardarCliente.Location = new System.Drawing.Point(316, 175);
             this.btnGuardarCliente.Name = "btnGuardarCliente";
             this.btnGuardarCliente.Size = new System.Drawing.Size(75, 23);
             this.btnGuardarCliente.TabIndex = 8;
@@ -297,7 +301,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 104);
+            this.label5.Location = new System.Drawing.Point(26, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 8;
@@ -311,6 +315,22 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(900, 626);
             this.tabControl1.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(26, 134);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 13);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Estilista Favorito";
+            // 
+            // tbEstilista
+            // 
+            this.tbEstilista.Location = new System.Drawing.Point(164, 127);
+            this.tbEstilista.Name = "tbEstilista";
+            this.tbEstilista.Size = new System.Drawing.Size(161, 20);
+            this.tbEstilista.TabIndex = 14;
             // 
             // Principal
             // 
@@ -365,6 +385,8 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnServicios;
+        private System.Windows.Forms.TextBox tbEstilista;
+        private System.Windows.Forms.Label label8;
     }
 }
 

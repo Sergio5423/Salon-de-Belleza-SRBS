@@ -18,7 +18,8 @@ namespace Entidades
                        string telefono, 
                        string correo,
                        DateTime cumpleaños,
-                       DateTime ultimaVisita)
+                       DateTime ultimaVisita,
+                       string estilistaFavorito)
         {
             Id = id;
             Nombre = nombre;
@@ -26,6 +27,7 @@ namespace Entidades
             Correo = correo;
             Cumpleaños = cumpleaños;
             UltimaVisita = ultimaVisita;
+            EstilistaFavorito = estilistaFavorito;
         }
 
         public int Id { get; set; }
@@ -34,10 +36,11 @@ namespace Entidades
         public string Correo { get; set; }
         public DateTime Cumpleaños { get; set; }
         public DateTime UltimaVisita { get; set; }
+        public string EstilistaFavorito { get; set; }
 
         public override string ToString()
         {
-            return $"{Id};{Nombre};{Telefono};{Correo};{Cumpleaños};{UltimaVisita}";
+            return $"{Id};{Nombre};{Telefono};{Correo};{Cumpleaños};{UltimaVisita},{EstilistaFavorito}";
         }
     }
 }

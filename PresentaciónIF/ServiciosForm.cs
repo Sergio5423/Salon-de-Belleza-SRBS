@@ -44,6 +44,7 @@ namespace PresentaciónIF
             lbNombre.Text = clienteServicio.Nombre;
             lbTelefono.Text = clienteServicio.Telefono;
             lbCorreo.Text = clienteServicio.Correo;
+            lbFavorito.Text = clienteServicio.EstilistaFavorito;
         }
 
         public void PresentarServicio()
@@ -76,7 +77,7 @@ namespace PresentaciónIF
 
         public void CrearServicioAlisado(dynamic cliente)
         {           
-            var servicio = new Servicios
+            var servicio = new ServiciosEscritura
             {
                 Vinculo = cliente.Id,
                 Nombre = cbServicio.SelectedItem.ToString(),
@@ -89,7 +90,7 @@ namespace PresentaciónIF
 
         public void CrearServicioColor(dynamic cliente)
         {
-            var servicio = new Servicios
+            var servicio = new ServiciosEscritura
             {
                 Vinculo = cliente.Id,
                 Nombre = cbServicio.SelectedItem.ToString(),
@@ -102,7 +103,7 @@ namespace PresentaciónIF
 
         public void CrearServicioMantenimiento(dynamic cliente)
         {        
-                var servicio = new Servicios
+                var servicio = new ServiciosEscritura
                 {
                     Vinculo = cliente.Id,
                     Nombre = cbServicio.SelectedItem.ToString(),
@@ -115,7 +116,7 @@ namespace PresentaciónIF
 
         public void CrearServicioIrregular(dynamic cliente)
         {         
-                var servicio = new Servicios
+                var servicio = new ServiciosEscritura
                 {
                     Vinculo = cliente.Id,
                     Nombre = cbServicio.SelectedItem.ToString(),
@@ -186,6 +187,12 @@ namespace PresentaciónIF
         private void dgvServicios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             idSeleccionado = int.Parse(dgvServicios.Rows[e.RowIndex].Cells[0].Value.ToString());                        
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            cbBusqueda.SelectedIndex = -1;
+            LlenarGridView();
         }
     }
 }

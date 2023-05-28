@@ -55,6 +55,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbServicio = new System.Windows.Forms.ComboBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbFavorito = new System.Windows.Forms.Label();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -65,7 +68,7 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.btnEliminarServicios);
-            this.groupBox8.Location = new System.Drawing.Point(21, 536);
+            this.groupBox8.Location = new System.Drawing.Point(21, 555);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(114, 49);
             this.groupBox8.TabIndex = 28;
@@ -83,6 +86,8 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.lbFavorito);
+            this.groupBox7.Controls.Add(this.label2);
             this.groupBox7.Controls.Add(this.label1);
             this.groupBox7.Controls.Add(this.label17);
             this.groupBox7.Controls.Add(this.lbNombre);
@@ -92,16 +97,16 @@
             this.groupBox7.Controls.Add(this.label22);
             this.groupBox7.Controls.Add(this.lbVinculo);
             this.groupBox7.Controls.Add(this.label24);
-            this.groupBox7.Location = new System.Drawing.Point(500, 48);
+            this.groupBox7.Location = new System.Drawing.Point(524, 45);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(316, 239);
+            this.groupBox7.Size = new System.Drawing.Size(316, 266);
             this.groupBox7.TabIndex = 27;
             this.groupBox7.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 71);
+            this.label1.Location = new System.Drawing.Point(20, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 23;
@@ -119,7 +124,7 @@
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
-            this.lbNombre.Location = new System.Drawing.Point(82, 108);
+            this.lbNombre.Location = new System.Drawing.Point(138, 105);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(120, 13);
             this.lbNombre.TabIndex = 22;
@@ -128,7 +133,7 @@
             // lbCorreo
             // 
             this.lbCorreo.AutoSize = true;
-            this.lbCorreo.Location = new System.Drawing.Point(82, 191);
+            this.lbCorreo.Location = new System.Drawing.Point(138, 191);
             this.lbCorreo.Name = "lbCorreo";
             this.lbCorreo.Size = new System.Drawing.Size(120, 13);
             this.lbCorreo.TabIndex = 19;
@@ -146,7 +151,7 @@
             // lbTelefono
             // 
             this.lbTelefono.AutoSize = true;
-            this.lbTelefono.Location = new System.Drawing.Point(82, 148);
+            this.lbTelefono.Location = new System.Drawing.Point(138, 147);
             this.lbTelefono.Name = "lbTelefono";
             this.lbTelefono.Size = new System.Drawing.Size(120, 13);
             this.lbTelefono.TabIndex = 17;
@@ -155,7 +160,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(20, 148);
+            this.label22.Location = new System.Drawing.Point(20, 147);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(49, 13);
             this.label22.TabIndex = 16;
@@ -164,7 +169,7 @@
             // lbVinculo
             // 
             this.lbVinculo.AutoSize = true;
-            this.lbVinculo.Location = new System.Drawing.Point(82, 71);
+            this.lbVinculo.Location = new System.Drawing.Point(138, 65);
             this.lbVinculo.Name = "lbVinculo";
             this.lbVinculo.Size = new System.Drawing.Size(131, 13);
             this.lbVinculo.TabIndex = 15;
@@ -173,7 +178,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(20, 108);
+            this.label24.Location = new System.Drawing.Point(20, 105);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(44, 13);
             this.label24.TabIndex = 13;
@@ -181,10 +186,11 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.btnLimpiar);
             this.groupBox6.Controls.Add(this.cbBusqueda);
             this.groupBox6.Controls.Add(this.dgvServicios);
             this.groupBox6.Controls.Add(this.label16);
-            this.groupBox6.Location = new System.Drawing.Point(21, 298);
+            this.groupBox6.Location = new System.Drawing.Point(21, 317);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(835, 232);
             this.groupBox6.TabIndex = 26;
@@ -216,11 +222,11 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(20, 26);
+            this.label16.Location = new System.Drawing.Point(29, 26);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(55, 13);
+            this.label16.Size = new System.Drawing.Size(32, 13);
             this.label16.TabIndex = 8;
-            this.label16.Text = "Busqueda";
+            this.label16.Text = "Filtrar";
             // 
             // label12
             // 
@@ -242,15 +248,15 @@
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.cbServicio);
-            this.groupBox5.Location = new System.Drawing.Point(65, 48);
+            this.groupBox5.Location = new System.Drawing.Point(53, 45);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(304, 239);
+            this.groupBox5.Size = new System.Drawing.Size(304, 266);
             this.groupBox5.TabIndex = 24;
             this.groupBox5.TabStop = false;
             // 
             // btnGuardarServicio
             // 
-            this.btnGuardarServicio.Location = new System.Drawing.Point(219, 206);
+            this.btnGuardarServicio.Location = new System.Drawing.Point(216, 226);
             this.btnGuardarServicio.Name = "btnGuardarServicio";
             this.btnGuardarServicio.Size = new System.Drawing.Size(75, 23);
             this.btnGuardarServicio.TabIndex = 22;
@@ -335,11 +341,39 @@
             this.cbServicio.TabIndex = 14;
             this.cbServicio.SelectedIndexChanged += new System.EventHandler(this.cbServicio_SelectedIndexChanged);
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(273, 21);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(94, 23);
+            this.btnLimpiar.TabIndex = 23;
+            this.btnLimpiar.Text = "Limpiar Filtros";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 228);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Estilista Favorito";
+            // 
+            // lbFavorito
+            // 
+            this.lbFavorito.AutoSize = true;
+            this.lbFavorito.Location = new System.Drawing.Point(138, 228);
+            this.lbFavorito.Name = "lbFavorito";
+            this.lbFavorito.Size = new System.Drawing.Size(120, 13);
+            this.lbFavorito.TabIndex = 25;
+            this.lbFavorito.Text = "Valor tomado del cliente";
+            // 
             // ServiciosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 602);
+            this.ClientSize = new System.Drawing.Size(872, 622);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
@@ -390,5 +424,8 @@
         private System.Windows.Forms.DataGridView dgvServicios;
         private System.Windows.Forms.ComboBox cbBusqueda;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbFavorito;
     }
 }

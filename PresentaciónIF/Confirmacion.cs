@@ -33,5 +33,10 @@ namespace PresentaciónIF
         {
             lbCumpleaños.Text = cumpleaños;
         }
+
+        public void SetEstilista(string estilista)
+        {
+            lbEstilista.Text = estilista;
+        }
     }
 }

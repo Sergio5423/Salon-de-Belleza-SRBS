@@ -15,7 +15,5 @@ namespace Logica
         void Borrar(int id);
 
         void Actualizar(T t);
-
-        List<T> Filtrar(string dato);
     }
 }

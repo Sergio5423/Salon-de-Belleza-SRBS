@@ -7,19 +7,19 @@ namespace Logica
 {
     public class ServicioXcliente
     {
-        List<Servicios> listaFiltrada = null;
-        List<Servicios> listaBuscada = null;
+        List<ServiciosEscritura> listaFiltrada = null;
+        List<ServiciosEscritura> listaBuscada = null;
         List<Clientes> listaClientes = null;
-        List<Servicios> listaServicios = null;
+        List<ServiciosEscritura> listaServicios = null;
         
         Clientes clientes = new Clientes();
 
         public ServicioXcliente()
         {
             listaClientes = new List<Clientes>();
-            listaServicios = new List<Servicios>();
-            listaFiltrada = new List<Servicios>();
-            listaBuscada = new List<Servicios>();
+            listaServicios = new List<ServiciosEscritura>();
+            listaFiltrada = new List<ServiciosEscritura>();
+            listaBuscada = new List<ServiciosEscritura>();
         }
 
         public void AgregarCliente(Clientes cliente)
@@ -27,7 +27,7 @@ namespace Logica
             listaClientes.Add(cliente);
         }
 
-        public void AgregarServicio(Servicios servicios)
+        public void AgregarServicio(ServiciosEscritura servicios)
         {
             listaServicios.Add(servicios);
         }
@@ -37,7 +37,7 @@ namespace Logica
             return listaClientes;
         }
 
-        public List<Servicios> ConsultarServicios()
+        public List<ServiciosEscritura> ConsultarServicios()
         {
             return listaServicios;
         }
@@ -81,7 +81,7 @@ namespace Logica
             return null;
         }
 
-        public List<Servicios> BuscarServicio(string dato)
+        public List<ServiciosEscritura> BuscarServicio(string dato)
         {
             
             foreach (var item in ConsultarServicios())
@@ -101,7 +101,7 @@ namespace Logica
             return listaBuscada;
         }
 
-        public List<Servicios> FiltrarServicio(string dato)
+        public List<ServiciosEscritura> FiltrarServicio(string dato)
         {
             foreach (var item in ConsultarServicios())
             {

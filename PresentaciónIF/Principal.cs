@@ -91,7 +91,8 @@ namespace PresentaciónIF
                 Telefono = tbTelefono.Text,
                 Correo = tbCorreo.Text,
                 UltimaVisita = dtUltimaVisita.Value,
-                Cumpleaños = dtFechaCumpleaños.Value
+                Cumpleaños = dtFechaCumpleaños.Value,
+                EstilistaFavorito = tbEstilista.Text
             };
             return cliente;
         }
@@ -103,6 +104,7 @@ namespace PresentaciónIF
             confirmacion.SetCorreo(cliente.Correo);
             confirmacion.SetUltimaVisita(cliente.UltimaVisita.ToShortDateString());
             confirmacion.SetCumpleaños(cliente.Cumpleaños.Date.ToShortDateString());
+            confirmacion.SetEstilista(cliente.EstilistaFavorito);
         }
 
         public Clientes CrearClienteActualizado()
@@ -114,7 +116,8 @@ namespace PresentaciónIF
                 Telefono = tbTelefono.Text,
                 Correo = tbCorreo.Text,
                 UltimaVisita = dtUltimaVisita.Value,
-                Cumpleaños = dtFechaCumpleaños.Value
+                Cumpleaños = dtFechaCumpleaños.Value,
+                EstilistaFavorito = tbEstilista.Text
             };
             return cliente;
         }
@@ -152,6 +155,7 @@ namespace PresentaciónIF
             tbCorreo.Text = dgvClientes[3, posicion].Value.ToString();
             dtFechaCumpleaños.Value = DateTime.Parse(dgvClientes[4, posicion].Value.ToString());
             dtUltimaVisita.Value = DateTime.Parse(dgvClientes[5, posicion].Value.ToString());
+            tbEstilista.Text = dgvClientes[6,posicion].Value.ToString();
             tbNombre.Focus();
         }
 

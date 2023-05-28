@@ -39,6 +39,8 @@
             this.lbUltimaVisita = new System.Windows.Forms.Label();
             this.lbCumpleaños = new System.Windows.Forms.Label();
             this.lbNombre = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbEstilista = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -140,11 +142,31 @@
             this.lbNombre.TabIndex = 4;
             this.lbNombre.Text = "...";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(33, 468);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Estilista Favorito:";
+            // 
+            // lbEstilista
+            // 
+            this.lbEstilista.AutoSize = true;
+            this.lbEstilista.Location = new System.Drawing.Point(134, 468);
+            this.lbEstilista.Name = "lbEstilista";
+            this.lbEstilista.Size = new System.Drawing.Size(16, 13);
+            this.lbEstilista.TabIndex = 16;
+            this.lbEstilista.Text = "...";
+            // 
             // Confirmacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 462);
+            this.ClientSize = new System.Drawing.Size(416, 520);
+            this.Controls.Add(this.lbEstilista);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lbCumpleaños);
             this.Controls.Add(this.lbUltimaVisita);
             this.Controls.Add(this.lbCorreo);
@@ -176,5 +198,7 @@
         private System.Windows.Forms.Label lbUltimaVisita;
         private System.Windows.Forms.Label lbCumpleaños;
         private System.Windows.Forms.Label lbNombre;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbEstilista;
     }
 }

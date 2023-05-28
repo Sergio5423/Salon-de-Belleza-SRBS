@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class RepositorioServicios : GestorConexion, IOperacionesBD<Servicios>
+    public class RepositorioServicios : GestorConexion, IOperacionesBD<ServiciosEscritura>
     {
-        public void Agregar(Servicios servicio)
+        public void Agregar(ServiciosEscritura servicio)
         {
             using (var Command = connection.CreateCommand())
             {
@@ -39,7 +39,7 @@ namespace Datos
             }
         }
 
-        public void Actualizar(Servicios servicio)
+        public void Actualizar(ServiciosEscritura servicio)
         {
             using (var Command = connection.CreateCommand())
             {
@@ -50,12 +50,12 @@ namespace Datos
             }
         }
 
-        public List<Servicios> Filtrar(string nombre, int vinculo)
+        public List<ServiciosLectura> Filtrar(string nombre, int vinculo)
         {        
-            List<Servicios> servicios = new List<Servicios>();
+            List<ServiciosLectura> servicios = new List<ServiciosLectura>();
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = $"select Id,Nombre,Valor,Duracion,Regreso from Servicios where Nombre like '%{nombre}%' and '%{vinculo}%'";
+                command.CommandText = $"select Id,Nombre,Valor,Duracion,Regreso from Servicios where Nombre like '%{nombre}%' and Vinculo = '{vinculo}'";
                 Open();
                 SqlDataReader lector = command.ExecuteReader();
                 while (lector.Read())
@@ -67,9 +67,9 @@ namespace Datos
             return servicios;
         }
 
-        public List<Servicios> Consultar(int vinculo)
+        public List<ServiciosLectura> Consultar(int vinculo)
         {
-            List<Servicios> servicios = new List<Servicios>();
+            List<ServiciosLectura> servicios = new List<ServiciosLectura>();
             var command = connection.CreateCommand();
             command.CommandText = $"select Id,Nombre,Valor,Duracion,Regreso from Servicios where Vinculo like '%{vinculo}%'";
             Open();
@@ -82,11 +82,11 @@ namespace Datos
             return servicios;
         }
 
-        public Servicios Mapeador(SqlDataReader dataReader)
+        public ServiciosLectura Mapeador(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows)
                 return null;
-            Servicios servicio = new Servicios();
+            ServiciosLectura servicio = new ServiciosLectura();
             servicio.Id = dataReader.GetInt32(0);
             servicio.Nombre = dataReader.GetString(1);
             servicio.Valor = dataReader.GetInt32(2);
