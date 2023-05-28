@@ -14,9 +14,10 @@ namespace Entidades
 
         }
 
-        public Servicios(int id, string nombre, int valor, int duracion, DateTime regreso)
+        public Servicios(int id, int vinculo, string nombre, int valor, int duracion, DateTime regreso)
         {
             Id = id;
+            Vinculo = vinculo;
             Nombre = nombre;
             Valor = valor;
             Duracion = duracion; 
@@ -24,6 +25,7 @@ namespace Entidades
         }
 
         public int Id { get; set; }
+        public int Vinculo { get; set; }
         public string Nombre { get; set; }
         public int Valor { get; set; }
         public int Duracion { get; set; }
@@ -31,7 +33,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            return $"{Id};{Nombre};{Valor};{Duracion}";
+            return $"{Id};{Vinculo};{Nombre};{Valor};{Duracion}";
         }
     }
 }

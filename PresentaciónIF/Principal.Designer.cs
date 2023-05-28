@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnServicios = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbId = new System.Windows.Forms.Label();
             this.tbCorreo = new System.Windows.Forms.TextBox();
@@ -38,9 +40,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.btnElminarServicio = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbBuscarClientes = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -50,8 +54,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tbBuscarClientes = new System.Windows.Forms.TextBox();
             this.tabPage1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -62,6 +66,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.label1);
@@ -70,10 +75,29 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(876, 600);
+            this.tabPage1.Size = new System.Drawing.Size(892, 600);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "s";
+            this.tabPage1.Text = "Registro Clientes Salon de Belleza";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btnServicios);
+            this.groupBox5.Location = new System.Drawing.Point(774, 533);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(96, 49);
+            this.groupBox5.TabIndex = 15;
+            this.groupBox5.TabStop = false;
+            // 
+            // btnServicios
+            // 
+            this.btnServicios.Location = new System.Drawing.Point(10, 15);
+            this.btnServicios.Name = "btnServicios";
+            this.btnServicios.Size = new System.Drawing.Size(75, 23);
+            this.btnServicios.TabIndex = 14;
+            this.btnServicios.Text = "Servicios";
+            this.btnServicios.UseVisualStyleBackColor = true;
+            this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
             // 
             // groupBox1
             // 
@@ -149,12 +173,23 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnActualizar);
             this.groupBox4.Controls.Add(this.btnElminarServicio);
             this.groupBox4.Location = new System.Drawing.Point(21, 533);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(124, 49);
+            this.groupBox4.Size = new System.Drawing.Size(208, 49);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(120, 15);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 14;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnElminarServicio
             // 
@@ -186,6 +221,14 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
+            // tbBuscarClientes
+            // 
+            this.tbBuscarClientes.Location = new System.Drawing.Point(99, 28);
+            this.tbBuscarClientes.Name = "tbBuscarClientes";
+            this.tbBuscarClientes.Size = new System.Drawing.Size(161, 20);
+            this.tbBuscarClientes.TabIndex = 14;
+            this.tbBuscarClientes.TextChanged += new System.EventHandler(this.tbBuscarClientes_TextChanged_1);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -202,6 +245,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(796, 167);
             this.dgvClientes.TabIndex = 0;
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
             // 
             // groupBox2
@@ -265,28 +309,21 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(884, 626);
+            this.tabControl1.Size = new System.Drawing.Size(900, 626);
             this.tabControl1.TabIndex = 5;
-            // 
-            // tbBuscarClientes
-            // 
-            this.tbBuscarClientes.Location = new System.Drawing.Point(99, 28);
-            this.tbBuscarClientes.Name = "tbBuscarClientes";
-            this.tbBuscarClientes.Size = new System.Drawing.Size(161, 20);
-            this.tbBuscarClientes.TabIndex = 14;
-            this.tbBuscarClientes.TextChanged += new System.EventHandler(this.tbBuscarClientes_TextChanged_1);
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 650);
+            this.ClientSize = new System.Drawing.Size(924, 650);
             this.Controls.Add(this.tabControl1);
             this.Name = "Principal";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -325,6 +362,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TextBox tbBuscarClientes;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button btnServicios;
     }
 }
 

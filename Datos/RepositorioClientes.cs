@@ -23,8 +23,8 @@ namespace Datos
                 Command.Parameters.Add("Nombre", SqlDbType.VarChar).Value = cliente.Nombre;
                 Command.Parameters.Add("Telefono", SqlDbType.VarChar).Value = cliente.Telefono;
                 Command.Parameters.Add("Correo", SqlDbType.VarChar).Value = cliente.Correo;
-                Command.Parameters.Add("Cumpleaños", SqlDbType.DateTime).Value = cliente.Cumpleaños;
-                Command.Parameters.Add("UltimaVisita", SqlDbType.DateTime).Value = cliente.UltimaVisita;
+                Command.Parameters.Add("Cumpleaños", SqlDbType.DateTime).Value = cliente.Cumpleaños.ToShortDateString();
+                Command.Parameters.Add("UltimaVisita", SqlDbType.DateTime).Value = cliente.UltimaVisita.ToShortDateString();
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
@@ -33,15 +33,42 @@ namespace Datos
 
         public void Borrar(int id)
         {
+            BorrarServiciosVinculados(id);
             using (var Command = connection.CreateCommand())
             {
-                Command.CommandText = "Delete Clientes" +
-                 $"where Id = {id}";
+                Command.CommandText = $"Delete Clientes where Id = {id}";
+                Open();
+                Command.ExecuteNonQuery();
+                Close();
+            }            
+        }
+
+        public void BorrarServiciosVinculados(int Vinculo)
+        {
+            using (var Command = connection.CreateCommand())
+            {
+                Command.CommandText = $"Delete Servicios where Vinculo = {Vinculo}";
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
             }
-            repositorioServicios.Borrar(id);
+        }
+
+        public void Actualizar(Clientes cliente)
+        {
+            using (var Command = connection.CreateCommand())
+            {
+                Command.CommandText = "Update Clientes Set Nombre = @Nombre,Telefono = @Telefono,Correo = @Correo,Cumpleaños = @Cumpleaños,UltimaVisita = @UltimaVisita Where Id = @Id";
+                Command.Parameters.Add("Nombre", SqlDbType.VarChar).Value = cliente.Nombre;
+                Command.Parameters.Add("Telefono", SqlDbType.VarChar).Value = cliente.Telefono;
+                Command.Parameters.Add("Correo", SqlDbType.VarChar).Value = cliente.Correo;
+                Command.Parameters.Add("Cumpleaños", SqlDbType.Date).Value = cliente.Cumpleaños.ToShortDateString();
+                Command.Parameters.Add("UltimaVisita", SqlDbType.Date).Value = cliente.UltimaVisita.ToShortDateString();
+                Command.Parameters.Add("Id", SqlDbType.Int).Value = cliente.Id;
+                Open();
+                Command.ExecuteNonQuery();
+                Close();
+            }
         }
 
         public List<Clientes> Filtrar(string dato)

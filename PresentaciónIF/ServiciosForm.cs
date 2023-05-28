@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace PresentaciónIF
@@ -17,14 +18,17 @@ namespace PresentaciónIF
         GestionServicios gestionServicios = new GestionServicios();
         Clientes clienteServicio = null;
 
+        int idSeleccionado;
+
         public ServiciosForm()
         {
             InitializeComponent();
         }
 
         private void ServiciosForm_Load(object sender, EventArgs e)
-        {            
-            Presentar();
+        {
+            gestionServicios.SetCliente(clienteServicio);
+            PresentarCliente();
             LlenarGridView();
             Limpiar();
         }
@@ -34,102 +38,105 @@ namespace PresentaciónIF
             clienteServicio = cliente;
         }
 
-        public void Presentar()
+        public void PresentarCliente()
         {
-            lbIdServicio.Text = clienteServicio.Id.ToString();
+            lbVinculo.Text = clienteServicio.Id.ToString();
             lbNombre.Text = clienteServicio.Nombre;
             lbTelefono.Text = clienteServicio.Telefono;
             lbCorreo.Text = clienteServicio.Correo;
         }
 
-        public void CrearServicioAlisado(dynamic Cliente)
+        public void PresentarServicio()
         {
             if (cbServicio.SelectedIndex == 0)
             {
-                var Servicio = new Servicios
-                {
-                    Id = Cliente.Id,
-                    Nombre = cbServicio.SelectedItem.ToString(),
-                    Valor = 0,
-                    Duracion = 3,
-                };
-
-                lbValor.Text = $"${Servicio.Valor}";
-
-                Servicio.Regreso = Cliente.UltimaVisita.AddMonths(Servicio.Duracion);
-                lbRegreso.Text = Servicio.Regreso.ToString();
-                gestionServicios.Agregar(Servicio);
+                lbValor.Text = "0";
+                lbDuracion.Text = "3 Meses";
+                lbRegreso.Text = gestionServicios.CalcularRegresoMeses(3).ToShortDateString();
             }
-        }
-
-        public void CrearServicioColor(dynamic Cliente)
-        {
             if (cbServicio.SelectedIndex == 1)
             {
-                var Servicio = new Servicios
-                {
-                    Id = Cliente.Id,
-                    Nombre = cbServicio.SelectedItem.ToString(),
-                    Valor = 0,
-                    Duracion = 4,
-                };
-                lbValor.Text = $"${Servicio.Valor}";
-
-                Servicio.Regreso = Cliente.UltimaVisita.AddMonths(Servicio.Duracion);
-                lbRegreso.Text = Servicio.Regreso.ToString();
-                gestionServicios.Agregar(Servicio);
+                lbValor.Text = "0";
+                lbDuracion.Text = "4 Meses";
+                lbRegreso.Text = gestionServicios.CalcularRegresoMeses(4).ToShortDateString();
+            }
+            if (cbServicio.SelectedIndex == 2)
+            {
+                lbValor.Text = "0";
+                lbDuracion.Text = "15 Dias";
+                lbRegreso.Text = gestionServicios.CalcularRegresoDias(15).ToShortDateString();
+            }
+            if (cbServicio.SelectedIndex == 3)
+            {
+                lbValor.Text = "0";
+                lbDuracion.Text = "20 Dias";
+                lbRegreso.Text = gestionServicios.CalcularRegresoDias(20).ToShortDateString();
             }
         }
 
-        public void CrearServicioMantenimiento(dynamic Cliente)
-        {
-            if (cbServicio.SelectedIndex == 2)
+        public void CrearServicioAlisado(dynamic cliente)
+        {           
+            var servicio = new Servicios
             {
-                var Servicio = new Servicios
+                Vinculo = cliente.Id,
+                Nombre = cbServicio.SelectedItem.ToString(),
+                Valor = 0,
+                Duracion = 3,                    
+            };
+
+            gestionServicios.Agregar(servicio);                    
+        }
+
+        public void CrearServicioColor(dynamic cliente)
+        {
+            var servicio = new Servicios
+            {
+                Vinculo = cliente.Id,
+                Nombre = cbServicio.SelectedItem.ToString(),
+                Valor = 0,
+                Duracion = 4,
+            };
+
+            gestionServicios.Agregar(servicio);            
+        }
+
+        public void CrearServicioMantenimiento(dynamic cliente)
+        {        
+                var servicio = new Servicios
                 {
-                    Id = Cliente.Id,
+                    Vinculo = cliente.Id,
                     Nombre = cbServicio.SelectedItem.ToString(),
                     Valor = 0,
                     Duracion = 15,
                 };
-                lbValor.Text = $"${Servicio.Valor}";
 
-                Servicio.Regreso = Cliente.UltimaVisita.AddMonths(Servicio.Duracion);
-                lbRegreso.Text = Servicio.Regreso.ToString();
-                gestionServicios.Agregar(Servicio);
-            }
+            gestionServicios.Agregar(servicio);            
         }
 
-        public void CrearServicioIrregular(dynamic Cliente)
-        {
-            if (cbServicio.SelectedIndex == 3)
-            {
-                var Servicio = new Servicios
+        public void CrearServicioIrregular(dynamic cliente)
+        {         
+                var servicio = new Servicios
                 {
-                    Id = Cliente.Id,
+                    Vinculo = cliente.Id,
                     Nombre = cbServicio.SelectedItem.ToString(),
                     Valor = 0,
                     Duracion = 20,
                 };
-                lbValor.Text = $"{Servicio.Valor}";
 
-                Servicio.Regreso = Cliente.UltimaVisita.AddMonths(Servicio.Duracion);
-                lbRegreso.Text = Servicio.Regreso.ToString();
-                gestionServicios.Agregar(Servicio);
-            }
+            gestionServicios.Agregar(servicio);            
         }
 
         public void LlenarGridView()
         {
             BindingSource bin = new BindingSource();
-            bin.DataSource = gestionServicios.Consultar();
+            bin.DataSource = gestionServicios.Consultar(clienteServicio.Id);
             dgvServicios.DataSource = bin;
         }
 
         public void Filtrar()
         {        
             BindingSource bin = new BindingSource();
-            bin.DataSource = gestionServicios.Filtrar(cbBusqueda.Text);
+            bin.DataSource = gestionServicios.Filtrar(cbBusqueda.Text,clienteServicio.Id);
             dgvServicios.DataSource = bin;
         }
 
@@ -142,37 +149,27 @@ namespace PresentaciónIF
         }
 
         public void Eliminar()
-        {            
-            gestionServicios.Borrar(dgvServicios.CurrentRow.Index);
+        {
+            gestionServicios.Borrar(idSeleccionado);
         }
 
         private void btnGuardarServicio_Click(object sender, EventArgs e)
         {
-            CrearServicioAlisado(clienteServicio);
-            CrearServicioColor(clienteServicio);
-            CrearServicioMantenimiento(clienteServicio);
-            CrearServicioIrregular(clienteServicio);
+            gestionServicios.SetCliente(clienteServicio);
+            if(cbServicio.SelectedIndex==0)
+                CrearServicioAlisado(clienteServicio);
+            if(cbServicio.SelectedIndex==1)
+                CrearServicioColor(clienteServicio);
+            if(cbServicio.SelectedIndex==2)
+                CrearServicioMantenimiento(clienteServicio);
+            if(cbServicio.SelectedIndex==3)
+                CrearServicioIrregular(clienteServicio);
             LlenarGridView();
         }
 
         private void cbServicio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbServicio.SelectedIndex == 0)
-            {
-                lbDuracion.Text = "3 Meses";
-            }
-            if (cbServicio.SelectedIndex == 1)
-            {
-                lbDuracion.Text = "4 Meses";
-            }
-            if (cbServicio.SelectedIndex == 2)
-            {
-                lbDuracion.Text = "15 Dias";
-            }
-            if (cbServicio.SelectedIndex == 3)
-            {
-                lbDuracion.Text = "20 Dias";
-            }
+            PresentarServicio();
         }
 
         private void btnEliminarServicios_Click(object sender, EventArgs e)
@@ -184,6 +181,11 @@ namespace PresentaciónIF
         private void cbBusqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
             Filtrar();
+        }
+
+        private void dgvServicios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idSeleccionado = int.Parse(dgvServicios.Rows[e.RowIndex].Cells[0].Value.ToString());                        
         }
     }
 }

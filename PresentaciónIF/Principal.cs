@@ -14,6 +14,8 @@ namespace PresentaciónIF
         GestionServicios gestionServicios = new GestionServicios();
         Confirmacion confirmacion;
         ServiciosForm serviciosForm;
+        int idCliente;
+        int posicion;
 
         public Principal()
         {
@@ -41,6 +43,19 @@ namespace PresentaciónIF
             LlenarGridView();
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            gestionClientes.Actualizar(CrearClienteActualizado());
+            Limpiar();
+            LlenarGridView();
+        }
+
+        private void btnServicios_Click(object sender, EventArgs e)
+        {
+            serviciosForm.SetCliente(gestionClientes.ConsultarUno(idCliente));
+            serviciosForm.ShowDialog();
+        }
+
         public void Limpiar()
         {
             tbNombre.Text = string.Empty;
@@ -61,11 +76,14 @@ namespace PresentaciónIF
             }
             else
             {
-                CrearCliente();
+                Clientes cliente = CrearCliente();
+                gestionClientes.Agregar(cliente);
+                Confirmacion(cliente);
+                confirmacion.ShowDialog();
             }
         }
 
-        public void CrearCliente()
+        public Clientes CrearCliente()
         {
             var cliente = new Clientes
             {                
@@ -75,27 +93,36 @@ namespace PresentaciónIF
                 UltimaVisita = dtUltimaVisita.Value,
                 Cumpleaños = dtFechaCumpleaños.Value
             };
-
-            gestionClientes.Agregar(cliente);
-
-            Confirmacion(cliente);
-            confirmacion.ShowDialog();
-
-        }        
+            return cliente;
+        }
 
         public void Confirmacion(dynamic cliente)
         {
             confirmacion.SetNombre(cliente.Nombre);
             confirmacion.SetTelefono(cliente.Telefono.ToString());
             confirmacion.SetCorreo(cliente.Correo);
-            confirmacion.SetUltimaVisita(cliente.UltimaVisita.ToString());
-            confirmacion.SetCumpleaños(cliente.Cumpleaños.ToString());
+            confirmacion.SetUltimaVisita(cliente.UltimaVisita.ToShortDateString());
+            confirmacion.SetCumpleaños(cliente.Cumpleaños.Date.ToShortDateString());
+        }
+
+        public Clientes CrearClienteActualizado()
+        {
+            var cliente = new Clientes
+            {
+                Id = idCliente,                
+                Nombre = tbNombre.Text,
+                Telefono = tbTelefono.Text,
+                Correo = tbCorreo.Text,
+                UltimaVisita = dtUltimaVisita.Value,
+                Cumpleaños = dtFechaCumpleaños.Value
+            };
+            return cliente;
         }
 
         public void LlenarGridView()
         {         
             BindingSource bin = new BindingSource();
-            bin.DataSource = gestionClientes.Consultar();
+            bin.DataSource = gestionClientes.ConsultarTodos();
             dgvClientes.DataSource = bin;
         }
 
@@ -106,7 +133,7 @@ namespace PresentaciónIF
 
             } else
             {
-                gestionClientes.Borrar(int.Parse(lbId.Text));
+                gestionClientes.Borrar(idCliente);
             }
         }        
 
@@ -118,17 +145,31 @@ namespace PresentaciónIF
             dgvClientes.DataSource = bin;
         }
 
+        public void CargarDatos()
+        {
+            tbNombre.Text = dgvClientes[1,posicion].Value.ToString();
+            tbTelefono.Text = dgvClientes[2,posicion].Value.ToString();
+            tbCorreo.Text = dgvClientes[3, posicion].Value.ToString();
+            dtFechaCumpleaños.Value = DateTime.Parse(dgvClientes[4, posicion].Value.ToString());
+            dtUltimaVisita.Value = DateTime.Parse(dgvClientes[5, posicion].Value.ToString());
+            tbNombre.Focus();
+        }
+
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int i = e.RowIndex;
-            var cliente = gestionClientes.Consultar()[i];
-            serviciosForm.SetCliente(cliente);
-            serviciosForm.ShowDialog();
+            idCliente = int.Parse(dgvClientes.Rows[e.RowIndex].Cells[0].Value.ToString());            
+            CargarDatos();
         }
 
         private void tbBuscarClientes_TextChanged_1(object sender, EventArgs e)
         {
             Filtrar();
+        }
+
+        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idCliente = int.Parse(dgvClientes.Rows[e.RowIndex].Cells[0].Value.ToString());
+            posicion = dgvClientes.CurrentRow.Index;
         }
     }
 }

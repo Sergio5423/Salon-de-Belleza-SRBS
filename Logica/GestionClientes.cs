@@ -9,7 +9,7 @@ using Entidades;
 
 namespace Logica
 {
-    public class GestionClientes
+    public class GestionClientes : IOperaciones<Clientes>
     {        
         RepositorioClientes repositorioClientes = new RepositorioClientes();
         List<Clientes> listaClientes = null;
@@ -29,14 +29,31 @@ namespace Logica
             repositorioClientes.Borrar(id);
         }
 
+        public void Actualizar(Clientes cliente)
+        {
+            repositorioClientes.Actualizar(cliente);
+        }
+
         public List<Clientes> Filtrar(string dato)
         {
             return repositorioClientes.Filtrar(dato);
         }
 
-        public List<Clientes> Consultar()
+        public Clientes ConsultarUno(int id)
         {
-            return listaClientes = repositorioClientes.Consultar();
+            foreach (var cliente in repositorioClientes.Consultar())
+            {
+                if (cliente.Id == id)
+                {
+                    return cliente;
+                }
+            }
+            return null;
+        }
+
+        public List<Clientes> ConsultarTodos()
+        {
+            return repositorioClientes.Consultar();
         }
     }
 }

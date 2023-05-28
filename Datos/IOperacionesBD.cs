@@ -11,8 +11,7 @@ namespace Datos
     public interface IOperacionesBD<T>
     {
         void Agregar(T t);
-        List<T> Consultar();
-        List<T> Filtrar(string dato);
+        void Actualizar(T t);
         void Borrar(int id);
         T Mapeador(SqlDataReader dataReader);
     }

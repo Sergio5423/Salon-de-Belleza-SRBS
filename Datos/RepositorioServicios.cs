@@ -15,9 +15,9 @@ namespace Datos
         {
             using (var Command = connection.CreateCommand())
             {
-                Command.CommandText = "Insert Into Servicios (Id,Nombre,Valor,Duracion,Regreso)" +
-                " values (@Id,@Nombre,@Valor,@Duracion,@Regreso)";
-                Command.Parameters.Add("Id", SqlDbType.Int).Value = servicio.Id;
+                Command.CommandText = "Insert Into Servicios (Vinculo,Nombre,Valor,Duracion,Regreso)" +
+                " values (@Vinculo,@Nombre,@Valor,@Duracion,@Regreso)";
+                Command.Parameters.Add("Vinculo", SqlDbType.Int).Value = servicio.Vinculo;
                 Command.Parameters.Add("Nombre", SqlDbType.VarChar).Value = servicio.Nombre;
                 Command.Parameters.Add("Valor", SqlDbType.Int).Value = servicio.Valor;
                 Command.Parameters.Add("Duracion", SqlDbType.Int).Value = servicio.Duracion;
@@ -32,58 +32,46 @@ namespace Datos
         {
             using (var Command = connection.CreateCommand())
             {
-                Command.CommandText = "Delete Servicios" +
-                 $"where Id = {id}";      /*No puede eliminar por id, 
-                                           * todos son iguales*/
+                Command.CommandText = $"Delete Servicios where Id = {id}";
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
             }
         }
 
-        public List<Servicios> Filtrar(string dato)
+        public void Actualizar(Servicios servicio)
         {
+            using (var Command = connection.CreateCommand())
             {
-                //foreach (var item in Consultar())
-                //{
-                //    try
-                //    {
-                //        if (item.Id == int.Parse(dato))
-                //        {
-                //            return item;
-                //        }
-                //    }
-                //    catch (Exception)
-                //    {
-
-                //    }
-
-                //    if (item.Nombre == dato)
-                //    {
-                //        return item;
-                //    }                                          
-                //}
-                //return null;
+                Command.CommandText = $"Update Servicios Set Nombre = '{servicio.Nombre}', Valor = '{servicio.Valor}', Duracion = '{servicio.Duracion}', Regreso = '{servicio.Regreso}'";                
+                Open();
+                Command.ExecuteNonQuery();
+                Close();
             }
+        }
+
+        public List<Servicios> Filtrar(string nombre, int vinculo)
+        {        
             List<Servicios> servicios = new List<Servicios>();
-            var command = connection.CreateCommand();
-            command.CommandText = $"select Nombre,Valor,Duracion,Regreso from Servicios where Nombre like '%{dato}%'";
-            Open();
-            SqlDataReader lector = command.ExecuteReader();
-            while (lector.Read())
+            using (var command = connection.CreateCommand())
             {
-                servicios.Add(Mapeador(lector));
-            }
-            Close();
+                command.CommandText = $"select Id,Nombre,Valor,Duracion,Regreso from Servicios where Nombre like '%{nombre}%' and '%{vinculo}%'";
+                Open();
+                SqlDataReader lector = command.ExecuteReader();
+                while (lector.Read())
+                {
+                    servicios.Add(Mapeador(lector));
+                }
+                Close();
+            }                        
             return servicios;
         }
 
-        public List<Servicios> Consultar()
+        public List<Servicios> Consultar(int vinculo)
         {
-            /*Id en la tabla servicios queda en 0, (debe desaparecer)*/
             List<Servicios> servicios = new List<Servicios>();
             var command = connection.CreateCommand();
-            command.CommandText = "select Nombre,Valor,Duracion,Regreso from Servicios";
+            command.CommandText = $"select Id,Nombre,Valor,Duracion,Regreso from Servicios where Vinculo like '%{vinculo}%'";
             Open();
             SqlDataReader lector = command.ExecuteReader();
             while (lector.Read())
@@ -99,11 +87,11 @@ namespace Datos
             if (!dataReader.HasRows)
                 return null;
             Servicios servicio = new Servicios();
-            /*servicio.Id borrado aquí*/
-            servicio.Nombre = dataReader.GetString(0);
-            servicio.Valor = dataReader.GetInt32(1);
-            servicio.Duracion = dataReader.GetInt32(2);
-            servicio.Regreso = dataReader.GetDateTime(3);
+            servicio.Id = dataReader.GetInt32(0);
+            servicio.Nombre = dataReader.GetString(1);
+            servicio.Valor = dataReader.GetInt32(2);
+            servicio.Duracion = dataReader.GetInt32(3);
+            servicio.Regreso = dataReader.GetDateTime(4);
 
             return servicio;
         }

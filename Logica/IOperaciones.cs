@@ -8,8 +8,14 @@ using Datos;
 
 namespace Logica
 {
-    public interface IOperaciones
+    public interface IOperaciones<T>
     {
+        void Agregar(T t);
 
+        void Borrar(int id);
+
+        void Actualizar(T t);
+
+        List<T> Filtrar(string dato);
     }
 }

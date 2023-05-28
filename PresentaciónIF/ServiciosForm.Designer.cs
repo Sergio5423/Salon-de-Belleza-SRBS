@@ -31,12 +31,14 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.btnEliminarServicios = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbCorreo = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.lbTelefono = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.lbVinculo = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cbBusqueda = new System.Windows.Forms.ComboBox();
@@ -51,10 +53,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.lbValor = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.lbIdServicio = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbServicio = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -67,13 +67,13 @@
             this.groupBox8.Controls.Add(this.btnEliminarServicios);
             this.groupBox8.Location = new System.Drawing.Point(21, 536);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(127, 49);
+            this.groupBox8.Size = new System.Drawing.Size(114, 49);
             this.groupBox8.TabIndex = 28;
             this.groupBox8.TabStop = false;
             // 
             // btnEliminarServicios
             // 
-            this.btnEliminarServicios.Location = new System.Drawing.Point(23, 15);
+            this.btnEliminarServicios.Location = new System.Drawing.Point(20, 15);
             this.btnEliminarServicios.Name = "btnEliminarServicios";
             this.btnEliminarServicios.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarServicios.TabIndex = 13;
@@ -83,23 +83,34 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.label1);
             this.groupBox7.Controls.Add(this.label17);
             this.groupBox7.Controls.Add(this.lbNombre);
             this.groupBox7.Controls.Add(this.lbCorreo);
             this.groupBox7.Controls.Add(this.label20);
             this.groupBox7.Controls.Add(this.lbTelefono);
             this.groupBox7.Controls.Add(this.label22);
+            this.groupBox7.Controls.Add(this.lbVinculo);
             this.groupBox7.Controls.Add(this.label24);
             this.groupBox7.Location = new System.Drawing.Point(500, 48);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(304, 239);
+            this.groupBox7.Size = new System.Drawing.Size(316, 239);
             this.groupBox7.TabIndex = 27;
             this.groupBox7.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "ID";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(73, 29);
+            this.label17.Location = new System.Drawing.Point(82, 28);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(136, 13);
             this.label17.TabIndex = 23;
@@ -108,7 +119,7 @@
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
-            this.lbNombre.Location = new System.Drawing.Point(83, 71);
+            this.lbNombre.Location = new System.Drawing.Point(82, 108);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(120, 13);
             this.lbNombre.TabIndex = 22;
@@ -117,7 +128,7 @@
             // lbCorreo
             // 
             this.lbCorreo.AutoSize = true;
-            this.lbCorreo.Location = new System.Drawing.Point(82, 148);
+            this.lbCorreo.Location = new System.Drawing.Point(82, 191);
             this.lbCorreo.Name = "lbCorreo";
             this.lbCorreo.Size = new System.Drawing.Size(120, 13);
             this.lbCorreo.TabIndex = 19;
@@ -126,7 +137,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(20, 148);
+            this.label20.Location = new System.Drawing.Point(20, 191);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(38, 13);
             this.label20.TabIndex = 18;
@@ -135,7 +146,7 @@
             // lbTelefono
             // 
             this.lbTelefono.AutoSize = true;
-            this.lbTelefono.Location = new System.Drawing.Point(82, 108);
+            this.lbTelefono.Location = new System.Drawing.Point(82, 148);
             this.lbTelefono.Name = "lbTelefono";
             this.lbTelefono.Size = new System.Drawing.Size(120, 13);
             this.lbTelefono.TabIndex = 17;
@@ -144,16 +155,25 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(20, 108);
+            this.label22.Location = new System.Drawing.Point(20, 148);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(49, 13);
             this.label22.TabIndex = 16;
             this.label22.Text = "Telefono";
             // 
+            // lbVinculo
+            // 
+            this.lbVinculo.AutoSize = true;
+            this.lbVinculo.Location = new System.Drawing.Point(82, 71);
+            this.lbVinculo.Name = "lbVinculo";
+            this.lbVinculo.Size = new System.Drawing.Size(131, 13);
+            this.lbVinculo.TabIndex = 15;
+            this.lbVinculo.Text = "ID de cliente para vincular";
+            // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(20, 71);
+            this.label24.Location = new System.Drawing.Point(20, 108);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(44, 13);
             this.label24.TabIndex = 13;
@@ -191,6 +211,7 @@
             this.dgvServicios.Name = "dgvServicios";
             this.dgvServicios.Size = new System.Drawing.Size(796, 167);
             this.dgvServicios.TabIndex = 14;
+            this.dgvServicios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvServicios_CellClick);
             // 
             // label16
             // 
@@ -212,7 +233,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Controls.Add(this.btnGuardarServicio);
             this.groupBox5.Controls.Add(this.lbRegreso);
             this.groupBox5.Controls.Add(this.label15);
@@ -220,7 +240,6 @@
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.lbValor);
             this.groupBox5.Controls.Add(this.label11);
-            this.groupBox5.Controls.Add(this.lbIdServicio);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.cbServicio);
             this.groupBox5.Location = new System.Drawing.Point(65, 48);
@@ -260,7 +279,7 @@
             // lbDuracion
             // 
             this.lbDuracion.AutoSize = true;
-            this.lbDuracion.Location = new System.Drawing.Point(82, 148);
+            this.lbDuracion.Location = new System.Drawing.Point(82, 139);
             this.lbDuracion.Name = "lbDuracion";
             this.lbDuracion.Size = new System.Drawing.Size(125, 13);
             this.lbDuracion.TabIndex = 19;
@@ -269,7 +288,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(20, 148);
+            this.label13.Location = new System.Drawing.Point(20, 139);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(50, 13);
             this.label13.TabIndex = 18;
@@ -278,7 +297,7 @@
             // lbValor
             // 
             this.lbValor.AutoSize = true;
-            this.lbValor.Location = new System.Drawing.Point(82, 108);
+            this.lbValor.Location = new System.Drawing.Point(82, 93);
             this.lbValor.Name = "lbValor";
             this.lbValor.Size = new System.Drawing.Size(125, 13);
             this.lbValor.TabIndex = 17;
@@ -287,25 +306,16 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(20, 108);
+            this.label11.Location = new System.Drawing.Point(20, 93);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 13);
             this.label11.TabIndex = 16;
             this.label11.Text = "Valor";
             // 
-            // lbIdServicio
-            // 
-            this.lbIdServicio.AutoSize = true;
-            this.lbIdServicio.Location = new System.Drawing.Point(82, 29);
-            this.lbIdServicio.Name = "lbIdServicio";
-            this.lbIdServicio.Size = new System.Drawing.Size(273, 13);
-            this.lbIdServicio.TabIndex = 15;
-            this.lbIdServicio.Text = "ID de servicio tomado del cliente seleccionado en la grid";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 71);
+            this.label8.Location = new System.Drawing.Point(20, 42);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 13);
             this.label8.TabIndex = 13;
@@ -319,20 +329,11 @@
             "Trabajo de Color",
             "Mantenimiento de Químicos",
             "Cliente Irregular"});
-            this.cbServicio.Location = new System.Drawing.Point(85, 68);
+            this.cbServicio.Location = new System.Drawing.Point(85, 39);
             this.cbServicio.Name = "cbServicio";
             this.cbServicio.Size = new System.Drawing.Size(158, 21);
             this.cbServicio.TabIndex = 14;
             this.cbServicio.SelectedIndexChanged += new System.EventHandler(this.cbServicio_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "ID";
             // 
             // ServiciosForm
             // 
@@ -381,7 +382,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lbValor;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lbIdServicio;
+        private System.Windows.Forms.Label lbVinculo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbServicio;
         private System.Windows.Forms.Label lbDuracion;
