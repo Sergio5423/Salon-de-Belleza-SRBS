@@ -12,7 +12,6 @@ namespace Datos
 {
     public class RepositorioClientes : GestorConexion, IOperacionesBD<Clientes>
     {
-        //RepositorioServicios repositorioServicios = new RepositorioServicios();
 
         public void Agregar(Clientes cliente)
         {

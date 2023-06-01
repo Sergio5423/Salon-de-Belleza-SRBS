@@ -13,7 +13,7 @@ namespace Entidades
 
         }
 
-        public ServiciosLectura(int id, string nombre, int valor, int duracion, DateTime regreso)
+        public ServiciosLectura(string id, string nombre, string valor, string duracion, string regreso)
         {
             Id = id;            
             Nombre = nombre;
@@ -22,11 +22,11 @@ namespace Entidades
             Regreso = regreso;
         }
 
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Nombre { get; set; }
-        public int Valor { get; set; }
-        public int Duracion { get; set; }
-        public DateTime Regreso { get; set; }
+        public string Valor { get; set; }
+        public string Duracion { get; set; }
+        public string Regreso { get; set; }
 
         public override string ToString()
         {

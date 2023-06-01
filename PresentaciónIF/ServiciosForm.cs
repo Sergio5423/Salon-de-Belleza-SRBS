@@ -77,7 +77,7 @@ namespace PresentaciónIF
 
         public void CrearServicioAlisado(dynamic cliente)
         {           
-            var servicio = new ServiciosEscritura
+            var servicio = new ServiciosEscritura   
             {
                 Vinculo = cliente.Id,
                 Nombre = cbServicio.SelectedItem.ToString(),

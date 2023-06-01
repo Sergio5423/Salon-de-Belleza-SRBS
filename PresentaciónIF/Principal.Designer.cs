@@ -48,14 +48,38 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbEstilista = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.dtFechaCumpleaños = new System.Windows.Forms.DateTimePicker();
             this.dtUltimaVisita = new System.Windows.Forms.DateTimePicker();
             this.btnGuardarCliente = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tbEstilista = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnAgregarTrabajo = new System.Windows.Forms.Button();
+            this.lbComisionE = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lbValorE = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbTrabajoE = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbNombreE = new System.Windows.Forms.TextBox();
+            this.tbCedulaE = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnGuardarE = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnActualizarE = new System.Windows.Forms.Button();
+            this.btnEliminarE = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tbBuscarEmpleados = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -64,6 +88,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -185,7 +215,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(120, 15);
+            this.btnActualizar.Location = new System.Drawing.Point(116, 15);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 14;
@@ -195,7 +225,7 @@
             // 
             // btnElminarServicio
             // 
-            this.btnElminarServicio.Location = new System.Drawing.Point(23, 15);
+            this.btnElminarServicio.Location = new System.Drawing.Point(18, 15);
             this.btnElminarServicio.Name = "btnElminarServicio";
             this.btnElminarServicio.Size = new System.Drawing.Size(75, 23);
             this.btnElminarServicio.TabIndex = 13;
@@ -265,6 +295,22 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // tbEstilista
+            // 
+            this.tbEstilista.Location = new System.Drawing.Point(164, 127);
+            this.tbEstilista.Name = "tbEstilista";
+            this.tbEstilista.Size = new System.Drawing.Size(161, 20);
+            this.tbEstilista.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(26, 134);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 13);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Estilista Favorito";
+            // 
             // dtFechaCumpleaños
             // 
             this.dtFechaCumpleaños.Location = new System.Drawing.Point(164, 37);
@@ -310,27 +356,252 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(900, 626);
             this.tabControl1.TabIndex = 5;
             // 
-            // label8
+            // tabPage2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(26, 134);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 13);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Estilista Favorito";
+            this.tabPage2.Controls.Add(this.groupBox8);
+            this.tabPage2.Controls.Add(this.groupBox7);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.groupBox6);
+            this.tabPage2.Controls.Add(this.panel3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(892, 600);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Empleados";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tbEstilista
+            // groupBox8
             // 
-            this.tbEstilista.Location = new System.Drawing.Point(164, 127);
-            this.tbEstilista.Name = "tbEstilista";
-            this.tbEstilista.Size = new System.Drawing.Size(161, 20);
-            this.tbEstilista.TabIndex = 14;
+            this.groupBox8.Controls.Add(this.btnAgregarTrabajo);
+            this.groupBox8.Controls.Add(this.lbComisionE);
+            this.groupBox8.Controls.Add(this.label17);
+            this.groupBox8.Controls.Add(this.lbValorE);
+            this.groupBox8.Controls.Add(this.label12);
+            this.groupBox8.Controls.Add(this.cbTrabajoE);
+            this.groupBox8.Controls.Add(this.label16);
+            this.groupBox8.Location = new System.Drawing.Point(562, 49);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(307, 198);
+            this.groupBox8.TabIndex = 14;
+            this.groupBox8.TabStop = false;
+            // 
+            // btnAgregarTrabajo
+            // 
+            this.btnAgregarTrabajo.Location = new System.Drawing.Point(220, 163);
+            this.btnAgregarTrabajo.Name = "btnAgregarTrabajo";
+            this.btnAgregarTrabajo.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarTrabajo.TabIndex = 14;
+            this.btnAgregarTrabajo.Text = "Agregar";
+            this.btnAgregarTrabajo.UseVisualStyleBackColor = true;
+            this.btnAgregarTrabajo.Click += new System.EventHandler(this.btnAgregarTrabajo_Click);
+            // 
+            // lbComisionE
+            // 
+            this.lbComisionE.AutoSize = true;
+            this.lbComisionE.Location = new System.Drawing.Point(134, 137);
+            this.lbComisionE.Name = "lbComisionE";
+            this.lbComisionE.Size = new System.Drawing.Size(16, 13);
+            this.lbComisionE.TabIndex = 21;
+            this.lbComisionE.Text = "...";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(18, 137);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(49, 13);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "Comision";
+            // 
+            // lbValorE
+            // 
+            this.lbValorE.AutoSize = true;
+            this.lbValorE.Location = new System.Drawing.Point(134, 93);
+            this.lbValorE.Name = "lbValorE";
+            this.lbValorE.Size = new System.Drawing.Size(16, 13);
+            this.lbValorE.TabIndex = 19;
+            this.lbValorE.Text = "...";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(18, 93);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(31, 13);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Valor";
+            // 
+            // cbTrabajoE
+            // 
+            this.cbTrabajoE.FormattingEnabled = true;
+            this.cbTrabajoE.Items.AddRange(new object[] {
+            "Alisado Profesional",
+            "Trabajo de Color",
+            "Mantenimiento de Químicos",
+            "Cliente Irregular"});
+            this.cbTrabajoE.Location = new System.Drawing.Point(137, 36);
+            this.cbTrabajoE.Name = "cbTrabajoE";
+            this.cbTrabajoE.Size = new System.Drawing.Size(158, 21);
+            this.cbTrabajoE.TabIndex = 15;
+            this.cbTrabajoE.SelectedIndexChanged += new System.EventHandler(this.cbTrabajoE_SelectedIndexChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(18, 39);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(93, 13);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "Trabajo Realizado";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label11);
+            this.groupBox7.Controls.Add(this.tbNombreE);
+            this.groupBox7.Controls.Add(this.tbCedulaE);
+            this.groupBox7.Controls.Add(this.label13);
+            this.groupBox7.Controls.Add(this.label14);
+            this.groupBox7.Controls.Add(this.btnGuardarE);
+            this.groupBox7.Location = new System.Drawing.Point(22, 49);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(300, 198);
+            this.groupBox7.TabIndex = 6;
+            this.groupBox7.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(30, 44);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(154, 13);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Ingrese los datos del Empleado";
+            // 
+            // tbNombreE
+            // 
+            this.tbNombreE.Location = new System.Drawing.Point(95, 125);
+            this.tbNombreE.Name = "tbNombreE";
+            this.tbNombreE.Size = new System.Drawing.Size(161, 20);
+            this.tbNombreE.TabIndex = 9;
+            // 
+            // tbCedulaE
+            // 
+            this.tbCedulaE.Location = new System.Drawing.Point(95, 84);
+            this.tbCedulaE.Name = "tbCedulaE";
+            this.tbCedulaE.Size = new System.Drawing.Size(161, 20);
+            this.tbCedulaE.TabIndex = 8;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(30, 87);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 13);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Cédula";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(30, 128);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(44, 13);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "Nombre";
+            // 
+            // btnGuardarE
+            // 
+            this.btnGuardarE.Location = new System.Drawing.Point(219, 163);
+            this.btnGuardarE.Name = "btnGuardarE";
+            this.btnGuardarE.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarE.TabIndex = 8;
+            this.btnGuardarE.Text = "Guardar";
+            this.btnGuardarE.UseVisualStyleBackColor = true;
+            this.btnGuardarE.Click += new System.EventHandler(this.btnGuardarE_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(19, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(198, 13);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Registro de Empleados Salon de Belleza";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.btnActualizarE);
+            this.groupBox6.Controls.Add(this.btnEliminarE);
+            this.groupBox6.Location = new System.Drawing.Point(22, 535);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(208, 49);
+            this.groupBox6.TabIndex = 4;
+            this.groupBox6.TabStop = false;
+            // 
+            // btnActualizarE
+            // 
+            this.btnActualizarE.Location = new System.Drawing.Point(116, 15);
+            this.btnActualizarE.Name = "btnActualizarE";
+            this.btnActualizarE.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizarE.TabIndex = 14;
+            this.btnActualizarE.Text = "Actualizar";
+            this.btnActualizarE.UseVisualStyleBackColor = true;
+            this.btnActualizarE.Click += new System.EventHandler(this.btnActualizarE_Click);
+            // 
+            // btnEliminarE
+            // 
+            this.btnEliminarE.Location = new System.Drawing.Point(18, 15);
+            this.btnEliminarE.Name = "btnEliminarE";
+            this.btnEliminarE.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarE.TabIndex = 13;
+            this.btnEliminarE.Text = "Eliminar";
+            this.btnEliminarE.UseVisualStyleBackColor = true;
+            this.btnEliminarE.Click += new System.EventHandler(this.btnEliminarE_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.tbBuscarEmpleados);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.dgvEmpleados);
+            this.panel3.Location = new System.Drawing.Point(22, 269);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(847, 253);
+            this.panel3.TabIndex = 1;
+            // 
+            // tbBuscarEmpleados
+            // 
+            this.tbBuscarEmpleados.Location = new System.Drawing.Point(92, 20);
+            this.tbBuscarEmpleados.Name = "tbBuscarEmpleados";
+            this.tbBuscarEmpleados.Size = new System.Drawing.Size(161, 20);
+            this.tbBuscarEmpleados.TabIndex = 17;
+            this.tbBuscarEmpleados.TextChanged += new System.EventHandler(this.tbBuscarEmpleados_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(23, 23);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Busqueda";
+            // 
+            // dgvEmpleados
+            // 
+            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleados.Location = new System.Drawing.Point(26, 67);
+            this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.Size = new System.Drawing.Size(796, 167);
+            this.dgvEmpleados.TabIndex = 15;
+            this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
+            this.dgvEmpleados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellDoubleClick);
             // 
             // Principal
             // 
@@ -339,7 +610,7 @@
             this.ClientSize = new System.Drawing.Size(924, 650);
             this.Controls.Add(this.tabControl1);
             this.Name = "Principal";
-            this.Text = "Form1";
+            this.Text = "2";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -353,6 +624,16 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -387,6 +668,30 @@
         private System.Windows.Forms.Button btnServicios;
         private System.Windows.Forms.TextBox tbEstilista;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox tbBuscarEmpleados;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dgvEmpleados;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button btnActualizarE;
+        private System.Windows.Forms.Button btnEliminarE;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button btnGuardarE;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox tbNombreE;
+        private System.Windows.Forms.TextBox tbCedulaE;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cbTrabajoE;
+        private System.Windows.Forms.Label lbComisionE;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lbValorE;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnAgregarTrabajo;
     }
 }
 

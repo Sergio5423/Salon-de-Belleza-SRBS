@@ -31,6 +31,8 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.btnEliminarServicios = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lbFavorito = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lbNombre = new System.Windows.Forms.Label();
@@ -41,6 +43,7 @@
             this.lbVinculo = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.cbBusqueda = new System.Windows.Forms.ComboBox();
             this.dgvServicios = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
@@ -55,9 +58,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbServicio = new System.Windows.Forms.ComboBox();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbFavorito = new System.Windows.Forms.Label();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -102,6 +102,24 @@
             this.groupBox7.Size = new System.Drawing.Size(316, 266);
             this.groupBox7.TabIndex = 27;
             this.groupBox7.TabStop = false;
+            // 
+            // lbFavorito
+            // 
+            this.lbFavorito.AutoSize = true;
+            this.lbFavorito.Location = new System.Drawing.Point(138, 228);
+            this.lbFavorito.Name = "lbFavorito";
+            this.lbFavorito.Size = new System.Drawing.Size(120, 13);
+            this.lbFavorito.TabIndex = 25;
+            this.lbFavorito.Text = "Valor tomado del cliente";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 228);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Estilista Favorito";
             // 
             // label1
             // 
@@ -196,6 +214,16 @@
             this.groupBox6.TabIndex = 26;
             this.groupBox6.TabStop = false;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(273, 21);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(94, 23);
+            this.btnLimpiar.TabIndex = 23;
+            this.btnLimpiar.Text = "Limpiar Filtros";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // cbBusqueda
             // 
             this.cbBusqueda.FormattingEnabled = true;
@@ -285,7 +313,7 @@
             // lbDuracion
             // 
             this.lbDuracion.AutoSize = true;
-            this.lbDuracion.Location = new System.Drawing.Point(82, 139);
+            this.lbDuracion.Location = new System.Drawing.Point(82, 143);
             this.lbDuracion.Name = "lbDuracion";
             this.lbDuracion.Size = new System.Drawing.Size(125, 13);
             this.lbDuracion.TabIndex = 19;
@@ -294,7 +322,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(20, 139);
+            this.label13.Location = new System.Drawing.Point(20, 143);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(50, 13);
             this.label13.TabIndex = 18;
@@ -340,34 +368,6 @@
             this.cbServicio.Size = new System.Drawing.Size(158, 21);
             this.cbServicio.TabIndex = 14;
             this.cbServicio.SelectedIndexChanged += new System.EventHandler(this.cbServicio_SelectedIndexChanged);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(273, 21);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(94, 23);
-            this.btnLimpiar.TabIndex = 23;
-            this.btnLimpiar.Text = "Limpiar Filtros";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 228);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Estilista Favorito";
-            // 
-            // lbFavorito
-            // 
-            this.lbFavorito.AutoSize = true;
-            this.lbFavorito.Location = new System.Drawing.Point(138, 228);
-            this.lbFavorito.Name = "lbFavorito";
-            this.lbFavorito.Size = new System.Drawing.Size(120, 13);
-            this.lbFavorito.TabIndex = 25;
-            this.lbFavorito.Text = "Valor tomado del cliente";
             // 
             // ServiciosForm
             // 

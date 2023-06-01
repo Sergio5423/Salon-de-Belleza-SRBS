@@ -87,11 +87,11 @@ namespace Datos
             if (!dataReader.HasRows)
                 return null;
             ServiciosLectura servicio = new ServiciosLectura();
-            servicio.Id = dataReader.GetInt32(0);
+            servicio.Id = dataReader.GetInt32(0).ToString();
             servicio.Nombre = dataReader.GetString(1);
-            servicio.Valor = dataReader.GetInt32(2);
-            servicio.Duracion = dataReader.GetInt32(3);
-            servicio.Regreso = dataReader.GetDateTime(4);
+            servicio.Valor = dataReader.GetInt32(2).ToString();
+            servicio.Duracion = dataReader.GetInt32(3).ToString();
+            servicio.Regreso = dataReader.GetDateTime(4).ToString();
 
             return servicio;
         }

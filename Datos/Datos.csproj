@@ -45,6 +45,7 @@
     <Compile Include="IOperacionesBD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioClientes.cs" />
+    <Compile Include="RepositorioEmpleados.cs" />
     <Compile Include="RepositorioServicios.cs" />
   </ItemGroup>
   <ItemGroup>
