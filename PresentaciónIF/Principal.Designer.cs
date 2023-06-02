@@ -80,6 +80,7 @@
             this.tbBuscarEmpleados = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.btnExportar = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -114,16 +115,17 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btnExportar);
             this.groupBox5.Controls.Add(this.btnServicios);
-            this.groupBox5.Location = new System.Drawing.Point(774, 533);
+            this.groupBox5.Location = new System.Drawing.Point(641, 533);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(96, 49);
+            this.groupBox5.Size = new System.Drawing.Size(229, 49);
             this.groupBox5.TabIndex = 15;
             this.groupBox5.TabStop = false;
             // 
             // btnServicios
             // 
-            this.btnServicios.Location = new System.Drawing.Point(10, 15);
+            this.btnServicios.Location = new System.Drawing.Point(141, 15);
             this.btnServicios.Name = "btnServicios";
             this.btnServicios.Size = new System.Drawing.Size(75, 23);
             this.btnServicios.TabIndex = 14;
@@ -603,6 +605,16 @@
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             this.dgvEmpleados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellDoubleClick);
             // 
+            // btnExportar
+            // 
+            this.btnExportar.Location = new System.Drawing.Point(12, 15);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(114, 23);
+            this.btnExportar.TabIndex = 15;
+            this.btnExportar.Text = "Exportar PDF";
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,6 +704,7 @@
         private System.Windows.Forms.Label lbValorE;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnAgregarTrabajo;
+        private System.Windows.Forms.Button btnExportar;
     }
 }
 

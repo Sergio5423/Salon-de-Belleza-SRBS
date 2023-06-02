@@ -2,6 +2,7 @@
 using Logica;
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -334,6 +335,12 @@ namespace PresentaciónIF
         private void tbBuscarEmpleados_TextChanged(object sender, EventArgs e)
         {
             FiltrarEmpleado();
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            gestionClientes.CrearPdfListaClientes("Clientes");
+            Process.Start("Clientes.pdf");
         }
     }
 }
