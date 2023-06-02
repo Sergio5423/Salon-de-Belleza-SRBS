@@ -58,6 +58,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.btnPdfE = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.btnAgregarTrabajo = new System.Windows.Forms.Button();
             this.lbComisionE = new System.Windows.Forms.Label();
@@ -74,15 +76,17 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btnGuardarE = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.btnActualizarE = new System.Windows.Forms.Button();
-            this.btnEliminarE = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbBuscarEmpleados = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.btnPdfE = new System.Windows.Forms.Button();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.btnSalirC = new System.Windows.Forms.Button();
+            this.btnEliminarE = new System.Windows.Forms.Button();
+            this.btnActualizarE = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.btnSalirE = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -92,16 +96,19 @@
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
-            this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox10);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.groupBox4);
@@ -222,7 +229,7 @@
             // 
             this.groupBox4.Controls.Add(this.btnActualizar);
             this.groupBox4.Controls.Add(this.btnElminarServicio);
-            this.groupBox4.Location = new System.Drawing.Point(21, 533);
+            this.groupBox4.Location = new System.Drawing.Point(439, 533);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(208, 49);
             this.groupBox4.TabIndex = 3;
@@ -380,6 +387,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox11);
             this.tabPage2.Controls.Add(this.groupBox9);
             this.tabPage2.Controls.Add(this.groupBox8);
             this.tabPage2.Controls.Add(this.groupBox7);
@@ -393,6 +401,25 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Empleados";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.btnPdfE);
+            this.groupBox9.Location = new System.Drawing.Point(726, 535);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(143, 49);
+            this.groupBox9.TabIndex = 16;
+            this.groupBox9.TabStop = false;
+            // 
+            // btnPdfE
+            // 
+            this.btnPdfE.Location = new System.Drawing.Point(13, 15);
+            this.btnPdfE.Name = "btnPdfE";
+            this.btnPdfE.Size = new System.Drawing.Size(114, 23);
+            this.btnPdfE.TabIndex = 15;
+            this.btnPdfE.Text = "Exportar PDF";
+            this.btnPdfE.UseVisualStyleBackColor = true;
+            this.btnPdfE.Click += new System.EventHandler(this.btnPdfE_Click);
             // 
             // groupBox8
             // 
@@ -552,36 +579,6 @@
             this.label10.TabIndex = 5;
             this.label10.Text = "Registro de Empleados Salon de Belleza";
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.btnActualizarE);
-            this.groupBox6.Controls.Add(this.btnEliminarE);
-            this.groupBox6.Location = new System.Drawing.Point(22, 535);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(208, 49);
-            this.groupBox6.TabIndex = 4;
-            this.groupBox6.TabStop = false;
-            // 
-            // btnActualizarE
-            // 
-            this.btnActualizarE.Location = new System.Drawing.Point(116, 15);
-            this.btnActualizarE.Name = "btnActualizarE";
-            this.btnActualizarE.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizarE.TabIndex = 14;
-            this.btnActualizarE.Text = "Actualizar";
-            this.btnActualizarE.UseVisualStyleBackColor = true;
-            this.btnActualizarE.Click += new System.EventHandler(this.btnActualizarE_Click);
-            // 
-            // btnEliminarE
-            // 
-            this.btnEliminarE.Location = new System.Drawing.Point(18, 15);
-            this.btnEliminarE.Name = "btnEliminarE";
-            this.btnEliminarE.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminarE.TabIndex = 13;
-            this.btnEliminarE.Text = "Eliminar";
-            this.btnEliminarE.UseVisualStyleBackColor = true;
-            this.btnEliminarE.Click += new System.EventHandler(this.btnEliminarE_Click);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.tbBuscarEmpleados);
@@ -619,24 +616,73 @@
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             this.dgvEmpleados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellDoubleClick);
             // 
-            // groupBox9
+            // groupBox10
             // 
-            this.groupBox9.Controls.Add(this.btnPdfE);
-            this.groupBox9.Location = new System.Drawing.Point(726, 535);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(143, 49);
-            this.groupBox9.TabIndex = 16;
-            this.groupBox9.TabStop = false;
+            this.groupBox10.Controls.Add(this.btnSalirC);
+            this.groupBox10.Location = new System.Drawing.Point(21, 536);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(110, 49);
+            this.groupBox10.TabIndex = 15;
+            this.groupBox10.TabStop = false;
             // 
-            // btnPdfE
+            // btnSalirC
             // 
-            this.btnPdfE.Location = new System.Drawing.Point(13, 15);
-            this.btnPdfE.Name = "btnPdfE";
-            this.btnPdfE.Size = new System.Drawing.Size(114, 23);
-            this.btnPdfE.TabIndex = 15;
-            this.btnPdfE.Text = "Exportar PDF";
-            this.btnPdfE.UseVisualStyleBackColor = true;
-            this.btnPdfE.Click += new System.EventHandler(this.btnPdfE_Click);
+            this.btnSalirC.Location = new System.Drawing.Point(18, 15);
+            this.btnSalirC.Name = "btnSalirC";
+            this.btnSalirC.Size = new System.Drawing.Size(75, 23);
+            this.btnSalirC.TabIndex = 13;
+            this.btnSalirC.Text = "Salir";
+            this.btnSalirC.UseVisualStyleBackColor = true;
+            this.btnSalirC.Click += new System.EventHandler(this.btnSalirC_Click);
+            // 
+            // btnEliminarE
+            // 
+            this.btnEliminarE.Location = new System.Drawing.Point(18, 15);
+            this.btnEliminarE.Name = "btnEliminarE";
+            this.btnEliminarE.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarE.TabIndex = 13;
+            this.btnEliminarE.Text = "Eliminar";
+            this.btnEliminarE.UseVisualStyleBackColor = true;
+            this.btnEliminarE.Click += new System.EventHandler(this.btnEliminarE_Click);
+            // 
+            // btnActualizarE
+            // 
+            this.btnActualizarE.Location = new System.Drawing.Point(116, 15);
+            this.btnActualizarE.Name = "btnActualizarE";
+            this.btnActualizarE.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizarE.TabIndex = 14;
+            this.btnActualizarE.Text = "Actualizar";
+            this.btnActualizarE.UseVisualStyleBackColor = true;
+            this.btnActualizarE.Click += new System.EventHandler(this.btnActualizarE_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.btnActualizarE);
+            this.groupBox6.Controls.Add(this.btnEliminarE);
+            this.groupBox6.Location = new System.Drawing.Point(525, 535);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(208, 49);
+            this.groupBox6.TabIndex = 4;
+            this.groupBox6.TabStop = false;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.btnSalirE);
+            this.groupBox11.Location = new System.Drawing.Point(22, 536);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(110, 49);
+            this.groupBox11.TabIndex = 15;
+            this.groupBox11.TabStop = false;
+            // 
+            // btnSalirE
+            // 
+            this.btnSalirE.Location = new System.Drawing.Point(18, 15);
+            this.btnSalirE.Name = "btnSalirE";
+            this.btnSalirE.Size = new System.Drawing.Size(75, 23);
+            this.btnSalirE.TabIndex = 13;
+            this.btnSalirE.Text = "Salir";
+            this.btnSalirE.UseVisualStyleBackColor = true;
+            this.btnSalirE.Click += new System.EventHandler(this.btnSalirE_Click);
             // 
             // Principal
             // 
@@ -661,15 +707,17 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
-            this.groupBox9.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -709,9 +757,6 @@
         private System.Windows.Forms.TextBox tbBuscarEmpleados;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvEmpleados;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button btnActualizarE;
-        private System.Windows.Forms.Button btnEliminarE;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button btnGuardarE;
@@ -731,6 +776,13 @@
         private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btnPdfE;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.Button btnSalirC;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Button btnSalirE;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button btnActualizarE;
+        private System.Windows.Forms.Button btnEliminarE;
     }
 }
 

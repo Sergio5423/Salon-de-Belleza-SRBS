@@ -206,5 +206,10 @@ namespace PresentaciónIF
         {
             GenerarPDF(clienteServicio.Nombre);
         }
+
+        private void btnSalirS_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

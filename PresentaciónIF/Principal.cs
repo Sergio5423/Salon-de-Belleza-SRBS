@@ -349,5 +349,15 @@ namespace PresentaciónIF
             gestionEmpleados.CrearPdfEmpleados("Empleados");
             Process.Start("Empleados.pdf");
         }
+
+        private void btnSalirC_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSalirE_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

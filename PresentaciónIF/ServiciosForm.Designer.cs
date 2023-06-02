@@ -60,18 +60,21 @@
             this.cbServicio = new System.Windows.Forms.ComboBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btnPdfS = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSalirS = new System.Windows.Forms.Button();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.btnEliminarServicios);
-            this.groupBox8.Location = new System.Drawing.Point(21, 555);
+            this.groupBox8.Location = new System.Drawing.Point(606, 561);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(114, 49);
             this.groupBox8.TabIndex = 28;
@@ -391,11 +394,31 @@
             this.btnPdfS.UseVisualStyleBackColor = true;
             this.btnPdfS.Click += new System.EventHandler(this.btnPdfS_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSalirS);
+            this.groupBox1.Location = new System.Drawing.Point(21, 561);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(114, 49);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            // 
+            // btnSalirS
+            // 
+            this.btnSalirS.Location = new System.Drawing.Point(20, 15);
+            this.btnSalirS.Name = "btnSalirS";
+            this.btnSalirS.Size = new System.Drawing.Size(75, 23);
+            this.btnSalirS.TabIndex = 13;
+            this.btnSalirS.Text = "Salir";
+            this.btnSalirS.UseVisualStyleBackColor = true;
+            this.btnSalirS.Click += new System.EventHandler(this.btnSalirS_Click);
+            // 
             // ServiciosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 622);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
@@ -414,6 +437,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox9.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,5 +477,7 @@
         private System.Windows.Forms.Label lbFavorito;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btnPdfS;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSalirS;
     }
 }

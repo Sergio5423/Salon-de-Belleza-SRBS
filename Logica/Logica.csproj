@@ -58,7 +58,6 @@
     <Compile Include="IOperaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GestionClientes.cs" />
-    <Compile Include="ServicioXcliente.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
