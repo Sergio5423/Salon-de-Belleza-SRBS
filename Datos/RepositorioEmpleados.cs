@@ -11,26 +11,6 @@ namespace Datos
 {
     public class RepositorioEmpleados : GestorConexion, IOperacionesBD<Empleados>
     {
-        public void Actualizar(Empleados empleado)
-        {
-            using (var Command = connection.CreateCommand())
-            {
-                Command.CommandText = "Update Empleados Set Cédula = @Cedula," +
-                                                           "Nombre = @Nombre," +    
-                                                           
-
-                                                           "Where Id = @Id";
-                Command.Parameters.Add("Cedula", SqlDbType.VarChar).Value = empleado.Ced;
-                Command.Parameters.Add("Nombre", SqlDbType.VarChar).Value = empleado.Nombre;
-                
-
-                Command.Parameters.Add("Id", SqlDbType.Int).Value = empleado.Id;
-                Open();
-                Command.ExecuteNonQuery();
-                Close();
-            }
-        }
-
         public void Agregar(Empleados empleado)
         {
             using (var Command = connection.CreateCommand())
@@ -47,6 +27,36 @@ namespace Datos
             }
         }
 
+        public void Borrar(int id)
+        {
+            using (var Command = connection.CreateCommand())
+            {
+                Command.CommandText = $"Delete Empleados where Id = {id}";
+                Open();
+                Command.ExecuteNonQuery();
+                Close();
+            }
+        }
+
+        public void Actualizar(Empleados empleado)
+        {
+            using (var Command = connection.CreateCommand())
+            {
+                Command.CommandText = "Update Empleados Set Cédula = @Cedula," +
+                                                           "Nombre = @Nombre" +    
+                                                           
+                                                           " Where Id = @Id";
+                Command.Parameters.Add("Cedula", SqlDbType.VarChar).Value = empleado.Ced;
+                Command.Parameters.Add("Nombre", SqlDbType.VarChar).Value = empleado.Nombre;
+                
+
+                Command.Parameters.Add("Id", SqlDbType.Int).Value = empleado.Id;
+                Open();
+                Command.ExecuteNonQuery();
+                Close();
+            }
+        }        
+
         public void AgregarTrabajo(int id, int generado, int comision)
         {
             using (var Command = connection.CreateCommand())
@@ -61,17 +71,6 @@ namespace Datos
 
 
                 Command.Parameters.Add("Id", SqlDbType.Int).Value = id;
-                Open();
-                Command.ExecuteNonQuery();
-                Close();
-            }
-        }
-
-        public void Borrar(int id)
-        {
-            using (var Command = connection.CreateCommand())
-            {
-                Command.CommandText = $"Delete Empleados where Id = {id}";
                 Open();
                 Command.ExecuteNonQuery();
                 Close();

@@ -12,7 +12,6 @@ namespace Datos
 {
     public class RepositorioClientes : GestorConexion, IOperacionesBD<Clientes>
     {
-
         public void Agregar(Clientes cliente)
         {
             using (var Command = connection.CreateCommand())
@@ -43,17 +42,6 @@ namespace Datos
             }            
         }
 
-        public void BorrarServiciosVinculados(int Vinculo)
-        {
-            using (var Command = connection.CreateCommand())
-            {
-                Command.CommandText = $"Delete Servicios where Vinculo = {Vinculo}";
-                Open();
-                Command.ExecuteNonQuery();
-                Close();
-            }
-        }
-
         public void Actualizar(Clientes cliente)
         {
             using (var Command = connection.CreateCommand())
@@ -65,7 +53,18 @@ namespace Datos
                 Command.Parameters.Add("Cumpleaños", SqlDbType.Date).Value = cliente.Cumpleaños.ToShortDateString();
                 Command.Parameters.Add("UltimaVisita", SqlDbType.Date).Value = cliente.UltimaVisita.ToShortDateString();
                 Command.Parameters.Add("Id", SqlDbType.Int).Value = cliente.Id;
-                Command.Parameters.Add("EstilistaFavorito", SqlDbType.VarChar).Value = cliente.EstilistaFavorito;  
+                Command.Parameters.Add("EstilistaFavorito", SqlDbType.VarChar).Value = cliente.EstilistaFavorito;
+                Open();
+                Command.ExecuteNonQuery();
+                Close();
+            }
+        }
+
+        public void BorrarServiciosVinculados(int Vinculo)
+        {
+            using (var Command = connection.CreateCommand())
+            {
+                Command.CommandText = $"Delete Servicios where Vinculo = {Vinculo}";
                 Open();
                 Command.ExecuteNonQuery();
                 Close();

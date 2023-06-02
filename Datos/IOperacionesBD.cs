@@ -12,6 +12,9 @@ namespace Datos
     {
         void Agregar(T t);
         void Actualizar(T t);
-        void Borrar(int id);       
+        void Borrar(int id);
+        List<T> Filtrar(string nombre);
+        List<T> Consultar();
+        T Mapeador(SqlDataReader dataReader);
     }
 }

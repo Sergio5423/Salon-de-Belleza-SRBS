@@ -18,7 +18,7 @@ namespace PresentaciónIF
         ServiciosForm serviciosForm;
         int idEmpleado = -1;
         int idCliente;
-        int posicion;
+        int posicion;        
 
         public Principal()
         {
@@ -29,34 +29,34 @@ namespace PresentaciónIF
         {
             confirmacion = new Confirmacion();
             serviciosForm = new ServiciosForm();
-            LlenarGridView();
+            LlenarGridViewClientes();
             LlenarGridViewEmpleados();
         }
         
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             AgregarCliente();
-            Limpiar();
-            LlenarGridView();
+            LimpiarCliente();
+            LlenarGridViewClientes();
         }
 
         private void btnElminar_Click(object sender, EventArgs e)
         {
-            Eliminar();
-            Limpiar();
-            LlenarGridView();
+            EliminarCliente();
+            LimpiarCliente();
+            LlenarGridViewClientes();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             gestionClientes.Actualizar(CrearClienteActualizado());
-            Limpiar();
-            LlenarGridView();
+            LimpiarCliente();
+            LlenarGridViewClientes();
         }
 
         private void btnServicios_Click(object sender, EventArgs e)
         {
-            serviciosForm.SetCliente(gestionClientes.ConsultarUno(idCliente));
+            serviciosForm.SetCliente(gestionClientes.Buscar(idCliente));
             serviciosForm.ShowDialog();
         }
 
@@ -86,7 +86,7 @@ namespace PresentaciónIF
             LlenarGridViewEmpleados();
         }
 
-        public void Limpiar()
+        public void LimpiarCliente()
         {
             tbNombre.Text = string.Empty;
             tbCorreo.Text = string.Empty;
@@ -108,7 +108,7 @@ namespace PresentaciónIF
             {
                 Clientes cliente = CrearCliente();
                 gestionClientes.Agregar(cliente);
-                Confirmacion(cliente);
+                ConfirmacionCliente(cliente);
                 confirmacion.ShowDialog();
             }
         }
@@ -127,7 +127,7 @@ namespace PresentaciónIF
             return cliente;
         }
 
-        public void Confirmacion(dynamic cliente)
+        public void ConfirmacionCliente(dynamic cliente)
         {
             confirmacion.SetNombre(cliente.Nombre);
             confirmacion.SetTelefono(cliente.Telefono.ToString());
@@ -152,14 +152,14 @@ namespace PresentaciónIF
             return cliente;
         }
 
-        public void LlenarGridView()
+        public void LlenarGridViewClientes()
         {         
             BindingSource bin = new BindingSource();
-            bin.DataSource = gestionClientes.ConsultarTodos();
+            bin.DataSource = gestionClientes.Consultar();
             dgvClientes.DataSource = bin;
         }
 
-        public void Eliminar()
+        public void EliminarCliente()
         {
             if (lbId.Text == String.Empty)
             {
@@ -170,7 +170,7 @@ namespace PresentaciónIF
             }
         }        
 
-        public void Filtrar()
+        public void FiltrarCliente()
         {
             var listaFiltrada = gestionClientes.Filtrar(tbBuscarClientes.Text);
             BindingSource bin = new BindingSource();
@@ -178,7 +178,7 @@ namespace PresentaciónIF
             dgvClientes.DataSource = bin;
         }
 
-        public void CargarDatos()
+        public void CargarDatosCliente()
         {
             tbNombre.Text = dgvClientes[1,posicion].Value.ToString();
             tbTelefono.Text = dgvClientes[2,posicion].Value.ToString();
@@ -188,7 +188,7 @@ namespace PresentaciónIF
             tbEstilista.Text = dgvClientes[6,posicion].Value.ToString();
         }
 
-        public void PresentarEmpleado()
+        public void PresentarTrabajo()
         {
             if (cbTrabajoE.SelectedIndex == 0)
             {
@@ -259,10 +259,9 @@ namespace PresentaciónIF
         {
             var empleado = new Empleados
             {
+                Id = idEmpleado,
                 Ced = tbCedulaE.Text,
                 Nombre = tbNombreE.Text,
-                Generado = int.Parse(lbValorE.Text),
-                Comision = int.Parse(lbComisionE.Text)
             };
             return empleado;
         }
@@ -289,8 +288,8 @@ namespace PresentaciónIF
 
         public void CargarDatosEmpleados()
         {
-            tbCedulaE.Text = dgvClientes[1, posicion].Value.ToString();
-            tbNombre.Text = dgvClientes[2, posicion].Value.ToString();                   
+            tbCedulaE.Text = dgvEmpleados[1, posicion].Value.ToString();
+            tbNombreE.Text = dgvEmpleados[2, posicion].Value.ToString();                   
         }
 
         public void AgregarTrabajo()
@@ -300,18 +299,19 @@ namespace PresentaciónIF
 
         private void tbBuscarClientes_TextChanged_1(object sender, EventArgs e)
         {
-            Filtrar();
+            FiltrarCliente();
         }
 
         private void cbTrabajoE_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PresentarEmpleado();
+            PresentarTrabajo();
         }
 
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            idCliente = int.Parse(dgvClientes.Rows[e.RowIndex].Cells[0].Value.ToString());            
-            CargarDatos();
+            idCliente = int.Parse(dgvClientes.Rows[e.RowIndex].Cells[0].Value.ToString());
+            posicion = dgvClientes.CurrentRow.Index;
+            CargarDatosCliente();
         }
 
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -322,13 +322,14 @@ namespace PresentaciónIF
 
         private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            idEmpleado = int.Parse(dgvEmpleados.Rows[e.RowIndex].Cells[0].Value.ToString());
-            posicion = dgvClientes.CurrentRow.Index;
+            idEmpleado = int.Parse(dgvEmpleados.Rows[e.RowIndex].Cells[0].Value.ToString());            
+            posicion = dgvEmpleados.CurrentRow.Index;
         }
 
         private void dgvEmpleados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             idEmpleado = int.Parse(dgvEmpleados.Rows[e.RowIndex].Cells[0].Value.ToString());
+            posicion = dgvEmpleados.CurrentRow.Index;
             CargarDatosEmpleados();
         }
 
@@ -339,8 +340,14 @@ namespace PresentaciónIF
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            gestionClientes.CrearPdfListaClientes("Clientes");
+            gestionClientes.CrearPdfClientes("Clientes");
             Process.Start("Clientes.pdf");
+        }
+
+        private void btnPdfE_Click(object sender, EventArgs e)
+        {
+            gestionEmpleados.CrearPdfEmpleados("Empleados");
+            Process.Start("Empleados.pdf");
         }
     }
 }

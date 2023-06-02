@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace PresentaciónIF
@@ -154,6 +155,12 @@ namespace PresentaciónIF
             gestionServicios.Borrar(idSeleccionado);
         }
 
+        public void GenerarPDF(string nombreCliente)
+        {
+            gestionServicios.CrearPdfEmpleados(nombreCliente,$"Servicios {nombreCliente}");
+            Process.Start($"Servicios {nombreCliente}.pdf");
+        }
+
         private void btnGuardarServicio_Click(object sender, EventArgs e)
         {
             gestionServicios.SetCliente(clienteServicio);
@@ -186,13 +193,18 @@ namespace PresentaciónIF
 
         private void dgvServicios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            idSeleccionado = int.Parse(dgvServicios.Rows[e.RowIndex].Cells[0].Value.ToString());                        
+            idSeleccionado = int.Parse(dgvServicios.Rows[e.RowIndex].Cells[0].Value.ToString());                                    
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             cbBusqueda.SelectedIndex = -1;
             LlenarGridView();
+        }
+
+        private void btnPdfS_Click(object sender, EventArgs e)
+        {
+            GenerarPDF(clienteServicio.Nombre);
         }
     }
 }

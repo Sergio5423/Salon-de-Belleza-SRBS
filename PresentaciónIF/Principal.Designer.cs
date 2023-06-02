@@ -30,6 +30,7 @@
         {
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnExportar = new System.Windows.Forms.Button();
             this.btnServicios = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbId = new System.Windows.Forms.Label();
@@ -80,7 +81,8 @@
             this.tbBuscarEmpleados = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.btnExportar = new System.Windows.Forms.Button();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.btnPdfE = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -95,6 +97,7 @@
             this.groupBox6.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -108,7 +111,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(892, 600);
+            this.tabPage1.Size = new System.Drawing.Size(888, 597);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Registro Clientes Salon de Belleza";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -122,6 +125,16 @@
             this.groupBox5.Size = new System.Drawing.Size(229, 49);
             this.groupBox5.TabIndex = 15;
             this.groupBox5.TabStop = false;
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.Location = new System.Drawing.Point(12, 15);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(114, 23);
+            this.btnExportar.TabIndex = 15;
+            this.btnExportar.Text = "Exportar PDF";
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // btnServicios
             // 
@@ -359,14 +372,15 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(-4, -1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(900, 626);
+            this.tabControl1.Size = new System.Drawing.Size(896, 623);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox9);
             this.tabPage2.Controls.Add(this.groupBox8);
             this.tabPage2.Controls.Add(this.groupBox7);
             this.tabPage2.Controls.Add(this.label10);
@@ -375,7 +389,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(892, 600);
+            this.tabPage2.Size = new System.Drawing.Size(888, 597);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Empleados";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -605,21 +619,30 @@
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             this.dgvEmpleados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellDoubleClick);
             // 
-            // btnExportar
+            // groupBox9
             // 
-            this.btnExportar.Location = new System.Drawing.Point(12, 15);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(114, 23);
-            this.btnExportar.TabIndex = 15;
-            this.btnExportar.Text = "Exportar PDF";
-            this.btnExportar.UseVisualStyleBackColor = true;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            this.groupBox9.Controls.Add(this.btnPdfE);
+            this.groupBox9.Location = new System.Drawing.Point(726, 535);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(143, 49);
+            this.groupBox9.TabIndex = 16;
+            this.groupBox9.TabStop = false;
+            // 
+            // btnPdfE
+            // 
+            this.btnPdfE.Location = new System.Drawing.Point(13, 15);
+            this.btnPdfE.Name = "btnPdfE";
+            this.btnPdfE.Size = new System.Drawing.Size(114, 23);
+            this.btnPdfE.TabIndex = 15;
+            this.btnPdfE.Text = "Exportar PDF";
+            this.btnPdfE.UseVisualStyleBackColor = true;
+            this.btnPdfE.Click += new System.EventHandler(this.btnPdfE_Click);
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 650);
+            this.ClientSize = new System.Drawing.Size(888, 618);
             this.Controls.Add(this.tabControl1);
             this.Name = "Principal";
             this.Text = "2";
@@ -646,6 +669,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            this.groupBox9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -705,6 +729,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnAgregarTrabajo;
         private System.Windows.Forms.Button btnExportar;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button btnPdfE;
     }
 }
 

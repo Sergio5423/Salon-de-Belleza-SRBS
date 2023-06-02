@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class RepositorioServicios : GestorConexion, IOperacionesBD<ServiciosEscritura>
+    public class RepositorioServicios : GestorConexion
     {
         public void Agregar(ServiciosEscritura servicio)
         {
@@ -91,7 +91,7 @@ namespace Datos
             servicio.Nombre = dataReader.GetString(1);
             servicio.Valor = dataReader.GetInt32(2).ToString();
             servicio.Duracion = dataReader.GetInt32(3).ToString();
-            servicio.Regreso = dataReader.GetDateTime(4).ToString();
+            servicio.Regreso = dataReader.GetDateTime(4).ToShortDateString();
 
             return servicio;
         }

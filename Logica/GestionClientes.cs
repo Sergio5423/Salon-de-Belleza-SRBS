@@ -12,7 +12,7 @@ using System.IO;
 
 namespace Logica
 {
-    public class GestionClientes : IOperaciones<Clientes>
+    public class GestionClientes : GestorFuentes, IOperaciones<Clientes>
     {        
         RepositorioClientes repositorioClientes = new RepositorioClientes();
         List<Clientes> listaClientes = null;
@@ -42,7 +42,12 @@ namespace Logica
             return repositorioClientes.Filtrar(nombre);
         }
 
-        public Clientes ConsultarUno(int id)
+        public List<Clientes> Consultar()
+        {
+            return repositorioClientes.Consultar();
+        }
+
+        public Clientes Buscar(int id)
         {
             foreach (var cliente in repositorioClientes.Consultar())
             {
@@ -54,12 +59,7 @@ namespace Logica
             return null;
         }
 
-        public List<Clientes> ConsultarTodos()
-        {
-            return repositorioClientes.Consultar();
-        }
-
-        public void CrearPdfListaClientes(string nombrePDF)
+        public void CrearPdfClientes(string nombrePDF)
         {
             Font font = new iTextSharp.text.Font(0);
             Document document = new Document();
@@ -69,11 +69,11 @@ namespace Logica
             FileMode.OpenOrCreate));
 
             Chunk chunkTitulo = new Chunk("Lista de Clientes" + "\n" + "\n",
-                FontFactory.GetFont("CAMBRIA", 12,
-                iTextSharp.text.Font.BOLD));
+                FontFactory.GetFont(GetTimes(), 14,
+                5));
 
             Chunk chunkFecha = new Chunk("\nFecha del Reporte: " + DateTime.Now.ToShortDateString() + "\n",
-                FontFactory.GetFont("CAMBRIA", 9,
+                FontFactory.GetFont(GetTimes(), 10,
                 iTextSharp.text.Font.BOLD));
 
             var parafTitulo = new Paragraph(chunkTitulo);
@@ -86,18 +86,18 @@ namespace Logica
             tabla.WidthPercentage = 90;
             tabla.SetWidths(new int[] { 12, 12, 12, 15, 10 });
 
-            tabla.AddCell(new Phrase("Nombre", FontFactory.GetFont("CAMBRIA", 10,
+            tabla.AddCell(new Phrase("Nombre", FontFactory.GetFont("Cambria", 10,
                 iTextSharp.text.Font.BOLD)));
-            tabla.AddCell(new Phrase("Telefono", FontFactory.GetFont("CAMBRIA", 10,
+            tabla.AddCell(new Phrase("Telefono", FontFactory.GetFont("Cambria", 10,
                 iTextSharp.text.Font.BOLD)));
-            tabla.AddCell(new Phrase("Cumpleaños", FontFactory.GetFont("CAMBRIA", 10,
+            tabla.AddCell(new Phrase("Cumpleaños", FontFactory.GetFont("Cambria", 10,
                 iTextSharp.text.Font.BOLD)));
-            tabla.AddCell(new Phrase("Ultima Visita", FontFactory.GetFont("CAMBRIA", 10,
+            tabla.AddCell(new Phrase("Ultima Visita", FontFactory.GetFont("Cambria", 10,
                 iTextSharp.text.Font.BOLD)));
-            tabla.AddCell(new Phrase("Estilista", FontFactory.GetFont("CAMBRIA", 10,
+            tabla.AddCell(new Phrase("Estilista", FontFactory.GetFont("Cambria", 10,
                 iTextSharp.text.Font.BOLD)));
 
-            foreach (var cliente in ConsultarTodos())
+            foreach (var cliente in Consultar())
             {
                 tabla.AddCell(new Phrase(cliente.Nombre, font));
                 tabla.AddCell(new Phrase(cliente.Telefono, font));

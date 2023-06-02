@@ -58,11 +58,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbServicio = new System.Windows.Forms.ComboBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.btnPdfS = new System.Windows.Forms.Button();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
             this.groupBox5.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox8
@@ -369,11 +372,31 @@
             this.cbServicio.TabIndex = 14;
             this.cbServicio.SelectedIndexChanged += new System.EventHandler(this.cbServicio_SelectedIndexChanged);
             // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.btnPdfS);
+            this.groupBox9.Location = new System.Drawing.Point(713, 561);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(143, 49);
+            this.groupBox9.TabIndex = 29;
+            this.groupBox9.TabStop = false;
+            // 
+            // btnPdfS
+            // 
+            this.btnPdfS.Location = new System.Drawing.Point(13, 15);
+            this.btnPdfS.Name = "btnPdfS";
+            this.btnPdfS.Size = new System.Drawing.Size(114, 23);
+            this.btnPdfS.TabIndex = 15;
+            this.btnPdfS.Text = "Exportar PDF";
+            this.btnPdfS.UseVisualStyleBackColor = true;
+            this.btnPdfS.Click += new System.EventHandler(this.btnPdfS_Click);
+            // 
             // ServiciosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 622);
+            this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
@@ -390,6 +413,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,5 +451,7 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbFavorito;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button btnPdfS;
     }
 }
