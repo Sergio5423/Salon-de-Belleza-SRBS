@@ -11,12 +11,13 @@ using FontAwesome.Sharp;
 
 namespace PresentaciónIF
 {
-    public partial class VentanaPrincipal : Form
+    public partial class MenuPrincipal : Form
     {
+        Principal principal = new Principal();
         private IconButton currentBtn;
         private Panel leftBorderBtn;
 
-        public VentanaPrincipal()
+        public MenuPrincipal()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
@@ -33,6 +34,26 @@ namespace PresentaciónIF
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
             }
+        }
+
+        public void AbrirPrincipal()
+        {
+            principal.ShowDialog();
+        }
+
+        public void Salir()
+        {
+            this.Close();
+        }
+
+        private void btnClientesYEmpleados_Click(object sender, EventArgs e)
+        {
+            AbrirPrincipal();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Salir();
         }
     }
 }

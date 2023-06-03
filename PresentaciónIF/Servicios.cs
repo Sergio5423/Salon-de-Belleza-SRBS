@@ -14,14 +14,14 @@ using System.Windows.Forms;
 
 namespace PresentaciónIF
 {
-    public partial class ServiciosForm : Form
+    public partial class Servicios : Form
     {
         GestionServicios gestionServicios = new GestionServicios();
         Clientes clienteServicio = null;
 
         int idSeleccionado;
 
-        public ServiciosForm()
+        public Servicios()
         {
             InitializeComponent();
         }

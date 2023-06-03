@@ -15,7 +15,7 @@ namespace PresentaciónIF
         GestionServicios gestionServicios = new GestionServicios();
         GestionEmpleados gestionEmpleados = new GestionEmpleados();
         Confirmacion confirmacion;
-        ServiciosForm serviciosForm;
+        Servicios serviciosForm;
         int idEmpleado = -1;
         int idCliente;
         int posicion;        
@@ -28,7 +28,7 @@ namespace PresentaciónIF
         private void Principal_Load(object sender, EventArgs e)
         {
             confirmacion = new Confirmacion();
-            serviciosForm = new ServiciosForm();
+            serviciosForm = new Servicios();
             LlenarGridViewClientes();
             LlenarGridViewEmpleados();
         }
@@ -307,17 +307,17 @@ namespace PresentaciónIF
             PresentarTrabajo();
         }
 
-        private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvClientes_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            idCliente = int.Parse(dgvClientes.Rows[e.RowIndex].Cells[0].Value.ToString());
+            posicion = dgvClientes.CurrentRow.Index;
+        }
+
+        private void dgvClientes_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             idCliente = int.Parse(dgvClientes.Rows[e.RowIndex].Cells[0].Value.ToString());
             posicion = dgvClientes.CurrentRow.Index;
             CargarDatosCliente();
-        }
-
-        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            idCliente = int.Parse(dgvClientes.Rows[e.RowIndex].Cells[0].Value.ToString());
-            posicion = dgvClientes.CurrentRow.Index;
         }
 
         private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)

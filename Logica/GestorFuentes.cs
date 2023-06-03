@@ -11,7 +11,7 @@ namespace Logica
     {
         public static string GetTimes()
         {
-            var fontName = "times";
+            string fontName = "times";
             if (!FontFactory.IsRegistered(fontName))
             {
                 var fontPath = Environment.GetEnvironmentVariable("SystemRoot") + "\\Fonts\\times.ttf";
