@@ -11,6 +11,11 @@ namespace Datos
 {
     public class RepositorioCredenciales : GestorConexion
     {
+        public RepositorioCredenciales() : base()
+        {
+            
+        }
+
         public void Agregar(Credenciales credencial)
         {
             using (var Command = connection.CreateCommand())

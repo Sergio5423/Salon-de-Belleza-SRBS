@@ -42,6 +42,9 @@
             this.lbVinculo = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.btnPdfS = new System.Windows.Forms.Button();
+            this.btnSalirS = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.cbBusqueda = new System.Windows.Forms.ComboBox();
             this.dgvServicios = new System.Windows.Forms.DataGridView();
@@ -55,13 +58,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbServicio = new System.Windows.Forms.ComboBox();
-            this.btnPdfS = new System.Windows.Forms.Button();
-            this.btnSalirS = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
@@ -218,6 +218,38 @@
             this.groupBox6.TabIndex = 26;
             this.groupBox6.TabStop = false;
             // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(105)))), ((int)(((byte)(96)))));
+            this.panel12.Location = new System.Drawing.Point(0, -6);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(859, 10);
+            this.panel12.TabIndex = 24;
+            // 
+            // btnPdfS
+            // 
+            this.btnPdfS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.btnPdfS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPdfS.Location = new System.Drawing.Point(400, 239);
+            this.btnPdfS.Name = "btnPdfS";
+            this.btnPdfS.Size = new System.Drawing.Size(114, 23);
+            this.btnPdfS.TabIndex = 15;
+            this.btnPdfS.Text = "Exportar PDF";
+            this.btnPdfS.UseVisualStyleBackColor = false;
+            this.btnPdfS.Click += new System.EventHandler(this.btnPdfS_Click);
+            // 
+            // btnSalirS
+            // 
+            this.btnSalirS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.btnSalirS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalirS.Location = new System.Drawing.Point(71, 239);
+            this.btnSalirS.Name = "btnSalirS";
+            this.btnSalirS.Size = new System.Drawing.Size(75, 23);
+            this.btnSalirS.TabIndex = 13;
+            this.btnSalirS.Text = "Salir";
+            this.btnSalirS.UseVisualStyleBackColor = false;
+            this.btnSalirS.Click += new System.EventHandler(this.btnSalirS_Click);
+            // 
             // btnLimpiar
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
@@ -235,10 +267,11 @@
             this.cbBusqueda.BackColor = System.Drawing.Color.White;
             this.cbBusqueda.FormattingEnabled = true;
             this.cbBusqueda.Items.AddRange(new object[] {
-            "Alisado Profesional",
-            "Trabajo de Color",
+            "Alisado Permanente",
+            "Diseño de Color",
             "Mantenimiento de Químicos",
-            "Cliente Irregular"});
+            "Restauración Capilar",
+            "Blower"});
             this.cbBusqueda.Location = new System.Drawing.Point(141, 24);
             this.cbBusqueda.Name = "cbBusqueda";
             this.cbBusqueda.Size = new System.Drawing.Size(158, 25);
@@ -343,39 +376,16 @@
             this.cbServicio.BackColor = System.Drawing.Color.White;
             this.cbServicio.FormattingEnabled = true;
             this.cbServicio.Items.AddRange(new object[] {
-            "Alisado Profesional",
-            "Trabajo de Color",
+            "Alisado Permanente",
+            "Diseño de Color",
             "Mantenimiento de Químicos",
-            "Cliente Irregular"});
+            "Restauración Capilar",
+            "Blower"});
             this.cbServicio.Location = new System.Drawing.Point(113, 57);
             this.cbServicio.Name = "cbServicio";
             this.cbServicio.Size = new System.Drawing.Size(158, 25);
             this.cbServicio.TabIndex = 14;
             this.cbServicio.SelectedIndexChanged += new System.EventHandler(this.cbServicio_SelectedIndexChanged);
-            // 
-            // btnPdfS
-            // 
-            this.btnPdfS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnPdfS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPdfS.Location = new System.Drawing.Point(400, 239);
-            this.btnPdfS.Name = "btnPdfS";
-            this.btnPdfS.Size = new System.Drawing.Size(114, 23);
-            this.btnPdfS.TabIndex = 15;
-            this.btnPdfS.Text = "Exportar PDF";
-            this.btnPdfS.UseVisualStyleBackColor = false;
-            this.btnPdfS.Click += new System.EventHandler(this.btnPdfS_Click);
-            // 
-            // btnSalirS
-            // 
-            this.btnSalirS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnSalirS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSalirS.Location = new System.Drawing.Point(71, 239);
-            this.btnSalirS.Name = "btnSalirS";
-            this.btnSalirS.Size = new System.Drawing.Size(75, 23);
-            this.btnSalirS.TabIndex = 13;
-            this.btnSalirS.Text = "Salir";
-            this.btnSalirS.UseVisualStyleBackColor = false;
-            this.btnSalirS.Click += new System.EventHandler(this.btnSalirS_Click);
             // 
             // panel9
             // 
@@ -424,15 +434,7 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "Datos del Servicio";
             // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(105)))), ((int)(((byte)(96)))));
-            this.panel12.Location = new System.Drawing.Point(0, -6);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(859, 10);
-            this.panel12.TabIndex = 24;
-            // 
-            // ServiciosForm
+            // Servicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -441,7 +443,8 @@
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
-            this.Name = "ServiciosForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "Servicios";
             this.Text = "ServiciosForm";
             this.Load += new System.EventHandler(this.ServiciosForm_Load);
             this.groupBox7.ResumeLayout(false);

@@ -12,6 +12,11 @@ namespace Datos
 {
     public class RepositorioClientes : GestorConexion, IOperacionesBD<Clientes>
     {
+        public RepositorioClientes() : base()
+        {
+                    
+        }
+
         public void Agregar(Clientes cliente)
         {
             using (var Command = connection.CreateCommand())

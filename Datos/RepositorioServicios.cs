@@ -11,6 +11,11 @@ namespace Datos
 {
     public class RepositorioServicios : GestorConexion
     {
+        public RepositorioServicios() : base()
+        {
+            
+        }
+
         public void Agregar(ServiciosEscritura servicio)
         {
             using (var Command = connection.CreateCommand())

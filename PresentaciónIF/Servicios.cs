@@ -18,6 +18,11 @@ namespace PresentaciónIF
     {
         GestionServicios gestionServicios = new GestionServicios();
         Clientes clienteServicio = null;
+        int precAlis = 200000;
+        int precDis = 300000;
+        int precQuim = 70000;
+        int precRes = 80000;
+        int precBlow = 30000;
 
         int idSeleccionado;
 
@@ -52,27 +57,33 @@ namespace PresentaciónIF
         {
             if (cbServicio.SelectedIndex == 0)
             {
-                lbValor.Text = "0";
+                lbValor.Text = $"${precAlis}";
                 lbDuracion.Text = "3 Meses";
                 lbRegreso.Text = gestionServicios.CalcularRegresoMeses(3).ToShortDateString();
             }
             if (cbServicio.SelectedIndex == 1)
             {
-                lbValor.Text = "0";
+                lbValor.Text = $"${precDis}";
                 lbDuracion.Text = "4 Meses";
                 lbRegreso.Text = gestionServicios.CalcularRegresoMeses(4).ToShortDateString();
             }
             if (cbServicio.SelectedIndex == 2)
             {
-                lbValor.Text = "0";
+                lbValor.Text = $"${precQuim}";
                 lbDuracion.Text = "15 Dias";
                 lbRegreso.Text = gestionServicios.CalcularRegresoDias(15).ToShortDateString();
             }
             if (cbServicio.SelectedIndex == 3)
             {
-                lbValor.Text = "0";
-                lbDuracion.Text = "20 Dias";
-                lbRegreso.Text = gestionServicios.CalcularRegresoDias(20).ToShortDateString();
+                lbValor.Text = $"${precRes}";
+                lbDuracion.Text = "15 Dias";
+                lbRegreso.Text = gestionServicios.CalcularRegresoDias(15).ToShortDateString();
+            }
+            if (cbServicio.SelectedIndex == 4)
+            {
+                lbValor.Text = $"${precBlow}";
+                lbDuracion.Text = "8 Dias";
+                lbRegreso.Text = gestionServicios.CalcularRegresoDias(8).ToShortDateString();
             }
         }
 
@@ -82,50 +93,63 @@ namespace PresentaciónIF
             {
                 Vinculo = cliente.Id,
                 Nombre = cbServicio.SelectedItem.ToString(),
-                Valor = 0,
+                Valor = precAlis,
                 Duracion = 3,                    
             };
 
             gestionServicios.Agregar(servicio);                    
         }
 
-        public void CrearServicioColor(dynamic cliente)
+        public void CrearServicioDisColor(dynamic cliente)
         {
             var servicio = new ServiciosEscritura
             {
                 Vinculo = cliente.Id,
                 Nombre = cbServicio.SelectedItem.ToString(),
-                Valor = 0,
+                Valor = precDis,
                 Duracion = 4,
             };
 
             gestionServicios.Agregar(servicio);            
         }
 
-        public void CrearServicioMantenimiento(dynamic cliente)
+        public void CrearServicioMantQuimicos(dynamic cliente)
         {        
                 var servicio = new ServiciosEscritura
                 {
                     Vinculo = cliente.Id,
                     Nombre = cbServicio.SelectedItem.ToString(),
-                    Valor = 0,
+                    Valor = precQuim,
                     Duracion = 15,
                 };
 
             gestionServicios.Agregar(servicio);            
         }
 
-        public void CrearServicioIrregular(dynamic cliente)
+        public void CrearServicioRestauracion(dynamic cliente)
         {         
                 var servicio = new ServiciosEscritura
                 {
                     Vinculo = cliente.Id,
                     Nombre = cbServicio.SelectedItem.ToString(),
-                    Valor = 0,
-                    Duracion = 20,
+                    Valor = precRes,
+                    Duracion = 15,
                 };
 
             gestionServicios.Agregar(servicio);            
+        }
+
+        public void CrearServicioBlower(dynamic cliente)
+        {
+            var servicio = new ServiciosEscritura
+            {
+                Vinculo = cliente.Id,
+                Nombre = cbServicio.SelectedItem.ToString(),
+                Valor = precBlow,
+                Duracion = 8,
+            };
+
+            gestionServicios.Agregar(servicio);
         }
 
         public void LlenarGridView()
@@ -164,14 +188,16 @@ namespace PresentaciónIF
         private void btnGuardarServicio_Click(object sender, EventArgs e)
         {
             gestionServicios.SetCliente(clienteServicio);
-            if(cbServicio.SelectedIndex==0)
+            if (cbServicio.SelectedIndex == 0)
                 CrearServicioAlisado(clienteServicio);
-            if(cbServicio.SelectedIndex==1)
-                CrearServicioColor(clienteServicio);
-            if(cbServicio.SelectedIndex==2)
-                CrearServicioMantenimiento(clienteServicio);
-            if(cbServicio.SelectedIndex==3)
-                CrearServicioIrregular(clienteServicio);
+            if (cbServicio.SelectedIndex == 1)
+                CrearServicioDisColor(clienteServicio);
+            if (cbServicio.SelectedIndex == 2)
+                CrearServicioMantQuimicos(clienteServicio);
+            if (cbServicio.SelectedIndex == 3)
+                CrearServicioRestauracion(clienteServicio);
+            if (cbServicio.SelectedIndex == 4)
+                CrearServicioBlower(clienteServicio);
             LlenarGridView();
         }
 

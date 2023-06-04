@@ -30,13 +30,15 @@ namespace Logica
 
         public void Agregar(ServiciosEscritura servicio)
         {
-            if (servicio.Nombre == "Alisado Profesional")
+            if (servicio.Nombre == "Alisado Permanente")
                 servicio.Regreso = CalcularRegresoMeses(servicio.Duracion);
-            if (servicio.Nombre == "Trabajo de Color")
+            if (servicio.Nombre == "Diseño de Color")
                 servicio.Regreso = CalcularRegresoMeses(servicio.Duracion);
             if (servicio.Nombre == "Mantenimiento de Químicos")
                 servicio.Regreso = CalcularRegresoDias(servicio.Duracion);
-            if (servicio.Nombre == "Cliente Irregular")
+            if (servicio.Nombre == "Restauración Capilar")
+                servicio.Regreso = CalcularRegresoDias(servicio.Duracion);
+            if (servicio.Nombre == "Blower")
                 servicio.Regreso = CalcularRegresoDias(servicio.Duracion);
             repositorioServicios.Agregar(servicio);
         }
