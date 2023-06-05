@@ -144,17 +144,10 @@ namespace PresentaciónIF
             }
             else
             {
-
-                if (tbTelefono.Text.All(char.IsDigit))
-                {
-                    Clientes cliente = CrearCliente();
-                    gestionClientes.Agregar(cliente);
-                    ConfirmacionCliente(cliente);
-                    confirmacion.ShowDialog();
-                } else
-                {
-                    MessageBox.Show("Ingrese solo números");
-                }                
+                Clientes cliente = CrearCliente();
+                gestionClientes.Agregar(cliente);
+                ConfirmacionCliente(cliente);
+                confirmacion.ShowDialog();              
             }
         }
 
