@@ -14,7 +14,7 @@ namespace Datos
 
         public GestorConexion()
         {
-            string connectionString = "server=SERGIOPC ; database=BDSalonDeBelleza ; trusted_connection = true ; multipleactiveresultsets = true";
+            string connectionString = "server=. ; database=BDSalonDeBelleza ; trusted_connection = true ; multipleactiveresultsets = true";
             connection = new SqlConnection(connectionString);
         }
 

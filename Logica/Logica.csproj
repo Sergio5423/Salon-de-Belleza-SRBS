@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GestionCredenciales.cs" />
     <Compile Include="GestionEmpleados.cs" />
     <Compile Include="GestionServicios.cs" />
     <Compile Include="GestorFuentes.cs" />
