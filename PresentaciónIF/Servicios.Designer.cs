@@ -304,7 +304,7 @@
             this.btnGuardarServicio.Name = "btnGuardarServicio";
             this.btnGuardarServicio.Size = new System.Drawing.Size(75, 23);
             this.btnGuardarServicio.TabIndex = 22;
-            this.btnGuardarServicio.Text = "Guardar";
+            this.btnGuardarServicio.Text = "Agregar";
             this.btnGuardarServicio.UseVisualStyleBackColor = false;
             this.btnGuardarServicio.Click += new System.EventHandler(this.btnGuardarServicio_Click);
             // 
@@ -445,7 +445,7 @@
             this.Controls.Add(this.groupBox6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Servicios";
-            this.Text = "ServiciosForm";
+            this.Text = "Servicios";
             this.Load += new System.EventHandler(this.ServiciosForm_Load);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
