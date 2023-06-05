@@ -172,6 +172,7 @@ namespace PresentaciónIF
             lbValor.Text = string.Empty;
             lbDuracion.Text = string.Empty;
             lbRegreso.Text = string.Empty;
+            cbBusqueda.SelectedIndex = -1;
         }
 
         public void Eliminar()
@@ -235,6 +236,7 @@ namespace PresentaciónIF
 
         private void btnSalirS_Click(object sender, EventArgs e)
         {
+            Limpiar();
             this.Close();
         }
     }
