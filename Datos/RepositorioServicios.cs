@@ -60,7 +60,7 @@ namespace Datos
             List<ServiciosLectura> servicios = new List<ServiciosLectura>();
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = $"select Id,Nombre,Valor,Duracion,Regreso from Servicios where Nombre like '%{nombre}%' and Vinculo = '{vinculo}'";
+                command.CommandText = $"select Id,Nombre,Valor,Duracion,Regreso from Servicios where Nombre like '%{nombre}%' and Vinculo = {vinculo}";
                 Open();
                 SqlDataReader lector = command.ExecuteReader();
                 while (lector.Read())
@@ -76,7 +76,7 @@ namespace Datos
         {
             List<ServiciosLectura> servicios = new List<ServiciosLectura>();
             var command = connection.CreateCommand();
-            command.CommandText = $"select Id,Nombre,Valor,Duracion,Regreso from Servicios where Vinculo like '%{vinculo}%'";
+            command.CommandText = $"select Id,Nombre,Valor,Duracion,Regreso from Servicios where Vinculo = {vinculo}";
             Open();
             SqlDataReader lector = command.ExecuteReader();
             while (lector.Read())
