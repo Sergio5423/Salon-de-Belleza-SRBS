@@ -438,8 +438,14 @@ namespace PresentaciónIF
 
         private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            idEmpleado = int.Parse(dgvEmpleados.Rows[e.RowIndex].Cells[0].Value.ToString());            
-            posicion = dgvEmpleados.CurrentRow.Index;
+            try
+            {
+                idEmpleado = int.Parse(dgvEmpleados.Rows[e.RowIndex].Cells[0].Value.ToString());
+                posicion = dgvEmpleados.CurrentRow.Index;
+            } catch (ArgumentOutOfRangeException)
+            {
+
+            }            
         }
 
         private void dgvEmpleados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -220,7 +220,15 @@ namespace PresentaciónIF
 
         private void dgvServicios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            idSeleccionado = int.Parse(dgvServicios.Rows[e.RowIndex].Cells[0].Value.ToString());                                    
+            try
+            {
+                idSeleccionado = int.Parse(dgvServicios.Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
+            }
+            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
