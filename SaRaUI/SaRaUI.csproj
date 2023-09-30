@@ -79,7 +79,9 @@
     </EmbeddedResource>
     <None Include="Fonts\Benedict.ttf" />
     <None Include="Fonts\Mistress Benedict.ttf" />
-    <None Include="Fonts\Playlist Script.ttf" />
+    <None Include="Fonts\Playlist Script.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -133,6 +135,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono_Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{c4641106-cb35-4232-9020-3a0847de65ff}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logica\Logica.csproj">
+      <Project>{6517b69f-5eb7-41e6-a1fe-35f9a9cc4339}</Project>
+      <Name>Logica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
