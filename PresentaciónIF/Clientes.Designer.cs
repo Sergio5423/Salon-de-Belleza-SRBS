@@ -1,6 +1,6 @@
 ﻿namespace PresentaciónIF
 {
-    partial class Principal
+    partial class Clientes
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -44,6 +44,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbCédula = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
             this.tbCorreo = new System.Windows.Forms.TextBox();
             this.tbTelefono = new System.Windows.Forms.TextBox();
@@ -70,6 +72,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.lbValorE = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.tbTeléfonoE = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.tbNombreE = new System.Windows.Forms.TextBox();
             this.btnGuardarE = new System.Windows.Forms.Button();
@@ -79,6 +83,7 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.btnActualizarE = new System.Windows.Forms.Button();
             this.btnPdfE = new System.Windows.Forms.Button();
@@ -115,7 +120,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(840, 593);
+            this.tabPage1.Size = new System.Drawing.Size(799, 615);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
             // 
@@ -128,9 +133,9 @@
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.dgvClientes);
-            this.panel5.Location = new System.Drawing.Point(-4, 288);
+            this.panel5.Location = new System.Drawing.Point(0, 306);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(848, 309);
+            this.panel5.Size = new System.Drawing.Size(799, 309);
             this.panel5.TabIndex = 19;
             // 
             // panel8
@@ -148,7 +153,7 @@
             this.panel7.Controls.Add(this.btnElminarServicio);
             this.panel7.Controls.Add(this.btnExportar);
             this.panel7.Controls.Add(this.btnActualizar);
-            this.panel7.Location = new System.Drawing.Point(368, 249);
+            this.panel7.Location = new System.Drawing.Point(357, 253);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(419, 44);
             this.panel7.TabIndex = 21;
@@ -214,7 +219,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(208)))), ((int)(((byte)(197)))));
             this.panel6.Controls.Add(this.btnSalirC);
-            this.panel6.Location = new System.Drawing.Point(20, 249);
+            this.panel6.Location = new System.Drawing.Point(32, 253);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(105, 44);
             this.panel6.TabIndex = 20;
@@ -271,6 +276,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.tbCédula);
+            this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.lbId);
             this.panel2.Controls.Add(this.tbCorreo);
             this.panel2.Controls.Add(this.tbTelefono);
@@ -280,13 +287,30 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(39, 61);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(279, 194);
+            this.panel2.Size = new System.Drawing.Size(279, 223);
             this.panel2.TabIndex = 17;
+            // 
+            // tbCédula
+            // 
+            this.tbCédula.BackColor = System.Drawing.Color.White;
+            this.tbCédula.Location = new System.Drawing.Point(91, 47);
+            this.tbCédula.Name = "tbCédula";
+            this.tbCédula.Size = new System.Drawing.Size(161, 25);
+            this.tbCédula.TabIndex = 22;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(26, 55);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(50, 17);
+            this.label18.TabIndex = 21;
+            this.label18.Text = "Cédula";
             // 
             // lbId
             // 
             this.lbId.AutoSize = true;
-            this.lbId.Location = new System.Drawing.Point(17, 20);
+            this.lbId.Location = new System.Drawing.Point(17, 19);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(190, 17);
             this.lbId.TabIndex = 20;
@@ -295,7 +319,7 @@
             // tbCorreo
             // 
             this.tbCorreo.BackColor = System.Drawing.Color.White;
-            this.tbCorreo.Location = new System.Drawing.Point(82, 149);
+            this.tbCorreo.Location = new System.Drawing.Point(91, 184);
             this.tbCorreo.Name = "tbCorreo";
             this.tbCorreo.Size = new System.Drawing.Size(161, 25);
             this.tbCorreo.TabIndex = 19;
@@ -303,7 +327,7 @@
             // tbTelefono
             // 
             this.tbTelefono.BackColor = System.Drawing.Color.White;
-            this.tbTelefono.Location = new System.Drawing.Point(82, 108);
+            this.tbTelefono.Location = new System.Drawing.Point(91, 143);
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(161, 25);
             this.tbTelefono.TabIndex = 18;
@@ -311,7 +335,7 @@
             // tbNombre
             // 
             this.tbNombre.BackColor = System.Drawing.Color.White;
-            this.tbNombre.Location = new System.Drawing.Point(82, 58);
+            this.tbNombre.Location = new System.Drawing.Point(91, 93);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(161, 25);
             this.tbNombre.TabIndex = 17;
@@ -319,7 +343,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 157);
+            this.label4.Location = new System.Drawing.Point(26, 192);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 17);
             this.label4.TabIndex = 16;
@@ -328,7 +352,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 108);
+            this.label3.Location = new System.Drawing.Point(26, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 15;
@@ -337,7 +361,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 62);
+            this.label2.Location = new System.Drawing.Point(26, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 14;
@@ -354,7 +378,7 @@
             this.panel1.Controls.Add(this.dtUltimaVisita);
             this.panel1.Location = new System.Drawing.Point(368, 61);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 194);
+            this.panel1.Size = new System.Drawing.Size(400, 223);
             this.panel1.TabIndex = 16;
             // 
             // tbEstilista
@@ -405,7 +429,7 @@
             // 
             this.btnGuardarCliente.BackColor = System.Drawing.Color.White;
             this.btnGuardarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGuardarCliente.Location = new System.Drawing.Point(310, 157);
+            this.btnGuardarCliente.Location = new System.Drawing.Point(310, 186);
             this.btnGuardarCliente.Name = "btnGuardarCliente";
             this.btnGuardarCliente.Size = new System.Drawing.Size(75, 23);
             this.btnGuardarCliente.TabIndex = 8;
@@ -424,13 +448,13 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Font = new System.Drawing.Font("Segoe Script", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(-4, -1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(848, 623);
+            this.tabControl1.Size = new System.Drawing.Size(807, 645);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage2
@@ -443,7 +467,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(840, 593);
+            this.tabPage2.Size = new System.Drawing.Size(799, 615);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Empleados";
             // 
@@ -458,14 +482,14 @@
             this.panel11.Controls.Add(this.lbValorE);
             this.panel11.Location = new System.Drawing.Point(388, 66);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(330, 197);
+            this.panel11.Size = new System.Drawing.Size(330, 224);
             this.panel11.TabIndex = 21;
             // 
             // btnAgregarTrabajo
             // 
             this.btnAgregarTrabajo.BackColor = System.Drawing.Color.White;
             this.btnAgregarTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAgregarTrabajo.Location = new System.Drawing.Point(252, 162);
+            this.btnAgregarTrabajo.Location = new System.Drawing.Point(241, 162);
             this.btnAgregarTrabajo.Name = "btnAgregarTrabajo";
             this.btnAgregarTrabajo.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarTrabajo.TabIndex = 14;
@@ -536,6 +560,8 @@
             // 
             // panel10
             // 
+            this.panel10.Controls.Add(this.tbTeléfonoE);
+            this.panel10.Controls.Add(this.label19);
             this.panel10.Controls.Add(this.label11);
             this.panel10.Controls.Add(this.tbNombreE);
             this.panel10.Controls.Add(this.btnGuardarE);
@@ -544,13 +570,30 @@
             this.panel10.Controls.Add(this.label13);
             this.panel10.Location = new System.Drawing.Point(22, 66);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(292, 197);
+            this.panel10.Size = new System.Drawing.Size(292, 224);
             this.panel10.TabIndex = 20;
+            // 
+            // tbTeléfonoE
+            // 
+            this.tbTeléfonoE.BackColor = System.Drawing.Color.White;
+            this.tbTeléfonoE.Location = new System.Drawing.Point(86, 143);
+            this.tbTeléfonoE.Name = "tbTeléfonoE";
+            this.tbTeléfonoE.Size = new System.Drawing.Size(161, 25);
+            this.tbTeléfonoE.TabIndex = 15;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(19, 146);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(55, 17);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "Teléfono";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 27);
+            this.label11.Location = new System.Drawing.Point(19, 23);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(180, 17);
             this.label11.TabIndex = 13;
@@ -559,7 +602,7 @@
             // tbNombreE
             // 
             this.tbNombreE.BackColor = System.Drawing.Color.White;
-            this.tbNombreE.Location = new System.Drawing.Point(82, 116);
+            this.tbNombreE.Location = new System.Drawing.Point(86, 102);
             this.tbNombreE.Name = "tbNombreE";
             this.tbNombreE.Size = new System.Drawing.Size(161, 25);
             this.tbNombreE.TabIndex = 9;
@@ -568,7 +611,7 @@
             // 
             this.btnGuardarE.BackColor = System.Drawing.Color.White;
             this.btnGuardarE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGuardarE.Location = new System.Drawing.Point(214, 162);
+            this.btnGuardarE.Location = new System.Drawing.Point(204, 188);
             this.btnGuardarE.Name = "btnGuardarE";
             this.btnGuardarE.Size = new System.Drawing.Size(75, 23);
             this.btnGuardarE.TabIndex = 8;
@@ -579,7 +622,7 @@
             // tbCedulaE
             // 
             this.tbCedulaE.BackColor = System.Drawing.Color.White;
-            this.tbCedulaE.Location = new System.Drawing.Point(82, 75);
+            this.tbCedulaE.Location = new System.Drawing.Point(86, 61);
             this.tbCedulaE.Name = "tbCedulaE";
             this.tbCedulaE.Size = new System.Drawing.Size(161, 25);
             this.tbCedulaE.TabIndex = 8;
@@ -587,7 +630,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(17, 119);
+            this.label14.Location = new System.Drawing.Point(21, 105);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(52, 17);
             this.label14.TabIndex = 5;
@@ -596,7 +639,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(17, 78);
+            this.label13.Location = new System.Drawing.Point(21, 64);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(50, 17);
             this.label13.TabIndex = 6;
@@ -624,6 +667,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(208)))), ((int)(((byte)(197)))));
+            this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.panel12);
             this.panel3.Controls.Add(this.btnActualizarE);
             this.panel3.Controls.Add(this.btnPdfE);
@@ -632,10 +676,19 @@
             this.panel3.Controls.Add(this.tbBuscarEmpleados);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.dgvEmpleados);
-            this.panel3.Location = new System.Drawing.Point(-4, 280);
+            this.panel3.Location = new System.Drawing.Point(0, 302);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(809, 313);
+            this.panel3.Size = new System.Drawing.Size(803, 313);
             this.panel3.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(273, 151);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(242, 17);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Aqui calcular total por trabajo realizado";
             // 
             // panel12
             // 
@@ -721,14 +774,14 @@
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             this.dgvEmpleados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellDoubleClick);
             // 
-            // Principal
+            // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 618);
+            this.ClientSize = new System.Drawing.Size(800, 640);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Principal";
+            this.Name = "Clientes";
             this.Text = "Registro";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.tabPage1.ResumeLayout(false);
@@ -819,6 +872,11 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tbCédula;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox tbTeléfonoE;
+        private System.Windows.Forms.Label label19;
     }
 }
 

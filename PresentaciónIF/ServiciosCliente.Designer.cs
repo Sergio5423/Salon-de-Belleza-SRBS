@@ -1,6 +1,6 @@
 ﻿namespace PresentaciónIF
 {
-    partial class Servicios
+    partial class ServiciosCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -212,9 +212,9 @@
             this.groupBox6.Controls.Add(this.dgvServicios);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Font = new System.Drawing.Font("Segoe Script", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(-1, 351);
+            this.groupBox6.Location = new System.Drawing.Point(-1, 349);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(881, 294);
+            this.groupBox6.Size = new System.Drawing.Size(691, 294);
             this.groupBox6.TabIndex = 26;
             this.groupBox6.TabStop = false;
             // 

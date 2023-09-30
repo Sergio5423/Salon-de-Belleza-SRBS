@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace PresentaciónIF
 {
-    public partial class Servicios : Form
+    public partial class ServiciosCliente : Form
     {
         GestionServicios gestionServicios = new GestionServicios();
-        Clientes clienteServicio = null;
+        Entidades.Clientes clienteServicio = null;
         int precAlis = 200000;
         int precDis = 300000;
         int precQuim = 70000;
@@ -26,7 +26,7 @@ namespace PresentaciónIF
 
         int idSeleccionado;
 
-        public Servicios()
+        public ServiciosCliente()
         {
             InitializeComponent();
         }
@@ -39,7 +39,7 @@ namespace PresentaciónIF
             Limpiar();
         }
 
-        public void SetCliente(Clientes cliente)
+        public void SetCliente(Entidades.Clientes cliente)
         {
             clienteServicio = cliente;
         }

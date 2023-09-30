@@ -59,6 +59,9 @@
     <Compile Include="GestionClientes.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
       <Project>{6e1c5366-2ebe-4681-b22c-670d2e7273d2}</Project>
       <Name>Datos</Name>
@@ -67,9 +70,6 @@
       <Project>{c4641106-cb35-4232-9020-3a0847de65ff}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,13 +11,13 @@ using FontAwesome.Sharp;
 
 namespace PresentaciónIF
 {
-    public partial class MenuPrincipal : Form
+    public partial class Menu : Form
     {
-        Principal principal = new Principal();
+        Clientes principal = new Clientes();
         private IconButton currentBtn;
         private Panel leftBorderBtn;
 
-        public MenuPrincipal()
+        public Menu()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();

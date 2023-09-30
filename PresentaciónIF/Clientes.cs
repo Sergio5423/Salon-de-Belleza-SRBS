@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace PresentaciónIF
 {
-    public partial class Principal : Form
+    public partial class Clientes : Form
     {
         GestionClientes gestionClientes = new GestionClientes();
         GestionServicios gestionServicios = new GestionServicios();
         GestionEmpleados gestionEmpleados = new GestionEmpleados();
         Confirmacion confirmacion;
-        Servicios serviciosForm;
+        ServiciosCliente serviciosForm;
         int idEmpleado = -1;
         int idCliente;
         int posicion;
@@ -27,7 +27,7 @@ namespace PresentaciónIF
         int precRes = 80000;
         int precBlow = 30000;
 
-        public Principal()
+        public Clientes()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace PresentaciónIF
         private void Principal_Load(object sender, EventArgs e)
         {
             confirmacion = new Confirmacion();
-            serviciosForm = new Servicios();
+            serviciosForm = new ServiciosCliente();
             LlenarGridViewClientes();
             LlenarGridViewEmpleados();
         }
@@ -63,7 +63,7 @@ namespace PresentaciónIF
 
         private void btnServicios_Click(object sender, EventArgs e)
         {
-            Clientes cliente = gestionClientes.Buscar(idCliente);
+            Entidades.Clientes cliente = gestionClientes.Buscar(idCliente);
             if (cliente == null)
             {
                 MessageBox.Show("Seleccione un Cliente");
@@ -144,7 +144,7 @@ namespace PresentaciónIF
             }
             else
             {
-                Clientes cliente = CrearCliente();
+                Entidades.Clientes cliente = CrearCliente();
                 gestionClientes.Agregar(cliente);
                 ConfirmacionCliente(cliente);
                 confirmacion.ShowDialog();              
@@ -165,9 +165,9 @@ namespace PresentaciónIF
             }
         }
 
-        public Clientes CrearCliente()
+        public Entidades.Clientes CrearCliente()
         {
-            var cliente = new Clientes
+            var cliente = new Entidades.Clientes
             {                
                 Nombre = tbNombre.Text,
                 Telefono = tbTelefono.Text,
@@ -189,9 +189,9 @@ namespace PresentaciónIF
             confirmacion.SetEstilista(cliente.EstilistaFavorito);
         }
 
-        public Clientes CrearClienteActualizado()
+        public Entidades.Clientes CrearClienteActualizado()
         {
-            var cliente = new Clientes
+            var cliente = new Entidades.Clientes
             {
                 Id = idCliente,                
                 Nombre = tbNombre.Text,
