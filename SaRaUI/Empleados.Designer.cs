@@ -113,6 +113,7 @@
             this.btnAgregarEmpleado.Size = new System.Drawing.Size(44, 44);
             this.btnAgregarEmpleado.TabIndex = 5;
             this.btnAgregarEmpleado.UseVisualStyleBackColor = false;
+            this.btnAgregarEmpleado.Click += new System.EventHandler(this.btnAgregarEmpleado_Click);
             // 
             // btnBorrarEmpleado
             // 
@@ -141,6 +142,7 @@
             this.btnEditarEmpleado.Size = new System.Drawing.Size(44, 44);
             this.btnEditarEmpleado.TabIndex = 3;
             this.btnEditarEmpleado.UseVisualStyleBackColor = false;
+            this.btnEditarEmpleado.Click += new System.EventHandler(this.btnEditarEmpleado_Click);
             // 
             // btnTrabajosEmpleados
             // 

@@ -67,6 +67,12 @@
     <Compile Include="AgregarCliente.Designer.cs">
       <DependentUpon>AgregarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarEmpleado.Designer.cs">
+      <DependentUpon>AgregarEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="EditarCliente.Designer.cs">
       <DependentUpon>EditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarEmpleado.Designer.cs">
+      <DependentUpon>EditarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Empleados.cs">
       <SubType>Form</SubType>
@@ -102,11 +114,17 @@
     <EmbeddedResource Include="AgregarCliente.resx">
       <DependentUpon>AgregarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AgregarEmpleado.resx">
+      <DependentUpon>AgregarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarCliente.resx">
       <DependentUpon>EditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarEmpleado.resx">
+      <DependentUpon>EditarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>
@@ -244,6 +262,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono_Trabajo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo_Nuevo_Empleado.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

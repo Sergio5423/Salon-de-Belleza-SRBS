@@ -36,5 +36,17 @@ namespace SaRaUI
             childForm.BringToFront();
             childForm.Show();
         }
+
+        private void btnAgregarEmpleado_Click(object sender, EventArgs e)
+        {
+            panelBottom.Dock = DockStyle.None;
+            OpenChildForm(new AgregarEmpleado());
+        }
+
+        private void btnEditarEmpleado_Click(object sender, EventArgs e)
+        {
+            panelBottom.Dock = DockStyle.None;
+            OpenChildForm(new EditarEmpleado());
+        }
     }
 }

@@ -103,6 +103,16 @@ namespace SaRaUI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fondo_Nuevo_Empleado {
+            get {
+                object obj = ResourceManager.GetObject("Fondo_Nuevo_Empleado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fondo_Tablas {
             get {
                 object obj = ResourceManager.GetObject("Fondo_Tablas", resourceCulture);
