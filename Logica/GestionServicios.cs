@@ -12,7 +12,7 @@ using System.IO;
 
 namespace Logica
 {
-    public class GestionServicios : GestorFuentes, IOperaciones<ServiciosEscritura>
+    public class GestionServicios : GestorFuentes, IOperaciones<Servicios>
     {        
         RepositorioServicios repositorioServicios = new RepositorioServicios();
         Clientes clienteServicio;
@@ -28,7 +28,7 @@ namespace Logica
             clienteServicio = cliente;
         }
 
-        public void Agregar(ServiciosEscritura servicio)
+        public void Agregar(Servicios servicio)
         {
             if (servicio.Nombre == "Alisado Permanente")
                 servicio.Regreso = CalcularRegresoMeses(servicio.Duracion);
@@ -48,7 +48,7 @@ namespace Logica
             repositorioServicios.Borrar(id);
         }
 
-        public void Actualizar(ServiciosEscritura servicio)
+        public void Actualizar(Servicios servicio)
         {
             repositorioServicios.Actualizar(servicio);
         }

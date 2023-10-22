@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.panelFondo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbTrabajos = new System.Windows.Forms.Label();
             this.panelBottom = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAtrasSC = new System.Windows.Forms.Button();
             this.btnGuardarSC = new System.Windows.Forms.Button();
             this.btnBorrarSC = new System.Windows.Forms.Button();
             this.panelTablaC = new System.Windows.Forms.Panel();
+            this.cbServicios = new System.Windows.Forms.ComboBox();
             this.dgvServicios_Cliente = new System.Windows.Forms.DataGridView();
             this.cbFiltrarTrabajos = new System.Windows.Forms.ComboBox();
             this.panelNombreCliente = new System.Windows.Forms.Panel();
             this.lbNombreEmpleado = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.cbServicios = new System.Windows.Forms.ComboBox();
             this.panelFondo.SuspendLayout();
-            this.panelBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelBottom.SuspendLayout();
             this.panelTablaC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios_Cliente)).BeginInit();
             this.panelNombreCliente.SuspendLayout();
@@ -64,6 +64,16 @@
             this.panelFondo.Name = "panelFondo";
             this.panelFondo.Size = new System.Drawing.Size(822, 477);
             this.panelFondo.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SaRaUI.Properties.Resources.Logo_pequeño;
+            this.pictureBox1.Location = new System.Drawing.Point(738, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(67, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // lbTrabajos
             // 
@@ -89,16 +99,6 @@
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(822, 52);
             this.panelBottom.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SaRaUI.Properties.Resources.Logo_pequeño;
-            this.pictureBox1.Location = new System.Drawing.Point(738, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // btnAtrasSC
             // 
@@ -162,6 +162,19 @@
             this.panelTablaC.Size = new System.Drawing.Size(790, 317);
             this.panelTablaC.TabIndex = 1;
             // 
+            // cbServicios
+            // 
+            this.cbServicios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(238)))));
+            this.cbServicios.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbServicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbServicios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.cbServicios.FormattingEnabled = true;
+            this.cbServicios.Location = new System.Drawing.Point(486, 16);
+            this.cbServicios.Name = "cbServicios";
+            this.cbServicios.Size = new System.Drawing.Size(124, 32);
+            this.cbServicios.TabIndex = 12;
+            this.cbServicios.Text = " Servicios";
+            // 
             // dgvServicios_Cliente
             // 
             this.dgvServicios_Cliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -222,19 +235,6 @@
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
-            // cbServicios
-            // 
-            this.cbServicios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(238)))));
-            this.cbServicios.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbServicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbServicios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.cbServicios.FormattingEnabled = true;
-            this.cbServicios.Location = new System.Drawing.Point(486, 16);
-            this.cbServicios.Name = "cbServicios";
-            this.cbServicios.Size = new System.Drawing.Size(124, 32);
-            this.cbServicios.TabIndex = 12;
-            this.cbServicios.Text = " Servicios";
-            // 
             // Trabajos_Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,8 +245,8 @@
             this.Text = "Trabajos_Empleado";
             this.panelFondo.ResumeLayout(false);
             this.panelFondo.PerformLayout();
-            this.panelBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelBottom.ResumeLayout(false);
             this.panelTablaC.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios_Cliente)).EndInit();
             this.panelNombreCliente.ResumeLayout(false);

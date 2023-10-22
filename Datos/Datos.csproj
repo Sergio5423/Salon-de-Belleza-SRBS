@@ -44,7 +44,9 @@
     <Compile Include="GestorConexion.cs" />
     <Compile Include="IOperacionesBD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioServicios_Cliente.cs" />
     <Compile Include="RepositorioClientes.cs" />
+    <Compile Include="RepositorioTrabajos.cs" />
     <Compile Include="RepositorioEmpleados.cs" />
     <Compile Include="RepositorioServicios.cs" />
   </ItemGroup>

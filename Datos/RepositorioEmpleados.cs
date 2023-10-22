@@ -20,23 +20,22 @@ namespace Datos
         {
             using (var Command = connection.CreateCommand())
             {
-                Command.CommandText = "Insert Into Empleados (Cédula,Nombre,Generado,Comisión)" +
-                " values (@Cedula,@Nombre,@Generado,@Comision)";
-                Command.Parameters.Add("Cedula", SqlDbType.VarChar).Value = empleado.Ced;
+                Command.CommandText = "Insert Into Empleados (Cedula,Nombre,Telefono)" +
+                " values (@Cedula,@Nombre,@Telefono)";
+                Command.Parameters.Add("Cedula", SqlDbType.VarChar).Value = empleado.Cedula;
                 Command.Parameters.Add("Nombre", SqlDbType.VarChar).Value = empleado.Nombre;
-                Command.Parameters.Add("Generado", SqlDbType.Int).Value = empleado.Generado;
-                Command.Parameters.Add("Comision", SqlDbType.Int).Value = empleado.Comision;
+                Command.Parameters.Add("Telefono", SqlDbType.VarChar).Value = empleado.Telefono;
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
             }
         }
 
-        public void Borrar(int id)
+        public void Borrar(int cedula)
         {
             using (var Command = connection.CreateCommand())
             {
-                Command.CommandText = $"Delete Empleados where Id = {id}";
+                Command.CommandText = $"Delete Empleados where Cedula = '{cedula}'";
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
@@ -48,39 +47,41 @@ namespace Datos
             using (var Command = connection.CreateCommand())
             {
                 Command.CommandText = "Update Empleados Set Cédula = @Cedula," +
-                                                           "Nombre = @Nombre" +    
+                                                           "Nombre = @Nombre" +
+                                                           "Telefono = @Telefono" +    
                                                            
-                                                           " Where Id = @Id";
-                Command.Parameters.Add("Cedula", SqlDbType.VarChar).Value = empleado.Ced;
+                                                           " Where Cedula = '@Cedula'";
+                Command.Parameters.Add("Cedula", SqlDbType.VarChar).Value = empleado.Cedula;
                 Command.Parameters.Add("Nombre", SqlDbType.VarChar).Value = empleado.Nombre;
-                
+                Command.Parameters.Add("Telefono", SqlDbType.VarChar).Value = empleado.Telefono;
 
-                Command.Parameters.Add("Id", SqlDbType.Int).Value = empleado.Id;
+
+                Command.Parameters.Add("Cedula", SqlDbType.Int).Value = empleado.Cedula;
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
             }
         }        
 
-        public void AgregarTrabajo(int id, int generado, int comision)
-        {
-            using (var Command = connection.CreateCommand())
-            {
-                Command.CommandText = "Update Empleados Set Generado = @Generado," +
-                                                           "Comisión = @Comision " +
+        //public void AgregarTrabajo(int codigo, int generado, int comision)
+        //{
+        //    using (var Command = connection.CreateCommand())
+        //    {
+        //        Command.CommandText = "Update Empleados Set Generado = @Generado," +
+        //                                                   "Comisión = @Comision " +
 
 
-                                                           "Where Id = @Id";
-                Command.Parameters.Add("Generado", SqlDbType.Int).Value = generado;
-                Command.Parameters.Add("Comision", SqlDbType.Int).Value = comision;
+        //                                                   "Where Id = @Id";
+        //        Command.Parameters.Add("Generado", SqlDbType.Int).Value = generado;
+        //        Command.Parameters.Add("Comision", SqlDbType.Int).Value = comision;
 
 
-                Command.Parameters.Add("Id", SqlDbType.Int).Value = id;
-                Open();
-                Command.ExecuteNonQuery();
-                Close();
-            }
-        }
+        //        Command.Parameters.Add("Id", SqlDbType.Int).Value = id;
+        //        Open();
+        //        Command.ExecuteNonQuery();
+        //       Close();
+        //    }
+        //}
 
         public List<Empleados> Filtrar(string nombre)
         {
@@ -116,13 +117,10 @@ namespace Datos
         {
             if (!dataReader.HasRows)
                 return null;
-            Empleados empleado = new Empleados();
-            empleado.Id = dataReader.GetInt32(0);
-            empleado.Ced = dataReader.GetString(1);
-            empleado.Nombre = dataReader.GetString(2);
-            empleado.Generado = dataReader.GetInt32(3);
-            empleado.Comision = dataReader.GetInt32(4);
-
+            Empleados empleado = new Empleados();            
+            empleado.Cedula = dataReader.GetString(0);
+            empleado.Nombre = dataReader.GetString(1);
+            empleado.Telefono = dataReader.GetString(2);
             return empleado;
         }
     }

@@ -16,51 +16,55 @@ namespace Datos
             
         }
 
-        public void Agregar(ServiciosEscritura servicio)
+        public void Agregar(Servicios servicio)
         {
             using (var Command = connection.CreateCommand())
             {
-                Command.CommandText = "Insert Into Servicios (Vinculo,Nombre,Valor,Duracion,Regreso)" +
-                " values (@Vinculo,@Nombre,@Valor,@Duracion,@Regreso)";
-                Command.Parameters.Add("Vinculo", SqlDbType.Int).Value = servicio.Vinculo;
+                Command.CommandText = "Insert Into Servicios (Codigo,Nombre,Duracion,Valor)" +
+                " values (@Codigo,@Nombre,@Duracion,@Valor)";
+                Command.Parameters.Add("Codigo", SqlDbType.VarChar).Value = servicio.Codigo;
                 Command.Parameters.Add("Nombre", SqlDbType.VarChar).Value = servicio.Nombre;
-                Command.Parameters.Add("Valor", SqlDbType.Int).Value = servicio.Valor;
                 Command.Parameters.Add("Duracion", SqlDbType.Int).Value = servicio.Duracion;
-                Command.Parameters.Add("Regreso", SqlDbType.DateTime).Value = servicio.Regreso;
+                Command.Parameters.Add("Valor", SqlDbType.Int).Value = servicio.Valor;
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
             }
         }
 
-        public void Borrar(int id)
+        public void Borrar(string codigo)
         {
             using (var Command = connection.CreateCommand())
             {
-                Command.CommandText = $"Delete Servicios where Id = {id}";
+                Command.CommandText = $"Delete Servicios where Codigo = '{codigo}'";
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
             }
         }
 
-        public void Actualizar(ServiciosEscritura servicio)
+        public void Actualizar(Servicios servicio)
         {
             using (var Command = connection.CreateCommand())
             {
-                Command.CommandText = $"Update Servicios Set Nombre = '{servicio.Nombre}', Valor = '{servicio.Valor}', Duracion = '{servicio.Duracion}', Regreso = '{servicio.Regreso}'";                
+                Command.CommandText = $"Update Servicios " +
+                                      $"Set Nombre = '{servicio.Nombre}', " +
+                                      $"Duracion = '{servicio.Duracion}', " +
+                                      $"Valor = '{servicio.Valor}'";                
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
             }
         }
 
-        public List<ServiciosLectura> Filtrar(string nombre, int vinculo)
+        public List<Servicios> Filtrar(string nombre, int vinculo)
         {        
-            List<ServiciosLectura> servicios = new List<ServiciosLectura>();
+            List<Servicios> servicios = new List<Servicios>();
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = $"select Id,Nombre,Valor,Duracion,Regreso from Servicios where Nombre like '%{nombre}%' and Vinculo = {vinculo}";
+                command.CommandText = $"select Nombre,Duracion,Valor " +
+                                      $"from Servicios where Nombre " +
+                                      $"like '%{nombre}%'";
                 Open();
                 SqlDataReader lector = command.ExecuteReader();
                 while (lector.Read())
@@ -72,11 +76,12 @@ namespace Datos
             return servicios;
         }
 
-        public List<ServiciosLectura> Consultar(int vinculo)
+        public List<Servicios> Consultar()
         {
-            List<ServiciosLectura> servicios = new List<ServiciosLectura>();
+            List<Servicios> servicios = new List<Servicios>();
             var command = connection.CreateCommand();
-            command.CommandText = $"select Id,Nombre,Valor,Duracion,Regreso from Servicios where Vinculo = {vinculo}";
+            command.CommandText = $"select Codigo,Nombre,Duracion,Valor " +
+                                  $"from Servicios";
             Open();
             SqlDataReader lector = command.ExecuteReader();
             while (lector.Read())
@@ -87,16 +92,15 @@ namespace Datos
             return servicios;
         }
 
-        public ServiciosLectura Mapeador(SqlDataReader dataReader)
+        public Servicios Mapeador(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows)
                 return null;
-            ServiciosLectura servicio = new ServiciosLectura();
-            servicio.Id = dataReader.GetInt32(0).ToString();
+            Servicios servicio = new Servicios();
+            servicio.Codigo = dataReader.GetString(0);
             servicio.Nombre = dataReader.GetString(1);
-            servicio.Valor = dataReader.GetInt32(2).ToString();
-            servicio.Duracion = dataReader.GetInt32(3).ToString();
-            servicio.Regreso = dataReader.GetDateTime(4).ToShortDateString();
+            servicio.Duracion = dataReader.GetInt32(2);
+            servicio.Valor = dataReader.GetInt32(3);
 
             return servicio;
         }

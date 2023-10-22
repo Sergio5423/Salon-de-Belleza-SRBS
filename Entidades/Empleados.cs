@@ -13,23 +13,22 @@ namespace Entidades
             
         }
 
-        public Empleados(int id, 
-                         string ced, 
+        public Empleados(string cedula,                           
                          string nombre, 
-                         int generado, 
-                         int comision)
+                         string telefono)
         {
-            Id = id;
-            Ced = ced;
+            Cedula = cedula;
             Nombre = nombre;
-            Generado = generado;
-            Comision = comision;
+            Telefono = telefono;
         }
 
-        public int Id { get; set; }
-        public string Ced { get; set; }
+        public string Cedula { get; set; }
         public string Nombre { get; set; }
-        public int Generado { get; set; }
-        public int Comision { get; set; }
+        public string Telefono { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Cedula};{Nombre};{Telefono}";
+        }
     }
 }

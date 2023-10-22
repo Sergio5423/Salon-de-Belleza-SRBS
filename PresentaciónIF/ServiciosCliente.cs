@@ -89,7 +89,7 @@ namespace PresentaciónIF
 
         public void CrearServicioAlisado(dynamic cliente)
         {           
-            var servicio = new ServiciosEscritura   
+            var servicio = new Servicios   
             {
                 Vinculo = cliente.Id,
                 Nombre = cbServicio.SelectedItem.ToString(),
@@ -102,7 +102,7 @@ namespace PresentaciónIF
 
         public void CrearServicioDisColor(dynamic cliente)
         {
-            var servicio = new ServiciosEscritura
+            var servicio = new Servicios
             {
                 Vinculo = cliente.Id,
                 Nombre = cbServicio.SelectedItem.ToString(),
@@ -115,7 +115,7 @@ namespace PresentaciónIF
 
         public void CrearServicioMantQuimicos(dynamic cliente)
         {        
-                var servicio = new ServiciosEscritura
+                var servicio = new Servicios
                 {
                     Vinculo = cliente.Id,
                     Nombre = cbServicio.SelectedItem.ToString(),
@@ -128,7 +128,7 @@ namespace PresentaciónIF
 
         public void CrearServicioRestauracion(dynamic cliente)
         {         
-                var servicio = new ServiciosEscritura
+                var servicio = new Servicios
                 {
                     Vinculo = cliente.Id,
                     Nombre = cbServicio.SelectedItem.ToString(),
@@ -141,7 +141,7 @@ namespace PresentaciónIF
 
         public void CrearServicioBlower(dynamic cliente)
         {
-            var servicio = new ServiciosEscritura
+            var servicio = new Servicios
             {
                 Vinculo = cliente.Id,
                 Nombre = cbServicio.SelectedItem.ToString(),

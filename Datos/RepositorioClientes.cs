@@ -10,7 +10,7 @@ using System.Data;
 
 namespace Datos
 {
-    public class RepositorioClientes : GestorConexion, IOperacionesBD<Clientes>
+    public class RepositorioClientes : GestorConexion/*, IOperacionesBD<Clientes>*/
     {
         public RepositorioClientes() : base()
         {
@@ -21,60 +21,68 @@ namespace Datos
         {
             using (var Command = connection.CreateCommand())
             {
-                Command.CommandText = "Insert Into Clientes (Nombre,Telefono,Correo,Cumpleaños,[Ultima Visita],[Estilista Favorito])" +
-                " values (@Nombre,@Telefono,@Correo,@Cumpleaños,@UltimaVisita,@EstilistaFavorito)";
+                Command.CommandText = "Insert Into Clientes (Cedula,Nombre,Telefono,Correo,Cumpleaños,[Ultima Visita],[Estilista Favorito])" +
+                " values (@Cedula,@Nombre,@Telefono,@Correo,@Cumpleaños,@UltimaVisita,@EstilistaFavorito)";
+                Command.Parameters.Add("Cedula", SqlDbType.VarChar).Value = cliente.Cedula;
                 Command.Parameters.Add("Nombre", SqlDbType.VarChar).Value = cliente.Nombre;
                 Command.Parameters.Add("Telefono", SqlDbType.VarChar).Value = cliente.Telefono;
                 Command.Parameters.Add("Correo", SqlDbType.VarChar).Value = cliente.Correo;
                 Command.Parameters.Add("Cumpleaños", SqlDbType.DateTime).Value = cliente.Cumpleaños.ToShortDateString();
                 Command.Parameters.Add("UltimaVisita", SqlDbType.DateTime).Value = cliente.UltimaVisita.ToShortDateString();
-                Command.Parameters.Add("EstilistaFavorito", SqlDbType.VarChar).Value = cliente.EstilistaFavorito;
+                Command.Parameters.Add("Empleado_Cedula", SqlDbType.VarChar).Value = cliente.Empleado_Cedula;
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
             }
         }
 
-        public void Borrar(int id)
+        public void Borrar(string cedula)
         {
-            BorrarServiciosVinculados(id);
+            //BorrarServiciosVinculados(id);
             using (var Command = connection.CreateCommand())
             {
-                Command.CommandText = $"Delete Clientes where Id = {id}";
+                Command.CommandText = $"Delete Clientes where Cedula = '{cedula}'";
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
             }            
         }
 
-        public void Actualizar(Clientes cliente)
+        public void Actualizar(string ced, Clientes cliente)
         {
             using (var Command = connection.CreateCommand())
             {
-                Command.CommandText = "Update Clientes Set Nombre = @Nombre,Telefono = @Telefono,Correo = @Correo,Cumpleaños = @Cumpleaños,[Ultima Visita] = @UltimaVisita,[Estilista Favorito] = @EstilistaFavorito Where Id = @Id";
+                Command.CommandText = "Update Clientes Set " +
+                                      "Cedula = @Cedula," +
+                                      "Nombre = @Nombre," +
+                                      "Telefono = @Telefono," +
+                                      "Correo = @Correo," +
+                                      "Cumpleaños = @Cumpleaños," +                                
+                                      "Empleado_Cedula = @Empleado_Cedula " +
+                                      "Where Cedula = @Ced";
+                Command.Parameters.Add("Cedula", SqlDbType.VarChar).Value = cliente.Cedula;
                 Command.Parameters.Add("Nombre", SqlDbType.VarChar).Value = cliente.Nombre;
                 Command.Parameters.Add("Telefono", SqlDbType.VarChar).Value = cliente.Telefono;
                 Command.Parameters.Add("Correo", SqlDbType.VarChar).Value = cliente.Correo;
                 Command.Parameters.Add("Cumpleaños", SqlDbType.Date).Value = cliente.Cumpleaños.ToShortDateString();
-                Command.Parameters.Add("UltimaVisita", SqlDbType.Date).Value = cliente.UltimaVisita.ToShortDateString();
-                Command.Parameters.Add("Id", SqlDbType.Int).Value = cliente.Id;
-                Command.Parameters.Add("EstilistaFavorito", SqlDbType.VarChar).Value = cliente.EstilistaFavorito;
+                Command.Parameters.Add("Empleado_Cedula", SqlDbType.VarChar).Value = cliente.Empleado_Cedula;
+                Command.Parameters.Add("Ced", SqlDbType.Int).Value = ced;                
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
             }
         }
 
-        public void BorrarServiciosVinculados(int Vinculo)
-        {
-            using (var Command = connection.CreateCommand())
-            {
-                Command.CommandText = $"Delete Servicios where Vinculo = {Vinculo}";
-                Open();
-                Command.ExecuteNonQuery();
-                Close();
-            }
-        }
+        //public void BorrarServiciosVinculados(int Vinculo)
+        //{
+        //    using (var Command = connection.CreateCommand())
+        //    {
+        //        Command.CommandText = $"Delete Servicios where Vinculo = {Vinculo}";
+        //        Open();
+        //        Command.ExecuteNonQuery();
+        //        Close();
+        //    }
+        //}
 
         public List<Clientes> Filtrar(string nombre)
         {
@@ -111,13 +119,13 @@ namespace Datos
             if (!dataReader.HasRows)
                 return null;
             Clientes cliente = new Clientes();
-            cliente.Id = dataReader.GetInt32(0);
+            cliente.Cedula = dataReader.GetString(0);
             cliente.Nombre = dataReader.GetString(1);
             cliente.Telefono = dataReader.GetString(2);
             cliente.Correo = dataReader.GetString(3);
             cliente.Cumpleaños = dataReader.GetDateTime(4);
             cliente.UltimaVisita = dataReader.GetDateTime(5);
-            cliente.EstilistaFavorito = dataReader.GetString(6);
+            cliente.Empleado_Cedula = dataReader.GetString(6);
 
             return cliente;
         }
