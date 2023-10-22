@@ -10,17 +10,18 @@ using System.Windows.Forms;
 
 namespace SaRaUI
 {
-    public partial class Empleados : Form
+    public partial class Servicios : Form
     {
+
         private Form activeForm = null;
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
 
-        public Empleados()
+        public Servicios()
         {
             InitializeComponent();
             privateFonts.AddFontFile(@"C:\Users\starr\Source\Repos\Sergio5423\Salon-de-Belleza-SRBS\SaRaUI\Fonts\Playlist Script.ttf");
-            lbEmpleados.Font = new Font(privateFonts.Families[0], 35);
-            cbOrdenarEmpleados.Font = new Font(privateFonts.Families[0], 14);
+            lbServicios.Font = new Font(privateFonts.Families[0], 35);
+            cbOrdenarServicios.Font = new Font(privateFonts.Families[0], 14);
         }
 
         private void OpenChildForm(Form childForm)
@@ -37,22 +38,10 @@ namespace SaRaUI
             childForm.Show();
         }
 
-        private void btnAgregarEmpleado_Click(object sender, EventArgs e)
+        private void btnAgregarServicios_Click(object sender, EventArgs e)
         {
             panelBottom.Dock = DockStyle.None;
-            OpenChildForm(new AgregarEmpleado());
-        }
-
-        private void btnEditarEmpleado_Click(object sender, EventArgs e)
-        {
-            panelBottom.Dock = DockStyle.None;
-            OpenChildForm(new EditarEmpleado());
-        }
-
-        private void btnTrabajosEmpleados_Click(object sender, EventArgs e)
-        {
-            panelBottom.Dock = DockStyle.None;
-            OpenChildForm(new Trabajos_Empleado());
+            OpenChildForm(new AgregarServicio());
         }
     }
 }

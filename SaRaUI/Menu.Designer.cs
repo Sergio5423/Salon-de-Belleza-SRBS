@@ -31,32 +31,32 @@
             this.components = new System.ComponentModel.Container();
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.panelSalir = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.PanelServicios = new System.Windows.Forms.Panel();
+            this.btnServicios = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.PanelTrabajos = new System.Windows.Forms.Panel();
+            this.btnTrabajos = new System.Windows.Forms.Button();
             this.p2 = new System.Windows.Forms.Panel();
             this.Panel4 = new System.Windows.Forms.Panel();
             this.PanelEmpleados = new System.Windows.Forms.Panel();
+            this.btnEmpleados = new System.Windows.Forms.Button();
             this.p1 = new System.Windows.Forms.Panel();
             this.panelClientes = new System.Windows.Forms.Panel();
+            this.btnClientes = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelLogoPequeño = new System.Windows.Forms.Panel();
+            this.btnLogo = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
             this.PanelBackground = new System.Windows.Forms.Panel();
             this.panelFondo = new System.Windows.Forms.Panel();
+            this.pcLogoFondo = new System.Windows.Forms.PictureBox();
             this.panelHora = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
-            this.tmHoraFecha = new System.Windows.Forms.Timer(this.components);
-            this.pcLogoFondo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnServicios = new System.Windows.Forms.Button();
-            this.btnTrabajos = new System.Windows.Forms.Button();
-            this.btnEmpleados = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.btnLogo = new System.Windows.Forms.Button();
+            this.tmHoraFecha = new System.Windows.Forms.Timer(this.components);
             this.PanelMenu.SuspendLayout();
             this.panelSalir.SuspendLayout();
             this.PanelServicios.SuspendLayout();
@@ -67,8 +67,8 @@
             this.panelBottom.SuspendLayout();
             this.PanelBackground.SuspendLayout();
             this.panelFondo.SuspendLayout();
-            this.panelHora.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcLogoFondo)).BeginInit();
+            this.panelHora.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +103,20 @@
             this.panelSalir.Size = new System.Drawing.Size(67, 67);
             this.panelSalir.TabIndex = 11;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Salir;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Location = new System.Drawing.Point(0, 0);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(67, 67);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // PanelServicios
             // 
             this.PanelServicios.Controls.Add(this.btnServicios);
@@ -111,6 +125,20 @@
             this.PanelServicios.Name = "PanelServicios";
             this.PanelServicios.Size = new System.Drawing.Size(67, 67);
             this.PanelServicios.TabIndex = 10;
+            // 
+            // btnServicios
+            // 
+            this.btnServicios.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Servicios;
+            this.btnServicios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnServicios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnServicios.FlatAppearance.BorderSize = 0;
+            this.btnServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServicios.Location = new System.Drawing.Point(0, 0);
+            this.btnServicios.Name = "btnServicios";
+            this.btnServicios.Size = new System.Drawing.Size(67, 67);
+            this.btnServicios.TabIndex = 1;
+            this.btnServicios.UseVisualStyleBackColor = true;
+            this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
             // 
             // panel5
             // 
@@ -128,6 +156,20 @@
             this.PanelTrabajos.Name = "PanelTrabajos";
             this.PanelTrabajos.Size = new System.Drawing.Size(67, 67);
             this.PanelTrabajos.TabIndex = 8;
+            // 
+            // btnTrabajos
+            // 
+            this.btnTrabajos.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Trabajos1;
+            this.btnTrabajos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTrabajos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTrabajos.FlatAppearance.BorderSize = 0;
+            this.btnTrabajos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrabajos.Location = new System.Drawing.Point(0, 0);
+            this.btnTrabajos.Name = "btnTrabajos";
+            this.btnTrabajos.Size = new System.Drawing.Size(67, 67);
+            this.btnTrabajos.TabIndex = 1;
+            this.btnTrabajos.UseVisualStyleBackColor = true;
+            this.btnTrabajos.Click += new System.EventHandler(this.btnTrabajos_Click);
             // 
             // p2
             // 
@@ -154,6 +196,20 @@
             this.PanelEmpleados.Size = new System.Drawing.Size(67, 67);
             this.PanelEmpleados.TabIndex = 5;
             // 
+            // btnEmpleados
+            // 
+            this.btnEmpleados.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Empleados;
+            this.btnEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEmpleados.FlatAppearance.BorderSize = 0;
+            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 0);
+            this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Size = new System.Drawing.Size(67, 67);
+            this.btnEmpleados.TabIndex = 0;
+            this.btnEmpleados.UseVisualStyleBackColor = true;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            // 
             // p1
             // 
             this.p1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -171,6 +227,20 @@
             this.panelClientes.Size = new System.Drawing.Size(67, 67);
             this.panelClientes.TabIndex = 3;
             // 
+            // btnClientes
+            // 
+            this.btnClientes.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Clientes;
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Location = new System.Drawing.Point(0, 0);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(67, 67);
+            this.btnClientes.TabIndex = 0;
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -187,6 +257,20 @@
             this.panelLogoPequeño.Name = "panelLogoPequeño";
             this.panelLogoPequeño.Size = new System.Drawing.Size(67, 67);
             this.panelLogoPequeño.TabIndex = 1;
+            // 
+            // btnLogo
+            // 
+            this.btnLogo.BackgroundImage = global::SaRaUI.Properties.Resources.Logo_pequeño;
+            this.btnLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogo.FlatAppearance.BorderSize = 0;
+            this.btnLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogo.Location = new System.Drawing.Point(0, 0);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.Size = new System.Drawing.Size(67, 67);
+            this.btnLogo.TabIndex = 5;
+            this.btnLogo.UseVisualStyleBackColor = true;
+            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
             // panel
             // 
@@ -240,6 +324,17 @@
             this.panelFondo.Size = new System.Drawing.Size(822, 312);
             this.panelFondo.TabIndex = 5;
             // 
+            // pcLogoFondo
+            // 
+            this.pcLogoFondo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pcLogoFondo.Image = global::SaRaUI.Properties.Resources.Transparente_SA_RA_Alisados_y_Restauración1;
+            this.pcLogoFondo.Location = new System.Drawing.Point(0, 0);
+            this.pcLogoFondo.Name = "pcLogoFondo";
+            this.pcLogoFondo.Size = new System.Drawing.Size(822, 312);
+            this.pcLogoFondo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcLogoFondo.TabIndex = 4;
+            this.pcLogoFondo.TabStop = false;
+            // 
             // panelHora
             // 
             this.panelHora.Controls.Add(this.lblHora);
@@ -263,22 +358,6 @@
             this.lblHora.Text = "Hora";
             this.lblHora.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // tmHoraFecha
-            // 
-            this.tmHoraFecha.Enabled = true;
-            this.tmHoraFecha.Tick += new System.EventHandler(this.tmHoraFecha_Tick);
-            // 
-            // pcLogoFondo
-            // 
-            this.pcLogoFondo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pcLogoFondo.Image = global::SaRaUI.Properties.Resources.Transparente_SA_RA_Alisados_y_Restauración1;
-            this.pcLogoFondo.Location = new System.Drawing.Point(0, 0);
-            this.pcLogoFondo.Name = "pcLogoFondo";
-            this.pcLogoFondo.Size = new System.Drawing.Size(822, 312);
-            this.pcLogoFondo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcLogoFondo.TabIndex = 4;
-            this.pcLogoFondo.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -290,87 +369,10 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btnSalir
+            // tmHoraFecha
             // 
-            this.btnSalir.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Salir;
-            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(0, 0);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(67, 67);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnServicios
-            // 
-            this.btnServicios.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Servicios;
-            this.btnServicios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnServicios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnServicios.FlatAppearance.BorderSize = 0;
-            this.btnServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServicios.Location = new System.Drawing.Point(0, 0);
-            this.btnServicios.Name = "btnServicios";
-            this.btnServicios.Size = new System.Drawing.Size(67, 67);
-            this.btnServicios.TabIndex = 1;
-            this.btnServicios.UseVisualStyleBackColor = true;
-            // 
-            // btnTrabajos
-            // 
-            this.btnTrabajos.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Trabajos1;
-            this.btnTrabajos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnTrabajos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTrabajos.FlatAppearance.BorderSize = 0;
-            this.btnTrabajos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrabajos.Location = new System.Drawing.Point(0, 0);
-            this.btnTrabajos.Name = "btnTrabajos";
-            this.btnTrabajos.Size = new System.Drawing.Size(67, 67);
-            this.btnTrabajos.TabIndex = 1;
-            this.btnTrabajos.UseVisualStyleBackColor = true;
-            // 
-            // btnEmpleados
-            // 
-            this.btnEmpleados.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Empleados;
-            this.btnEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 0);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(67, 67);
-            this.btnEmpleados.TabIndex = 0;
-            this.btnEmpleados.UseVisualStyleBackColor = true;
-            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Clientes;
-            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Location = new System.Drawing.Point(0, 0);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(67, 67);
-            this.btnClientes.TabIndex = 0;
-            this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            // 
-            // btnLogo
-            // 
-            this.btnLogo.BackgroundImage = global::SaRaUI.Properties.Resources.Logo_pequeño;
-            this.btnLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLogo.FlatAppearance.BorderSize = 0;
-            this.btnLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogo.Location = new System.Drawing.Point(0, 0);
-            this.btnLogo.Name = "btnLogo";
-            this.btnLogo.Size = new System.Drawing.Size(67, 67);
-            this.btnLogo.TabIndex = 5;
-            this.btnLogo.UseVisualStyleBackColor = true;
-            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
+            this.tmHoraFecha.Enabled = true;
+            this.tmHoraFecha.Tick += new System.EventHandler(this.tmHoraFecha_Tick);
             // 
             // Menu
             // 
@@ -394,8 +396,8 @@
             this.panelBottom.ResumeLayout(false);
             this.PanelBackground.ResumeLayout(false);
             this.panelFondo.ResumeLayout(false);
-            this.panelHora.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcLogoFondo)).EndInit();
+            this.panelHora.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

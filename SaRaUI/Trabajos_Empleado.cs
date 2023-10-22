@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace SaRaUI
 {
-    public partial class Servicios_Cliente : Form
+    public partial class Trabajos_Empleado : Form
     {
 
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
 
-        public Servicios_Cliente()
+        public Trabajos_Empleado()
         {
             InitializeComponent();
             privateFonts.AddFontFile(@"C:\Users\starr\Source\Repos\Sergio5423\Salon-de-Belleza-SRBS\SaRaUI\Fonts\Playlist Script.ttf");
-            lbServicios_del_Cliente.Font = new Font(privateFonts.Families[0], 35);
-            lbNombreCliente.Font = new Font(privateFonts.Families[0], 16);
+            lbTrabajos.Font = new Font(privateFonts.Families[0], 35);
+            lbNombreEmpleado.Font = new Font(privateFonts.Families[0], 16);
         }
 
         private void btnAtrasSC_Click(object sender, EventArgs e)

@@ -40,12 +40,12 @@
             this.cbOrdenarEmpleados = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.tbBuscarEmpleados = new System.Windows.Forms.TextBox();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.panelFondo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelBottom.SuspendLayout();
             this.panelTablaC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFondo
@@ -157,6 +157,7 @@
             this.btnTrabajosEmpleados.Size = new System.Drawing.Size(44, 44);
             this.btnTrabajosEmpleados.TabIndex = 2;
             this.btnTrabajosEmpleados.UseVisualStyleBackColor = false;
+            this.btnTrabajosEmpleados.Click += new System.EventHandler(this.btnTrabajosEmpleados_Click);
             // 
             // panelTablaC
             // 
@@ -169,7 +170,7 @@
             this.panelTablaC.Controls.Add(this.cbOrdenarEmpleados);
             this.panelTablaC.Controls.Add(this.btnBuscar);
             this.panelTablaC.Controls.Add(this.tbBuscarEmpleados);
-            this.panelTablaC.Controls.Add(this.dgvClientes);
+            this.panelTablaC.Controls.Add(this.dgvEmpleados);
             this.panelTablaC.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelTablaC.Location = new System.Drawing.Point(15, 90);
             this.panelTablaC.Name = "panelTablaC";
@@ -215,18 +216,18 @@
             this.tbBuscarEmpleados.Size = new System.Drawing.Size(187, 29);
             this.tbBuscarEmpleados.TabIndex = 1;
             // 
-            // dgvClientes
+            // dgvEmpleados
             // 
-            this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(183)))), ((int)(((byte)(161)))));
-            this.dgvClientes.Location = new System.Drawing.Point(30, 61);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(730, 226);
-            this.dgvClientes.TabIndex = 0;
+            this.dgvEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
+            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(183)))), ((int)(((byte)(161)))));
+            this.dgvEmpleados.Location = new System.Drawing.Point(30, 61);
+            this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.Size = new System.Drawing.Size(730, 226);
+            this.dgvEmpleados.TabIndex = 0;
             // 
             // Empleados
             // 
@@ -242,7 +243,7 @@
             this.panelBottom.ResumeLayout(false);
             this.panelTablaC.ResumeLayout(false);
             this.panelTablaC.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,6 +262,6 @@
         private System.Windows.Forms.ComboBox cbOrdenarEmpleados;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox tbBuscarEmpleados;
-        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridView dgvEmpleados;
     }
 }

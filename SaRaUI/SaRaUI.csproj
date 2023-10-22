@@ -73,6 +73,12 @@
     <Compile Include="AgregarEmpleado.Designer.cs">
       <DependentUpon>AgregarEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarServicio.Designer.cs">
+      <DependentUpon>AgregarServicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,17 +111,38 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servicios.Designer.cs">
+      <DependentUpon>Servicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Servicios_Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Servicios_Cliente.Designer.cs">
       <DependentUpon>Servicios_Cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trabajos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trabajos.Designer.cs">
+      <DependentUpon>Trabajos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trabajos_Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trabajos_Empleado.Designer.cs">
+      <DependentUpon>Trabajos_Empleado.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AgregarCliente.resx">
       <DependentUpon>AgregarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarEmpleado.resx">
       <DependentUpon>AgregarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarServicio.resx">
+      <DependentUpon>AgregarServicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
@@ -137,8 +164,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Servicios.resx">
+      <DependentUpon>Servicios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Servicios_Cliente.resx">
       <DependentUpon>Servicios_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trabajos.resx">
+      <DependentUpon>Trabajos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trabajos_Empleado.resx">
+      <DependentUpon>Trabajos_Empleado.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Fonts\Benedict.ttf" />
     <None Include="Fonts\Mistress Benedict.ttf" />
@@ -265,6 +301,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Fondo_Nuevo_Empleado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono_Imprimir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo_Agregar_Servicio.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

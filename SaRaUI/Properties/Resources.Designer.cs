@@ -83,6 +83,16 @@ namespace SaRaUI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fondo_Agregar_Servicio {
+            get {
+                object obj = ResourceManager.GetObject("Fondo_Agregar_Servicio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fondo_Editar_Cliente {
             get {
                 object obj = ResourceManager.GetObject("Fondo_Editar_Cliente", resourceCulture);
@@ -206,6 +216,16 @@ namespace SaRaUI.Properties {
         internal static System.Drawing.Bitmap Icono_Guardar_2 {
             get {
                 object obj = ResourceManager.GetObject("Icono_Guardar_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_Imprimir {
+            get {
+                object obj = ResourceManager.GetObject("Icono_Imprimir", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

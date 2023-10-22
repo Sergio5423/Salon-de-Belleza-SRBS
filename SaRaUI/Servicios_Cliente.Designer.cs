@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.panelTablaC = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dgvServicios_Cliente = new System.Windows.Forms.DataGridView();
+            this.cbOrdenarSC = new System.Windows.Forms.ComboBox();
             this.panelNombreCliente = new System.Windows.Forms.Panel();
             this.lbNombreCliente = new System.Windows.Forms.Label();
-            this.cbOrdenarSC = new System.Windows.Forms.ComboBox();
-            this.dgvServicios_Cliente = new System.Windows.Forms.DataGridView();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelBottom = new System.Windows.Forms.Panel();
-            this.btnBorrarSC = new System.Windows.Forms.Button();
-            this.btnGuardarSC = new System.Windows.Forms.Button();
             this.btnAtrasSC = new System.Windows.Forms.Button();
+            this.btnGuardarSC = new System.Windows.Forms.Button();
+            this.btnBorrarSC = new System.Windows.Forms.Button();
             this.lbServicios_del_Cliente = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelFondo = new System.Windows.Forms.Panel();
             this.panelTablaC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelNombreCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios_Cliente)).BeginInit();
+            this.panelNombreCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelFondo.SuspendLayout();
@@ -68,16 +68,31 @@
             this.panelTablaC.Size = new System.Drawing.Size(790, 317);
             this.panelTablaC.TabIndex = 1;
             // 
-            // pictureBox2
+            // dgvServicios_Cliente
             // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::SaRaUI.Properties.Resources.Fondo;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(790, 317);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
+            this.dgvServicios_Cliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvServicios_Cliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
+            this.dgvServicios_Cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvServicios_Cliente.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(183)))), ((int)(((byte)(161)))));
+            this.dgvServicios_Cliente.Location = new System.Drawing.Point(30, 61);
+            this.dgvServicios_Cliente.Name = "dgvServicios_Cliente";
+            this.dgvServicios_Cliente.Size = new System.Drawing.Size(730, 226);
+            this.dgvServicios_Cliente.TabIndex = 0;
+            // 
+            // cbOrdenarSC
+            // 
+            this.cbOrdenarSC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(238)))));
+            this.cbOrdenarSC.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbOrdenarSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbOrdenarSC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.cbOrdenarSC.FormattingEnabled = true;
+            this.cbOrdenarSC.Location = new System.Drawing.Point(636, 16);
+            this.cbOrdenarSC.Name = "cbOrdenarSC";
+            this.cbOrdenarSC.Size = new System.Drawing.Size(124, 32);
+            this.cbOrdenarSC.TabIndex = 7;
+            this.cbOrdenarSC.Text = " Servicios";
             // 
             // panelNombreCliente
             // 
@@ -102,31 +117,16 @@
             this.lbNombreCliente.TabIndex = 8;
             this.lbNombreCliente.Text = "Nombre Cliente";
             // 
-            // cbOrdenarSC
+            // pictureBox2
             // 
-            this.cbOrdenarSC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(238)))));
-            this.cbOrdenarSC.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbOrdenarSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOrdenarSC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.cbOrdenarSC.FormattingEnabled = true;
-            this.cbOrdenarSC.Location = new System.Drawing.Point(636, 16);
-            this.cbOrdenarSC.Name = "cbOrdenarSC";
-            this.cbOrdenarSC.Size = new System.Drawing.Size(124, 32);
-            this.cbOrdenarSC.TabIndex = 7;
-            this.cbOrdenarSC.Text = " Servicios";
-            // 
-            // dgvServicios_Cliente
-            // 
-            this.dgvServicios_Cliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvServicios_Cliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
-            this.dgvServicios_Cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvServicios_Cliente.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(183)))), ((int)(((byte)(161)))));
-            this.dgvServicios_Cliente.Location = new System.Drawing.Point(30, 61);
-            this.dgvServicios_Cliente.Name = "dgvServicios_Cliente";
-            this.dgvServicios_Cliente.Size = new System.Drawing.Size(730, 226);
-            this.dgvServicios_Cliente.TabIndex = 0;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::SaRaUI.Properties.Resources.Fondo;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(790, 317);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
             // 
             // panelBottom
             // 
@@ -140,34 +140,6 @@
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(822, 52);
             this.panelBottom.TabIndex = 2;
-            // 
-            // btnBorrarSC
-            // 
-            this.btnBorrarSC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBorrarSC.BackColor = System.Drawing.Color.Transparent;
-            this.btnBorrarSC.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Borrar;
-            this.btnBorrarSC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBorrarSC.FlatAppearance.BorderSize = 0;
-            this.btnBorrarSC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrarSC.Location = new System.Drawing.Point(688, 3);
-            this.btnBorrarSC.Name = "btnBorrarSC";
-            this.btnBorrarSC.Size = new System.Drawing.Size(44, 44);
-            this.btnBorrarSC.TabIndex = 4;
-            this.btnBorrarSC.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardarSC
-            // 
-            this.btnGuardarSC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardarSC.BackColor = System.Drawing.Color.Transparent;
-            this.btnGuardarSC.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Guardar_2;
-            this.btnGuardarSC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnGuardarSC.FlatAppearance.BorderSize = 0;
-            this.btnGuardarSC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarSC.Location = new System.Drawing.Point(748, 3);
-            this.btnGuardarSC.Name = "btnGuardarSC";
-            this.btnGuardarSC.Size = new System.Drawing.Size(44, 44);
-            this.btnGuardarSC.TabIndex = 5;
-            this.btnGuardarSC.UseVisualStyleBackColor = false;
             // 
             // btnAtrasSC
             // 
@@ -183,6 +155,34 @@
             this.btnAtrasSC.TabIndex = 11;
             this.btnAtrasSC.UseVisualStyleBackColor = false;
             this.btnAtrasSC.Click += new System.EventHandler(this.btnAtrasSC_Click);
+            // 
+            // btnGuardarSC
+            // 
+            this.btnGuardarSC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardarSC.BackColor = System.Drawing.Color.Transparent;
+            this.btnGuardarSC.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Guardar_2;
+            this.btnGuardarSC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnGuardarSC.FlatAppearance.BorderSize = 0;
+            this.btnGuardarSC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarSC.Location = new System.Drawing.Point(748, 3);
+            this.btnGuardarSC.Name = "btnGuardarSC";
+            this.btnGuardarSC.Size = new System.Drawing.Size(44, 44);
+            this.btnGuardarSC.TabIndex = 5;
+            this.btnGuardarSC.UseVisualStyleBackColor = false;
+            // 
+            // btnBorrarSC
+            // 
+            this.btnBorrarSC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrarSC.BackColor = System.Drawing.Color.Transparent;
+            this.btnBorrarSC.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Borrar;
+            this.btnBorrarSC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBorrarSC.FlatAppearance.BorderSize = 0;
+            this.btnBorrarSC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrarSC.Location = new System.Drawing.Point(688, 3);
+            this.btnBorrarSC.Name = "btnBorrarSC";
+            this.btnBorrarSC.Size = new System.Drawing.Size(44, 44);
+            this.btnBorrarSC.TabIndex = 4;
+            this.btnBorrarSC.UseVisualStyleBackColor = false;
             // 
             // lbServicios_del_Cliente
             // 
@@ -229,10 +229,10 @@
             this.Name = "Servicios_Cliente";
             this.Text = "Servicios_Cliente";
             this.panelTablaC.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServicios_Cliente)).EndInit();
             this.panelNombreCliente.ResumeLayout(false);
             this.panelNombreCliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvServicios_Cliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelFondo.ResumeLayout(false);

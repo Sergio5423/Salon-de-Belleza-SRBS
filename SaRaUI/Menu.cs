@@ -69,9 +69,19 @@ namespace SaRaUI
             OpenChildForm(new Empleados());
         }
 
+        private void btnTrabajos_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Trabajos());
+        }
+
+        private void btnServicios_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Servicios());
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
-        }        
+        }
     }
 }
