@@ -27,8 +27,8 @@ namespace Datos
                 Command.Parameters.Add("Nombre", SqlDbType.VarChar).Value = cliente.Nombre;
                 Command.Parameters.Add("Telefono", SqlDbType.VarChar).Value = cliente.Telefono;
                 Command.Parameters.Add("Correo", SqlDbType.VarChar).Value = cliente.Correo;
-                Command.Parameters.Add("Cumpleaños", SqlDbType.DateTime).Value = cliente.Cumpleaños.ToShortDateString();
-                Command.Parameters.Add("UltimaVisita", SqlDbType.DateTime).Value = cliente.UltimaVisita.ToShortDateString();
+                Command.Parameters.Add("Cumpleaños", SqlDbType.DateTime).Value = cliente.Cumpleaños;
+                Command.Parameters.Add("UltimaVisita", SqlDbType.DateTime).Value = cliente.UltimaVisita;
                 Command.Parameters.Add("Empleado_Cedula", SqlDbType.VarChar).Value = cliente.Empleado_Cedula;
                 Open();
                 Command.ExecuteNonQuery();

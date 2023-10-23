@@ -129,6 +129,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(730, 226);
             this.dgvClientes.TabIndex = 0;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
             // btnServiciosClientes
             // 
@@ -187,6 +188,7 @@
             this.btnBorrarClientes.Size = new System.Drawing.Size(44, 44);
             this.btnBorrarClientes.TabIndex = 4;
             this.btnBorrarClientes.UseVisualStyleBackColor = false;
+            this.btnBorrarClientes.Click += new System.EventHandler(this.btnBorrarClientes_Click);
             // 
             // btnEditarClientes
             // 

@@ -36,7 +36,6 @@
             this.btnGuardarEC = new System.Windows.Forms.Button();
             this.tbCorreoEC = new System.Windows.Forms.TextBox();
             this.tbTelEC = new System.Windows.Forms.TextBox();
-            this.tbCumpEC = new System.Windows.Forms.TextBox();
             this.tbNomEC = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lbCorreoEC = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.btnAtrasEC = new System.Windows.Forms.Button();
             this.lblEC = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dtpCumpleañosEC = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panelCedula.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -105,10 +105,10 @@
             // 
             this.panel2.BackgroundImage = global::SaRaUI.Properties.Resources.Fondo_Editar_Cliente;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Controls.Add(this.dtpCumpleañosEC);
             this.panel2.Controls.Add(this.btnGuardarEC);
             this.panel2.Controls.Add(this.tbCorreoEC);
             this.panel2.Controls.Add(this.tbTelEC);
-            this.panel2.Controls.Add(this.tbCumpEC);
             this.panel2.Controls.Add(this.tbNomEC);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel5);
@@ -135,6 +135,7 @@
             this.btnGuardarEC.Size = new System.Drawing.Size(44, 44);
             this.btnGuardarEC.TabIndex = 12;
             this.btnGuardarEC.UseVisualStyleBackColor = false;
+            this.btnGuardarEC.Click += new System.EventHandler(this.btnGuardarEC_Click);
             // 
             // tbCorreoEC
             // 
@@ -158,17 +159,6 @@
             this.tbTelEC.Name = "tbTelEC";
             this.tbTelEC.Size = new System.Drawing.Size(168, 29);
             this.tbTelEC.TabIndex = 10;
-            // 
-            // tbCumpEC
-            // 
-            this.tbCumpEC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(238)))));
-            this.tbCumpEC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbCumpEC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCumpEC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.tbCumpEC.Location = new System.Drawing.Point(176, 250);
-            this.tbCumpEC.Name = "tbCumpEC";
-            this.tbCumpEC.Size = new System.Drawing.Size(168, 29);
-            this.tbCumpEC.TabIndex = 9;
             // 
             // tbNomEC
             // 
@@ -347,6 +337,17 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // dtpCumpleañosEC
+            // 
+            this.dtpCumpleañosEC.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.dtpCumpleañosEC.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(249)))), ((int)(((byte)(247)))));
+            this.dtpCumpleañosEC.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
+            this.dtpCumpleañosEC.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.dtpCumpleañosEC.Location = new System.Drawing.Point(176, 252);
+            this.dtpCumpleañosEC.Name = "dtpCumpleañosEC";
+            this.dtpCumpleañosEC.Size = new System.Drawing.Size(200, 20);
+            this.dtpCumpleañosEC.TabIndex = 13;
+            // 
             // EditarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,7 +387,6 @@
         private System.Windows.Forms.Button btnGuardarEC;
         private System.Windows.Forms.TextBox tbCorreoEC;
         private System.Windows.Forms.TextBox tbTelEC;
-        private System.Windows.Forms.TextBox tbCumpEC;
         private System.Windows.Forms.TextBox tbNomEC;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lbCorreoEC;
@@ -402,5 +402,6 @@
         private System.Windows.Forms.Button btnAtrasEC;
         private System.Windows.Forms.Label lblEC;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker dtpCumpleañosEC;
     }
 }

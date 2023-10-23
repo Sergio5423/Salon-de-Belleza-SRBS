@@ -53,15 +53,14 @@ namespace Logica
             repositorioServicios.Actualizar(servicio);
         }
 
-        public List<ServiciosLectura> Filtrar(string nombre, int vinculo)
+        public List<Servicios> Filtrar(string nombre, int vinculo)
         {
             return repositorioServicios.Filtrar(nombre, vinculo);
         }
 
-        public List<ServiciosLectura> Consultar(int vinculo)
+        public List<Servicios> Consultar()
         {
-            Vinculo = vinculo;
-            return repositorioServicios.Consultar(vinculo);
+            return repositorioServicios.Consultar();
         }
 
         public DateTime CalcularRegresoMeses(int Duracion)

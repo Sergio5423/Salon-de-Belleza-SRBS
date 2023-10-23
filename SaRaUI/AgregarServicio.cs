@@ -23,9 +23,24 @@ namespace SaRaUI
             lbIngreseElServicio.Font = new Font(privateFonts.Families[0], 20);
         }
 
+        public void CrearServicio()
+        {
+            var servicio = new Entidades.Servicios
+            {
+                Nombre = tbNombreServ.Text,
+                Duracion = int.Parse(tbRegresoServ.Text),
+                Valor = int.Parse(tbValorServ.Text),
+            };
+        }
+
         private void btnAtrasServ_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnGuardarServ_Click(object sender, EventArgs e)
+        {
+            CrearServicio();
         }
     }
 }

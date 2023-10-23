@@ -40,7 +40,6 @@
             this.btnGuardarNC = new System.Windows.Forms.Button();
             this.tbCorreoNC = new System.Windows.Forms.TextBox();
             this.tbTelefonoNC = new System.Windows.Forms.TextBox();
-            this.tbCumpleañosNC = new System.Windows.Forms.TextBox();
             this.tbNombreNC = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbCedulaNC = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dtpCumpleaños = new System.Windows.Forms.DateTimePicker();
             this.panelBottom.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelCedula.SuspendLayout();
@@ -155,10 +155,10 @@
             // 
             this.panel2.BackgroundImage = global::SaRaUI.Properties.Resources.Fondo_Nuevo_Cliente;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Controls.Add(this.dtpCumpleaños);
             this.panel2.Controls.Add(this.btnGuardarNC);
             this.panel2.Controls.Add(this.tbCorreoNC);
             this.panel2.Controls.Add(this.tbTelefonoNC);
-            this.panel2.Controls.Add(this.tbCumpleañosNC);
             this.panel2.Controls.Add(this.tbNombreNC);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel5);
@@ -208,17 +208,6 @@
             this.tbTelefonoNC.Name = "tbTelefonoNC";
             this.tbTelefonoNC.Size = new System.Drawing.Size(168, 29);
             this.tbTelefonoNC.TabIndex = 10;
-            // 
-            // tbCumpleañosNC
-            // 
-            this.tbCumpleañosNC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(238)))));
-            this.tbCumpleañosNC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbCumpleañosNC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCumpleañosNC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.tbCumpleañosNC.Location = new System.Drawing.Point(176, 250);
-            this.tbCumpleañosNC.Name = "tbCumpleañosNC";
-            this.tbCumpleañosNC.Size = new System.Drawing.Size(168, 29);
-            this.tbCumpleañosNC.TabIndex = 9;
             // 
             // tbNombreNC
             // 
@@ -347,6 +336,17 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // dtpCumpleaños
+            // 
+            this.dtpCumpleaños.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.dtpCumpleaños.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(249)))), ((int)(((byte)(247)))));
+            this.dtpCumpleaños.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
+            this.dtpCumpleaños.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.dtpCumpleaños.Location = new System.Drawing.Point(176, 259);
+            this.dtpCumpleaños.Name = "dtpCumpleaños";
+            this.dtpCumpleaños.Size = new System.Drawing.Size(212, 20);
+            this.dtpCumpleaños.TabIndex = 13;
+            // 
             // AgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,7 +390,6 @@
         private System.Windows.Forms.TextBox tbCedulaNC;
         private System.Windows.Forms.TextBox tbCorreoNC;
         private System.Windows.Forms.TextBox tbTelefonoNC;
-        private System.Windows.Forms.TextBox tbCumpleañosNC;
         private System.Windows.Forms.TextBox tbNombreNC;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label4;
@@ -402,5 +401,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGuardarNC;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker dtpCumpleaños;
     }
 }

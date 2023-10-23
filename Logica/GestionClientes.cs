@@ -27,14 +27,14 @@ namespace Logica
             repositorioClientes.Agregar(cliente);
         }
 
-        public void Borrar(int id)
+        public void Borrar(string cedula)
         {
-            repositorioClientes.Borrar(id);
+            repositorioClientes.Borrar(cedula);
         }
 
-        public void Actualizar(Clientes cliente)
+        public void Actualizar(string cedula, Clientes cliente)
         {
-            repositorioClientes.Actualizar(cliente);
+            repositorioClientes.Actualizar(cedula, cliente);
         }
 
         public List<Clientes> Filtrar(string nombre)

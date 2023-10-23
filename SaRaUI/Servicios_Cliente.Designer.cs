@@ -30,7 +30,7 @@
         {
             this.panelTablaC = new System.Windows.Forms.Panel();
             this.dgvServicios_Cliente = new System.Windows.Forms.DataGridView();
-            this.cbOrdenarSC = new System.Windows.Forms.ComboBox();
+            this.cbServicios = new System.Windows.Forms.ComboBox();
             this.panelNombreCliente = new System.Windows.Forms.Panel();
             this.lbNombreCliente = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -59,7 +59,7 @@
             this.panelTablaC.BackgroundImage = global::SaRaUI.Properties.Resources.Panel_Nuevo_Cliente;
             this.panelTablaC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelTablaC.Controls.Add(this.dgvServicios_Cliente);
-            this.panelTablaC.Controls.Add(this.cbOrdenarSC);
+            this.panelTablaC.Controls.Add(this.cbServicios);
             this.panelTablaC.Controls.Add(this.panelNombreCliente);
             this.panelTablaC.Controls.Add(this.pictureBox2);
             this.panelTablaC.Cursor = System.Windows.Forms.Cursors.Default;
@@ -81,18 +81,18 @@
             this.dgvServicios_Cliente.Size = new System.Drawing.Size(730, 226);
             this.dgvServicios_Cliente.TabIndex = 0;
             // 
-            // cbOrdenarSC
+            // cbServicios
             // 
-            this.cbOrdenarSC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(238)))));
-            this.cbOrdenarSC.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbOrdenarSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOrdenarSC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.cbOrdenarSC.FormattingEnabled = true;
-            this.cbOrdenarSC.Location = new System.Drawing.Point(636, 16);
-            this.cbOrdenarSC.Name = "cbOrdenarSC";
-            this.cbOrdenarSC.Size = new System.Drawing.Size(124, 32);
-            this.cbOrdenarSC.TabIndex = 7;
-            this.cbOrdenarSC.Text = " Servicios";
+            this.cbServicios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(238)))));
+            this.cbServicios.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbServicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbServicios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.cbServicios.FormattingEnabled = true;
+            this.cbServicios.Location = new System.Drawing.Point(636, 16);
+            this.cbServicios.Name = "cbServicios";
+            this.cbServicios.Size = new System.Drawing.Size(124, 32);
+            this.cbServicios.TabIndex = 7;
+            this.cbServicios.Text = " Servicios";
             // 
             // panelNombreCliente
             // 
@@ -169,6 +169,7 @@
             this.btnGuardarSC.Size = new System.Drawing.Size(44, 44);
             this.btnGuardarSC.TabIndex = 5;
             this.btnGuardarSC.UseVisualStyleBackColor = false;
+            this.btnGuardarSC.Click += new System.EventHandler(this.btnGuardarSC_Click);
             // 
             // btnBorrarSC
             // 
@@ -183,6 +184,7 @@
             this.btnBorrarSC.Size = new System.Drawing.Size(44, 44);
             this.btnBorrarSC.TabIndex = 4;
             this.btnBorrarSC.UseVisualStyleBackColor = false;
+            this.btnBorrarSC.Click += new System.EventHandler(this.btnBorrarSC_Click);
             // 
             // lbServicios_del_Cliente
             // 
@@ -245,7 +247,7 @@
 
         private System.Windows.Forms.Panel panelTablaC;
         private System.Windows.Forms.DataGridView dgvServicios_Cliente;
-        private System.Windows.Forms.ComboBox cbOrdenarSC;
+        private System.Windows.Forms.ComboBox cbServicios;
         private System.Windows.Forms.Panel panelNombreCliente;
         private System.Windows.Forms.Label lbNombreCliente;
         private System.Windows.Forms.PictureBox pictureBox2;

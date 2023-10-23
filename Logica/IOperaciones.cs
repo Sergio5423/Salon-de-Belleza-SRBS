@@ -12,7 +12,7 @@ namespace Logica
     {
         void Agregar(T t);
 
-        void Borrar(int id);
+        void Borrar(string t);
 
         void Actualizar(T t);
     }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Logica;
+using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +16,7 @@ namespace SaRaUI
     {
 
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
+        GestionClientes gestionClientes = new GestionClientes();
 
         public AgregarCliente()
         {
@@ -21,6 +24,20 @@ namespace SaRaUI
             privateFonts.AddFontFile(@"C:\Users\starr\Source\Repos\Sergio5423\Salon-de-Belleza-SRBS\SaRaUI\Fonts\Playlist Script.ttf");
             lblNC.Font = new Font(privateFonts.Families[0], 35);
             lblIngresaDatosNC.Font = new Font(privateFonts.Families[0], 20);
+        }
+
+        public void Agregar()
+        {
+            var cliente = new Entidades.Clientes
+            {
+                Cedula = tbCedulaNC.Text,
+                Nombre = tbNombreNC.Text,
+                Telefono = tbTelefonoNC.Text,
+                Correo = tbCorreoNC.Text,
+                UltimaVisita = DateTime.Now,
+                Cumpleaños = dtpCumpleaños.Value
+            };            
+            gestionClientes.Agregar(cliente);
         }
 
         private void btnAtrasNC_Click(object sender, EventArgs e)

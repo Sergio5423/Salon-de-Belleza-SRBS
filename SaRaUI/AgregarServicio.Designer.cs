@@ -133,6 +133,7 @@
             this.btnGuardarServ.Size = new System.Drawing.Size(44, 44);
             this.btnGuardarServ.TabIndex = 12;
             this.btnGuardarServ.UseVisualStyleBackColor = false;
+            this.btnGuardarServ.Click += new System.EventHandler(this.btnGuardarServ_Click);
             // 
             // tbRegresoServ
             // 
