@@ -37,7 +37,7 @@
             this.btnBorrarSC = new System.Windows.Forms.Button();
             this.panelTablaC = new System.Windows.Forms.Panel();
             this.cbServicios = new System.Windows.Forms.ComboBox();
-            this.dgvServicios_Cliente = new System.Windows.Forms.DataGridView();
+            this.dgvTrabajos_Empleado = new System.Windows.Forms.DataGridView();
             this.cbFiltrarTrabajos = new System.Windows.Forms.ComboBox();
             this.panelNombreCliente = new System.Windows.Forms.Panel();
             this.lbNombreEmpleado = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelBottom.SuspendLayout();
             this.panelTablaC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvServicios_Cliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajos_Empleado)).BeginInit();
             this.panelNombreCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -128,6 +128,7 @@
             this.btnGuardarSC.Size = new System.Drawing.Size(44, 44);
             this.btnGuardarSC.TabIndex = 5;
             this.btnGuardarSC.UseVisualStyleBackColor = false;
+            this.btnGuardarSC.Click += new System.EventHandler(this.btnGuardarSC_Click);
             // 
             // btnBorrarSC
             // 
@@ -142,6 +143,7 @@
             this.btnBorrarSC.Size = new System.Drawing.Size(44, 44);
             this.btnBorrarSC.TabIndex = 4;
             this.btnBorrarSC.UseVisualStyleBackColor = false;
+            this.btnBorrarSC.Click += new System.EventHandler(this.btnBorrarSC_Click);
             // 
             // panelTablaC
             // 
@@ -152,7 +154,7 @@
             this.panelTablaC.BackgroundImage = global::SaRaUI.Properties.Resources.Panel_Nuevo_Cliente;
             this.panelTablaC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelTablaC.Controls.Add(this.cbServicios);
-            this.panelTablaC.Controls.Add(this.dgvServicios_Cliente);
+            this.panelTablaC.Controls.Add(this.dgvTrabajos_Empleado);
             this.panelTablaC.Controls.Add(this.cbFiltrarTrabajos);
             this.panelTablaC.Controls.Add(this.panelNombreCliente);
             this.panelTablaC.Controls.Add(this.pictureBox2);
@@ -175,18 +177,19 @@
             this.cbServicios.TabIndex = 12;
             this.cbServicios.Text = " Servicios";
             // 
-            // dgvServicios_Cliente
+            // dgvTrabajos_Empleado
             // 
-            this.dgvServicios_Cliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvTrabajos_Empleado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvServicios_Cliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
-            this.dgvServicios_Cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvServicios_Cliente.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(183)))), ((int)(((byte)(161)))));
-            this.dgvServicios_Cliente.Location = new System.Drawing.Point(30, 61);
-            this.dgvServicios_Cliente.Name = "dgvServicios_Cliente";
-            this.dgvServicios_Cliente.Size = new System.Drawing.Size(730, 226);
-            this.dgvServicios_Cliente.TabIndex = 0;
+            this.dgvTrabajos_Empleado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
+            this.dgvTrabajos_Empleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTrabajos_Empleado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(183)))), ((int)(((byte)(161)))));
+            this.dgvTrabajos_Empleado.Location = new System.Drawing.Point(30, 61);
+            this.dgvTrabajos_Empleado.Name = "dgvTrabajos_Empleado";
+            this.dgvTrabajos_Empleado.Size = new System.Drawing.Size(730, 226);
+            this.dgvTrabajos_Empleado.TabIndex = 0;
+            this.dgvTrabajos_Empleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvServicios_Cliente_CellContentClick);
             // 
             // cbFiltrarTrabajos
             // 
@@ -248,7 +251,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelBottom.ResumeLayout(false);
             this.panelTablaC.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvServicios_Cliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajos_Empleado)).EndInit();
             this.panelNombreCliente.ResumeLayout(false);
             this.panelNombreCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -266,7 +269,7 @@
         private System.Windows.Forms.Button btnGuardarSC;
         private System.Windows.Forms.Button btnBorrarSC;
         private System.Windows.Forms.Panel panelTablaC;
-        private System.Windows.Forms.DataGridView dgvServicios_Cliente;
+        private System.Windows.Forms.DataGridView dgvTrabajos_Empleado;
         private System.Windows.Forms.ComboBox cbFiltrarTrabajos;
         private System.Windows.Forms.Panel panelNombreCliente;
         private System.Windows.Forms.Label lbNombreEmpleado;

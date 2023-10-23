@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,9 @@ namespace SaRaUI
     {
 
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
+        GestionEmpleados gestionEmpleados = new GestionEmpleados();
+        Entidades.Empleados empleado;
+        string cedula;
 
         public EditarEmpleado()
         {
@@ -21,11 +25,40 @@ namespace SaRaUI
             privateFonts.AddFontFile(@"C:\Users\starr\Source\Repos\Sergio5423\Salon-de-Belleza-SRBS\SaRaUI\Fonts\Playlist Script.ttf");
             lbEditarEmpleado.Font = new Font(privateFonts.Families[0], 35);
             lbIngreseDatosEm.Font = new Font(privateFonts.Families[0], 20);
+            tbCedulaEm.Text = empleado.Cedula;
+            tbNombreEm.Text = empleado.Nombre;
+            tbTelefonoEm.Text = empleado.Telefono;
+        }
+
+        public void Editar()
+        {
+            var empleado = new Entidades.Empleados
+            {
+                Cedula = tbCedulaEm.Text,
+                Nombre = tbNombreEm.Text,
+                Telefono = tbTelefonoEm.Text,
+            };
+            gestionEmpleados.Actualizar(cedula, empleado);
+        }
+
+        public void GetCedula(string ced)
+        {
+            cedula = ced;
+        }
+
+        public void GetEmpleado(Entidades.Empleados emp)
+        {
+            empleado = emp;
         }
 
         private void btnAtrasEC_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnGuardarEC_Click(object sender, EventArgs e)
+        {
+            Editar();
         }
     }
 }

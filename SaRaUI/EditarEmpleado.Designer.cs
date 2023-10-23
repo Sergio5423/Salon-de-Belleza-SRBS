@@ -31,11 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarEmpleado));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelBottom = new System.Windows.Forms.Panel();
-            this.btnAtrasEC = new System.Windows.Forms.Button();
-            this.lbEditarEmpleado = new System.Windows.Forms.Label();
-            this.lbIngreseDatosEm = new System.Windows.Forms.Label();
-            this.btnGuardarEC = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelCedula = new System.Windows.Forms.Panel();
             this.lbCedEm = new System.Windows.Forms.Label();
@@ -46,13 +41,18 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tbCedulaEm = new System.Windows.Forms.TextBox();
+            this.btnGuardarEC = new System.Windows.Forms.Button();
+            this.lbIngreseDatosEm = new System.Windows.Forms.Label();
+            this.panelBottom = new System.Windows.Forms.Panel();
+            this.btnAtrasEC = new System.Windows.Forms.Button();
+            this.lbEditarEmpleado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panelBottom.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelCedula.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panelBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -79,70 +79,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 318);
             this.panel1.TabIndex = 12;
-            // 
-            // panelBottom
-            // 
-            this.panelBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
-            this.panelBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBottom.Controls.Add(this.btnAtrasEC);
-            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(0, 425);
-            this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(822, 52);
-            this.panelBottom.TabIndex = 11;
-            // 
-            // btnAtrasEC
-            // 
-            this.btnAtrasEC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAtrasEC.BackColor = System.Drawing.Color.Transparent;
-            this.btnAtrasEC.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Atras;
-            this.btnAtrasEC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAtrasEC.FlatAppearance.BorderSize = 0;
-            this.btnAtrasEC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtrasEC.Location = new System.Drawing.Point(14, 3);
-            this.btnAtrasEC.Name = "btnAtrasEC";
-            this.btnAtrasEC.Size = new System.Drawing.Size(44, 44);
-            this.btnAtrasEC.TabIndex = 6;
-            this.btnAtrasEC.UseVisualStyleBackColor = false;
-            this.btnAtrasEC.Click += new System.EventHandler(this.btnAtrasEC_Click);
-            // 
-            // lbEditarEmpleado
-            // 
-            this.lbEditarEmpleado.AutoSize = true;
-            this.lbEditarEmpleado.BackColor = System.Drawing.Color.Transparent;
-            this.lbEditarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEditarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.lbEditarEmpleado.Location = new System.Drawing.Point(13, 4);
-            this.lbEditarEmpleado.Name = "lbEditarEmpleado";
-            this.lbEditarEmpleado.Size = new System.Drawing.Size(367, 54);
-            this.lbEditarEmpleado.TabIndex = 10;
-            this.lbEditarEmpleado.Text = "Editar Empleado";
-            // 
-            // lbIngreseDatosEm
-            // 
-            this.lbIngreseDatosEm.AutoSize = true;
-            this.lbIngreseDatosEm.BackColor = System.Drawing.Color.Transparent;
-            this.lbIngreseDatosEm.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIngreseDatosEm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.lbIngreseDatosEm.Location = new System.Drawing.Point(18, 19);
-            this.lbIngreseDatosEm.Name = "lbIngreseDatosEm";
-            this.lbIngreseDatosEm.Size = new System.Drawing.Size(234, 31);
-            this.lbIngreseDatosEm.TabIndex = 4;
-            this.lbIngreseDatosEm.Text = "Ingrese sus Datos";
-            // 
-            // btnGuardarEC
-            // 
-            this.btnGuardarEC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardarEC.BackColor = System.Drawing.Color.Transparent;
-            this.btnGuardarEC.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Guardar;
-            this.btnGuardarEC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnGuardarEC.FlatAppearance.BorderSize = 0;
-            this.btnGuardarEC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarEC.Location = new System.Drawing.Point(720, 265);
-            this.btnGuardarEC.Name = "btnGuardarEC";
-            this.btnGuardarEC.Size = new System.Drawing.Size(44, 44);
-            this.btnGuardarEC.TabIndex = 12;
-            this.btnGuardarEC.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -265,6 +201,71 @@
             this.tbCedulaEm.Size = new System.Drawing.Size(168, 29);
             this.tbCedulaEm.TabIndex = 13;
             // 
+            // btnGuardarEC
+            // 
+            this.btnGuardarEC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardarEC.BackColor = System.Drawing.Color.Transparent;
+            this.btnGuardarEC.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Guardar;
+            this.btnGuardarEC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnGuardarEC.FlatAppearance.BorderSize = 0;
+            this.btnGuardarEC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarEC.Location = new System.Drawing.Point(720, 265);
+            this.btnGuardarEC.Name = "btnGuardarEC";
+            this.btnGuardarEC.Size = new System.Drawing.Size(44, 44);
+            this.btnGuardarEC.TabIndex = 12;
+            this.btnGuardarEC.UseVisualStyleBackColor = false;
+            this.btnGuardarEC.Click += new System.EventHandler(this.btnGuardarEC_Click);
+            // 
+            // lbIngreseDatosEm
+            // 
+            this.lbIngreseDatosEm.AutoSize = true;
+            this.lbIngreseDatosEm.BackColor = System.Drawing.Color.Transparent;
+            this.lbIngreseDatosEm.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIngreseDatosEm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.lbIngreseDatosEm.Location = new System.Drawing.Point(18, 19);
+            this.lbIngreseDatosEm.Name = "lbIngreseDatosEm";
+            this.lbIngreseDatosEm.Size = new System.Drawing.Size(234, 31);
+            this.lbIngreseDatosEm.TabIndex = 4;
+            this.lbIngreseDatosEm.Text = "Ingrese sus Datos";
+            // 
+            // panelBottom
+            // 
+            this.panelBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
+            this.panelBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBottom.Controls.Add(this.btnAtrasEC);
+            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBottom.Location = new System.Drawing.Point(0, 425);
+            this.panelBottom.Name = "panelBottom";
+            this.panelBottom.Size = new System.Drawing.Size(822, 52);
+            this.panelBottom.TabIndex = 11;
+            // 
+            // btnAtrasEC
+            // 
+            this.btnAtrasEC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAtrasEC.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtrasEC.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Atras;
+            this.btnAtrasEC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAtrasEC.FlatAppearance.BorderSize = 0;
+            this.btnAtrasEC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtrasEC.Location = new System.Drawing.Point(14, 3);
+            this.btnAtrasEC.Name = "btnAtrasEC";
+            this.btnAtrasEC.Size = new System.Drawing.Size(44, 44);
+            this.btnAtrasEC.TabIndex = 6;
+            this.btnAtrasEC.UseVisualStyleBackColor = false;
+            this.btnAtrasEC.Click += new System.EventHandler(this.btnAtrasEC_Click);
+            // 
+            // lbEditarEmpleado
+            // 
+            this.lbEditarEmpleado.AutoSize = true;
+            this.lbEditarEmpleado.BackColor = System.Drawing.Color.Transparent;
+            this.lbEditarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEditarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.lbEditarEmpleado.Location = new System.Drawing.Point(13, 4);
+            this.lbEditarEmpleado.Name = "lbEditarEmpleado";
+            this.lbEditarEmpleado.Size = new System.Drawing.Size(367, 54);
+            this.lbEditarEmpleado.TabIndex = 10;
+            this.lbEditarEmpleado.Text = "Editar Empleado";
+            // 
             // EditarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,12 +280,12 @@
             this.Text = "EditarEmpleado";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panelBottom.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelCedula.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panelBottom.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

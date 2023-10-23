@@ -128,6 +128,7 @@
             this.btnBorrarEmpleado.Size = new System.Drawing.Size(44, 44);
             this.btnBorrarEmpleado.TabIndex = 4;
             this.btnBorrarEmpleado.UseVisualStyleBackColor = false;
+            this.btnBorrarEmpleado.Click += new System.EventHandler(this.btnBorrarEmpleado_Click);
             // 
             // btnEditarEmpleado
             // 
@@ -228,6 +229,7 @@
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.Size = new System.Drawing.Size(730, 226);
             this.dgvEmpleados.TabIndex = 0;
+            this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
             // 
             // Empleados
             // 

@@ -28,7 +28,7 @@ namespace SaRaUI
             privateFonts.AddFontFile(@"C:\Users\starr\Source\Repos\Sergio5423\Salon-de-Belleza-SRBS\SaRaUI\Fonts\Playlist Script.ttf");
             lblClientes.Font = new Font(privateFonts.Families[0], 35);
             cbOrdenarClientes.Font = new Font(privateFonts.Families[0], 14);
-
+            LlenarGridView();
         }
 
         private void OpenChildForm(Form childForm)
@@ -43,6 +43,13 @@ namespace SaRaUI
             panelFondo.Tag = childForm;
             childForm.BringToFront();            
             childForm.Show();
+        }
+
+        public void LlenarGridView()
+        {
+            BindingSource bin = new BindingSource();
+            bin.DataSource = gestionClientes.Consultar();
+            dgvClientes.DataSource = bin;
         }
 
         public Entidades.Clientes CrearCliente(string cedula,
@@ -62,6 +69,11 @@ namespace SaRaUI
                 UltimaVisita = ultimaVisita
             };
             return cliente;
+        }
+
+        public void Borrar()
+        {
+            gestionClientes.Borrar(cedula);
         }
 
         public void EnviarClienteEditar()
@@ -97,7 +109,7 @@ namespace SaRaUI
 
         private void btnBorrarClientes_Click(object sender, EventArgs e)
         {
-            gestionClientes.Borrar(cedula);
+            Borrar();
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)

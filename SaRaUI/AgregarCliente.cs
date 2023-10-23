@@ -44,5 +44,10 @@ namespace SaRaUI
         {
             this.Close();
         }
+
+        private void btnGuardarNC_Click(object sender, EventArgs e)
+        {
+            Agregar();
+        }
     }
 }

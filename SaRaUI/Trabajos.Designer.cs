@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panelFondo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbTrabajos = new System.Windows.Forms.Label();
             this.panelBottom = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.panelTablaC = new System.Windows.Forms.Panel();
             this.cbOrdenarTrabajos = new System.Windows.Forms.ComboBox();
             this.btnBuscarTrabajos = new System.Windows.Forms.Button();
             this.tbBuscarTrabajos = new System.Windows.Forms.TextBox();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.dgvTrabajos = new System.Windows.Forms.DataGridView();
             this.panelFondo.SuspendLayout();
-            this.panelBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelBottom.SuspendLayout();
             this.panelTablaC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajos)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFondo
@@ -59,6 +59,17 @@
             this.panelFondo.Name = "panelFondo";
             this.panelFondo.Size = new System.Drawing.Size(822, 477);
             this.panelFondo.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::SaRaUI.Properties.Resources.Logo_pequeño;
+            this.pictureBox1.Location = new System.Drawing.Point(738, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(67, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // lbTrabajos
             // 
@@ -82,17 +93,6 @@
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(822, 52);
             this.panelBottom.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::SaRaUI.Properties.Resources.Logo_pequeño;
-            this.pictureBox1.Location = new System.Drawing.Point(738, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // btnImprimir
             // 
@@ -119,7 +119,7 @@
             this.panelTablaC.Controls.Add(this.cbOrdenarTrabajos);
             this.panelTablaC.Controls.Add(this.btnBuscarTrabajos);
             this.panelTablaC.Controls.Add(this.tbBuscarTrabajos);
-            this.panelTablaC.Controls.Add(this.dgvClientes);
+            this.panelTablaC.Controls.Add(this.dgvTrabajos);
             this.panelTablaC.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelTablaC.Location = new System.Drawing.Point(15, 90);
             this.panelTablaC.Name = "panelTablaC";
@@ -165,18 +165,18 @@
             this.tbBuscarTrabajos.Size = new System.Drawing.Size(187, 29);
             this.tbBuscarTrabajos.TabIndex = 1;
             // 
-            // dgvClientes
+            // dgvTrabajos
             // 
-            this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvTrabajos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(183)))), ((int)(((byte)(161)))));
-            this.dgvClientes.Location = new System.Drawing.Point(30, 61);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(730, 226);
-            this.dgvClientes.TabIndex = 0;
+            this.dgvTrabajos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
+            this.dgvTrabajos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTrabajos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(183)))), ((int)(((byte)(161)))));
+            this.dgvTrabajos.Location = new System.Drawing.Point(30, 61);
+            this.dgvTrabajos.Name = "dgvTrabajos";
+            this.dgvTrabajos.Size = new System.Drawing.Size(730, 226);
+            this.dgvTrabajos.TabIndex = 0;
             // 
             // Trabajos
             // 
@@ -188,11 +188,11 @@
             this.Text = "Trabajos";
             this.panelFondo.ResumeLayout(false);
             this.panelFondo.PerformLayout();
-            this.panelBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelBottom.ResumeLayout(false);
             this.panelTablaC.ResumeLayout(false);
             this.panelTablaC.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -208,6 +208,6 @@
         private System.Windows.Forms.ComboBox cbOrdenarTrabajos;
         private System.Windows.Forms.Button btnBuscarTrabajos;
         private System.Windows.Forms.TextBox tbBuscarTrabajos;
-        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridView dgvTrabajos;
     }
 }

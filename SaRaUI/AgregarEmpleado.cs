@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace SaRaUI
     {
 
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
+        GestionEmpleados gestionEmpleados = new GestionEmpleados();
 
         public AgregarEmpleado()
         {
@@ -23,9 +25,25 @@ namespace SaRaUI
             lbIngreseSusDatos.Font = new Font(privateFonts.Families[0], 20);
         }
 
+        public void Agregar()
+        {
+            var empleado = new Entidades.Empleados
+            {
+                Cedula = tbCedulaEm.Text,
+                Nombre = tbNombreEm.Text,
+                Telefono = tbTelefonoEm.Text
+            };
+            gestionEmpleados.Agregar(empleado);
+        }
+
         private void btnAtrasEm_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnGuardarEm_Click(object sender, EventArgs e)
+        {
+            Agregar();
         }
     }
 }

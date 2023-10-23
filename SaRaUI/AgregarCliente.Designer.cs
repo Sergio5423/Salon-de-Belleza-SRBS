@@ -37,6 +37,7 @@
             this.panelCedula = new System.Windows.Forms.Panel();
             this.lbCedNC = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dtpCumpleaños = new System.Windows.Forms.DateTimePicker();
             this.btnGuardarNC = new System.Windows.Forms.Button();
             this.tbCorreoNC = new System.Windows.Forms.TextBox();
             this.tbTelefonoNC = new System.Windows.Forms.TextBox();
@@ -51,7 +52,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbCedulaNC = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dtpCumpleaños = new System.Windows.Forms.DateTimePicker();
             this.panelBottom.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelCedula.SuspendLayout();
@@ -172,6 +172,17 @@
             this.panel2.Size = new System.Drawing.Size(776, 318);
             this.panel2.TabIndex = 7;
             // 
+            // dtpCumpleaños
+            // 
+            this.dtpCumpleaños.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.dtpCumpleaños.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(249)))), ((int)(((byte)(247)))));
+            this.dtpCumpleaños.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
+            this.dtpCumpleaños.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.dtpCumpleaños.Location = new System.Drawing.Point(176, 259);
+            this.dtpCumpleaños.Name = "dtpCumpleaños";
+            this.dtpCumpleaños.Size = new System.Drawing.Size(212, 20);
+            this.dtpCumpleaños.TabIndex = 13;
+            // 
             // btnGuardarNC
             // 
             this.btnGuardarNC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -185,6 +196,7 @@
             this.btnGuardarNC.Size = new System.Drawing.Size(44, 44);
             this.btnGuardarNC.TabIndex = 12;
             this.btnGuardarNC.UseVisualStyleBackColor = false;
+            this.btnGuardarNC.Click += new System.EventHandler(this.btnGuardarNC_Click);
             // 
             // tbCorreoNC
             // 
@@ -335,17 +347,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            // 
-            // dtpCumpleaños
-            // 
-            this.dtpCumpleaños.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.dtpCumpleaños.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(249)))), ((int)(((byte)(247)))));
-            this.dtpCumpleaños.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
-            this.dtpCumpleaños.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.dtpCumpleaños.Location = new System.Drawing.Point(176, 259);
-            this.dtpCumpleaños.Name = "dtpCumpleaños";
-            this.dtpCumpleaños.Size = new System.Drawing.Size(212, 20);
-            this.dtpCumpleaños.TabIndex = 13;
             // 
             // AgregarCliente
             // 

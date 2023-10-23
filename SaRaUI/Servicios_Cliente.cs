@@ -18,6 +18,8 @@ namespace SaRaUI
         Entidades.Clientes cliente;
         Entidades.Clientes_Servicios clientes_servicios;
         GestionServicios gestionServicios = new GestionServicios();
+        GestionServicios_Clientes gestionServicios_Clientes = new GestionServicios_Clientes();
+        string Codigo, Cedula;
         List<string> NombreServicios = null;
         List<Entidades.Servicios> Servicios = null;
 
@@ -34,6 +36,14 @@ namespace SaRaUI
                 NombreServicios.Add(servicio.Nombre);
             }
             cbServicios.Items.Add(NombreServicios);
+            LlenarGridView();
+        }
+
+        public void LlenarGridView()
+        {
+            BindingSource bin = new BindingSource();
+            bin.DataSource = gestionClientes_Servicios.Consultar(Cedula);
+            dgvServicios_Cliente.DataSource = bin;
         }
 
         public void Agregar()
@@ -47,13 +57,14 @@ namespace SaRaUI
                         Codigo_Servicio = servicio.Codigo,
                         Cedula_Cliente = cliente.Cedula
                     };
+                    gestionServicios_Clientes.Agregar(clientes_servicios);
                 }
-            }
+            }            
         }
 
-        public void Borrar()
+        public void Borrar(string Codigo, string Cedula)
         {
-           
+           gestionServicios_Clientes.Borrar(Codigo, Cedula);
         }
 
         public void GetCliente(Entidades.Clientes client)
@@ -74,6 +85,12 @@ namespace SaRaUI
         private void btnBorrarSC_Click(object sender, EventArgs e)
         {
             Borrar();
+        }
+
+        private void dgvServicios_Cliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Codigo = dgvServicios_Cliente.Rows[e.RowIndex].Cells[0].Value.ToString();
+            Cedula = dgvServicios_Cliente.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
     }
 }

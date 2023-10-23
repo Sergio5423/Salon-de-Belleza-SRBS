@@ -31,7 +31,7 @@ namespace Datos
             }
         }
 
-        public void Borrar(int cedula)
+        public void Borrar(string cedula)
         {
             using (var Command = connection.CreateCommand())
             {

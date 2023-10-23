@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,12 @@ namespace SaRaUI
     {
 
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
+        GestionTrabajos gestionTrabajos = new GestionTrabajos();
+        GestionServicios gestionServicios = new GestionServicios();
+        List<Entidades.Servicios> Servicios = null;
+        List<string> NombreServicios = null;
+        string codigo;
+        Entidades.Empleados empleado;
 
         public Trabajos_Empleado()
         {
@@ -21,11 +28,68 @@ namespace SaRaUI
             privateFonts.AddFontFile(@"C:\Users\starr\Source\Repos\Sergio5423\Salon-de-Belleza-SRBS\SaRaUI\Fonts\Playlist Script.ttf");
             lbTrabajos.Font = new Font(privateFonts.Families[0], 35);
             lbNombreEmpleado.Font = new Font(privateFonts.Families[0], 16);
+            lbNombreEmpleado.Text = empleado.Nombre;
+            Servicios = gestionServicios.Consultar();
+            foreach (var servicio in Servicios)
+            {
+                NombreServicios.Add(servicio.Nombre);
+            }
+            cbServicios.Items.Add(NombreServicios);
+            LlenarGridView();
+        }
+
+        public void LlenarGridView()
+        {
+            BindingSource bin = new BindingSource();
+            bin.DataSource = gestionTrabajos.ConsultarPorEmpleado();
+            dgvTrabajos_Empleado.DataSource = bin;
+        }
+
+        public void Agregar()
+        {
+            foreach (var servicio in Servicios)
+            {
+                if (servicio.Nombre == cbServicios.Text)
+                {
+                    var trabajo = new Entidades.Trabajos
+                    {
+                        Fecha = DateTime.Now,
+                        Servicio_Codigo = servicio.Codigo,
+                        Empleado_Cedula = empleado.Cedula
+                    };
+                    gestionTrabajos.Agregar(trabajo);
+                }
+            }
+        }
+
+        public void Borrar(string codigo)
+        {
+            gestionTrabajos.Borrar(codigo);
+        }
+
+        public void GetEmpleado(Entidades.Empleados emp)
+        {
+            empleado = emp;
         }
 
         private void btnAtrasSC_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnGuardarSC_Click(object sender, EventArgs e)
+        {
+            Agregar();
+        }
+
+        private void btnBorrarSC_Click(object sender, EventArgs e)
+        {
+            Borrar(codigo);
+        }
+
+        private void dgvServicios_Cliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            codigo = dgvTrabajos_Empleado.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
     }
 }

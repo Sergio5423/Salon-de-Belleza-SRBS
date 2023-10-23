@@ -133,6 +133,7 @@
             this.btnGuardarEm.Size = new System.Drawing.Size(44, 44);
             this.btnGuardarEm.TabIndex = 12;
             this.btnGuardarEm.UseVisualStyleBackColor = false;
+            this.btnGuardarEm.Click += new System.EventHandler(this.btnGuardarEm_Click);
             // 
             // tbTelefonoEm
             // 

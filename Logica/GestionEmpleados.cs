@@ -26,14 +26,14 @@ namespace Logica
             repositorioEmpleados.Agregar(empleado);
         }
 
-        public void Borrar(int id)
+        public void Borrar(string cedula)
         {
-            repositorioEmpleados.Borrar(id);
+            repositorioEmpleados.Borrar(cedula);
         }
 
-        public void Actualizar(Empleados empleado)
+        public void Actualizar(string ced, Empleados empleado)
         {
-            repositorioEmpleados.Actualizar(empleado);
+            repositorioEmpleados.Actualizar(ced, empleado);
         }
 
         public List<Empleados> Filtrar(string nombre)

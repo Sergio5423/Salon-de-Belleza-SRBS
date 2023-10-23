@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace SaRaUI
     {
 
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
+        GestionTrabajos gestionTrabajos = new GestionTrabajos();
 
         public Trabajos()
         {
@@ -21,6 +23,14 @@ namespace SaRaUI
             privateFonts.AddFontFile(@"C:\Users\starr\Source\Repos\Sergio5423\Salon-de-Belleza-SRBS\SaRaUI\Fonts\Playlist Script.ttf");
             lbTrabajos.Font = new Font(privateFonts.Families[0], 35);
             cbOrdenarTrabajos.Font = new Font(privateFonts.Families[0], 14);
+            LlenarGridView();
+        }
+
+        public void LlenarGridView()
+        {
+            BindingSource bin = new BindingSource();
+            bin.DataSource = gestionTrabajos.Consultar();
+            dgvTrabajos.DataSource = bin;
         }
     }
 }

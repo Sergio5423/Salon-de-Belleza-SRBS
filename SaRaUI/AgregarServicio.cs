@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace SaRaUI
     {
 
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
+        GestionServicios gestionServicios = new GestionServicios();
 
         public AgregarServicio()
         {
@@ -23,7 +25,7 @@ namespace SaRaUI
             lbIngreseElServicio.Font = new Font(privateFonts.Families[0], 20);
         }
 
-        public void CrearServicio()
+        public void Agregar()
         {
             var servicio = new Entidades.Servicios
             {
@@ -31,6 +33,7 @@ namespace SaRaUI
                 Duracion = int.Parse(tbRegresoServ.Text),
                 Valor = int.Parse(tbValorServ.Text),
             };
+            gestionServicios.Agregar(servicio);
         }
 
         private void btnAtrasServ_Click(object sender, EventArgs e)
@@ -40,7 +43,7 @@ namespace SaRaUI
 
         private void btnGuardarServ_Click(object sender, EventArgs e)
         {
-            CrearServicio();
+            Agregar();
         }
     }
 }
