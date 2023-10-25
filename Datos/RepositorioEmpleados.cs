@@ -42,7 +42,7 @@ namespace Datos
             }
         }
 
-        public void Actualizar(Empleados empleado)
+        public void Actualizar(string ced, Empleados empleado)
         {
             using (var Command = connection.CreateCommand())
             {
@@ -50,13 +50,13 @@ namespace Datos
                                                            "Nombre = @Nombre" +
                                                            "Telefono = @Telefono" +    
                                                            
-                                                           " Where Cedula = '@Cedula'";
+                                                           " Where Cedula = '@CedulaAnt'";
                 Command.Parameters.Add("Cedula", SqlDbType.VarChar).Value = empleado.Cedula;
                 Command.Parameters.Add("Nombre", SqlDbType.VarChar).Value = empleado.Nombre;
                 Command.Parameters.Add("Telefono", SqlDbType.VarChar).Value = empleado.Telefono;
 
 
-                Command.Parameters.Add("Cedula", SqlDbType.Int).Value = empleado.Cedula;
+                Command.Parameters.Add("CedulaAnt", SqlDbType.Int).Value = ced;
                 Open();
                 Command.ExecuteNonQuery();
                 Close();

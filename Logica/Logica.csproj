@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="GestionEmpleados.cs" />
     <Compile Include="GestionServicios.cs" />
+    <Compile Include="GestionServicios_Clientes.cs" />
     <Compile Include="GestorFuentes.cs" />
     <Compile Include="IOperaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -32,6 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbServicios = new System.Windows.Forms.Label();
             this.panelBottom = new System.Windows.Forms.Panel();
+            this.btnEditarServicios = new System.Windows.Forms.Button();
             this.btnAgregarServicios = new System.Windows.Forms.Button();
             this.btnBorrarServicios = new System.Windows.Forms.Button();
             this.panelTablaC = new System.Windows.Forms.Panel();
@@ -88,6 +89,7 @@
             // 
             this.panelBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
             this.panelBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBottom.Controls.Add(this.btnEditarServicios);
             this.panelBottom.Controls.Add(this.btnAgregarServicios);
             this.panelBottom.Controls.Add(this.btnBorrarServicios);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -95,6 +97,21 @@
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(822, 52);
             this.panelBottom.TabIndex = 2;
+            // 
+            // btnEditarServicios
+            // 
+            this.btnEditarServicios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditarServicios.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarServicios.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Editar;
+            this.btnEditarServicios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEditarServicios.FlatAppearance.BorderSize = 0;
+            this.btnEditarServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarServicios.Location = new System.Drawing.Point(688, 3);
+            this.btnEditarServicios.Name = "btnEditarServicios";
+            this.btnEditarServicios.Size = new System.Drawing.Size(44, 44);
+            this.btnEditarServicios.TabIndex = 8;
+            this.btnEditarServicios.UseVisualStyleBackColor = false;
+            this.btnEditarServicios.Click += new System.EventHandler(this.btnEditarServicios_Click);
             // 
             // btnAgregarServicios
             // 
@@ -104,7 +121,7 @@
             this.btnAgregarServicios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAgregarServicios.FlatAppearance.BorderSize = 0;
             this.btnAgregarServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarServicios.Location = new System.Drawing.Point(688, 3);
+            this.btnAgregarServicios.Location = new System.Drawing.Point(628, 3);
             this.btnAgregarServicios.Name = "btnAgregarServicios";
             this.btnAgregarServicios.Size = new System.Drawing.Size(44, 44);
             this.btnAgregarServicios.TabIndex = 5;
@@ -227,5 +244,6 @@
         private System.Windows.Forms.Button btnBuscarServicio;
         private System.Windows.Forms.TextBox tbBuscarServicio;
         private System.Windows.Forms.DataGridView dgvServicios;
+        private System.Windows.Forms.Button btnEditarServicios;
     }
 }

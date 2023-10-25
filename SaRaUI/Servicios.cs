@@ -52,5 +52,10 @@ namespace SaRaUI
             panelBottom.Dock = DockStyle.None;
             OpenChildForm(new AgregarServicio());
         }
+
+        private void btnEditarServicios_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

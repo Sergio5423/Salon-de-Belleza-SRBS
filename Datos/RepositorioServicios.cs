@@ -43,14 +43,15 @@ namespace Datos
             }
         }
 
-        public void Actualizar(Servicios servicio)
+        public void Actualizar(string cod, Servicios servicio)
         {
             using (var Command = connection.CreateCommand())
             {
                 Command.CommandText = $"Update Servicios " +
                                       $"Set Nombre = '{servicio.Nombre}', " +
                                       $"Duracion = '{servicio.Duracion}', " +
-                                      $"Valor = '{servicio.Valor}'";                
+                                      $"Valor = '{servicio.Valor}'" +
+                                      $"WHERE codigo = '{cod}'";                
                 Open();
                 Command.ExecuteNonQuery();
                 Close();

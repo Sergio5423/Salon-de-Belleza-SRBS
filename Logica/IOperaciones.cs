@@ -14,6 +14,6 @@ namespace Logica
 
         void Borrar(string t);
 
-        void Actualizar(T t);
+        void Actualizar(string s,T t);
     }
 }

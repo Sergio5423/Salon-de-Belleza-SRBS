@@ -42,7 +42,7 @@ namespace SaRaUI
         public void LlenarGridView()
         {
             BindingSource bin = new BindingSource();
-            bin.DataSource = gestionClientes_Servicios.Consultar(Cedula);
+            bin.DataSource = gestionServicios_Clientes.ConsultarClientes(Cedula);
             dgvServicios_Cliente.DataSource = bin;
         }
 
@@ -62,9 +62,9 @@ namespace SaRaUI
             }            
         }
 
-        public void Borrar(string Codigo, string Cedula)
+        public void Borrar()
         {
-           gestionServicios_Clientes.Borrar(Codigo, Cedula);
+           gestionServicios_Clientes.BorrarServicio(Codigo, Cedula);
         }
 
         public void GetCliente(Entidades.Clientes client)

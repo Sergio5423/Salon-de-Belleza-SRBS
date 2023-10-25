@@ -17,14 +17,14 @@ namespace Datos
                     
         }
 
-        public void Agregar(string cedula, string codigo)
+        public void Agregar(Clientes_Servicios clientes_servicios)
         {
             using (var Command = connection.CreateCommand())
             {
                 Command.CommandText = "Insert Into Clientes_Servicios (Cedula_Cliente,Codigo_Servicio)" +
                 " values (@Cedula_Cliente,@Codigo_Servicio)";
-                Command.Parameters.Add("Cedula_Cliente", SqlDbType.VarChar).Value = cedula;
-                Command.Parameters.Add("Codigo_Servicio", SqlDbType.VarChar).Value = codigo;
+                Command.Parameters.Add("Cedula_Cliente", SqlDbType.VarChar).Value = clientes_servicios.Cedula_Cliente;
+                Command.Parameters.Add("Codigo_Servicio", SqlDbType.VarChar).Value = clientes_servicios.Codigo_Servicio;
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
@@ -58,12 +58,25 @@ namespace Datos
             }
         }
 
-        public void BorrarServiciosVinculados(string cedula)
+        public void BorrarCliente(string cedula)
         {
             using (var Command = connection.CreateCommand())
             {
                 Command.CommandText = $"Delete Clientes_Servicios" +
                                       $" where Cedula_Cliente = {cedula}";
+                Open();
+                Command.ExecuteNonQuery();
+                Close();
+            }
+        }
+
+        public void BorrarServicios(string cod, string ced)
+        {
+            using (var Command = connection.CreateCommand())
+            {
+                Command.CommandText = $"Delete Clientes_Servicios" +
+                                      $" where Cedula_Cliente = '{ced}'" +
+                                      $"and Codigo_Servicio = '{cod}'";
                 Open();
                 Command.ExecuteNonQuery();
                 Close();
