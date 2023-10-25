@@ -41,7 +41,7 @@ namespace SaRaUI
         public void LlenarGridView()
         {
             BindingSource bin = new BindingSource();
-            bin.DataSource = gestionTrabajos.ConsultarPorEmpleado();
+            bin.DataSource = gestionTrabajos.ConsultarPorEmpleado(empleado.Cedula);
             dgvTrabajos_Empleado.DataSource = bin;
         }
 
@@ -87,7 +87,7 @@ namespace SaRaUI
             Borrar(codigo);
         }
 
-        private void dgvServicios_Cliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvTrabajos_Empleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             codigo = dgvTrabajos_Empleado.Rows[e.RowIndex].Cells[0].Value.ToString();
         }

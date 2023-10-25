@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class RepositorioEmpleados : GestorConexion, IOperacionesBD<Empleados>
+    public class RepositorioEmpleados : GestorConexion
     {
         public RepositorioEmpleados() : base()
         {

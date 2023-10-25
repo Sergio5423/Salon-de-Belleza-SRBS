@@ -16,6 +16,7 @@ namespace SaRaUI
 
         private Form activeForm = null;
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
+        GestionServicios gestionServicios = new GestionServicios();
 
         public Servicios()
         {

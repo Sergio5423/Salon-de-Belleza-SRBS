@@ -29,13 +29,25 @@ namespace SaRaUI
             privateFonts.AddFontFile(@"C:\Users\starr\Source\Repos\Sergio5423\Salon-de-Belleza-SRBS\SaRaUI\Fonts\Playlist Script.ttf");
             lbServicios_del_Cliente.Font = new Font(privateFonts.Families[0], 35);
             lbNombreCliente.Font = new Font(privateFonts.Families[0], 16);
-            lbNombreCliente.Text = cliente.Nombre;
-            Servicios = gestionServicios.Consultar();
-            foreach(var servicio in Servicios) 
+            if (cliente == null)
             {
-                NombreServicios.Add(servicio.Nombre);
+                
+            } else
+            {
+                lbNombreCliente.Text = cliente.Nombre;
+                Servicios = gestionServicios.Consultar();
             }
-            cbServicios.Items.Add(NombreServicios);
+            if (Servicios == null)
+            {
+
+            } else
+            {
+                foreach (var servicio in Servicios)
+                {
+                    NombreServicios.Add(servicio.Nombre);
+                }
+                cbServicios.Items.Add(NombreServicios);
+            }
             LlenarGridView();
         }
 

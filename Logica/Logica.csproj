@@ -54,12 +54,14 @@
     <Compile Include="GestionEmpleados.cs" />
     <Compile Include="GestionServicios.cs" />
     <Compile Include="GestionServicios_Clientes.cs" />
+    <Compile Include="GestionTrabajos.cs" />
     <Compile Include="GestorFuentes.cs" />
     <Compile Include="IOperaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GestionClientes.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

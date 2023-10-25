@@ -96,6 +96,22 @@ namespace Datos
             return trabajos;
         }
 
+        public List<Trabajos> ConsultarPorEmpleado(string ced)
+        {
+            List<Trabajos> trabajos = new List<Trabajos>();
+            var command = connection.CreateCommand();
+            command.CommandText = $"select * from Trabajos " +
+                                  $"WHERE Empleado_Cedula = '{ced}'";
+            Open();
+            SqlDataReader lector = command.ExecuteReader();
+            while (lector.Read())
+            {
+                trabajos.Add(Mapeador(lector));
+            }
+            Close();
+            return trabajos;
+        }
+
         public Trabajos Mapeador(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows)

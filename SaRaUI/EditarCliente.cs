@@ -18,7 +18,7 @@ namespace SaRaUI
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
         GestionClientes gestionClientes = new GestionClientes();
         string cedula;
-        Entidades.Clientes cliente;
+        Entidades.Clientes cliente = null;
 
         public EditarCliente()
         {
@@ -26,11 +26,20 @@ namespace SaRaUI
             privateFonts.AddFontFile(@"C:\Users\starr\Source\Repos\Sergio5423\Salon-de-Belleza-SRBS\SaRaUI\Fonts\Playlist Script.ttf");
             lblEC.Font = new Font(privateFonts.Families[0], 35);
             lbIngreseDatosEC.Font = new Font(privateFonts.Families[0], 20);
-            tbCedEC.Text = cliente.Cedula;
-            tbNomEC.Text = cliente.Nombre;
-            tbTelEC.Text = cliente.Telefono;
-            tbCorreoEC.Text = cliente.Correo;
-            dtpCumpleañosEC.Value = cliente.Cumpleaños;
+            
+            if (cliente == null)
+            {
+
+            }
+            else
+            {
+                tbCedEC.Text = cliente.Cedula;
+                tbNomEC.Text = cliente.Nombre;
+                tbTelEC.Text = cliente.Telefono;
+                tbCorreoEC.Text = cliente.Correo;
+                dtpCumpleañosEC.Value = cliente.Cumpleaños;
+            }
+   
         }
 
         public void GetCedula(string ced)

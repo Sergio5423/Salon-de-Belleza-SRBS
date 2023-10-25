@@ -189,7 +189,7 @@
             this.dgvTrabajos_Empleado.Name = "dgvTrabajos_Empleado";
             this.dgvTrabajos_Empleado.Size = new System.Drawing.Size(730, 226);
             this.dgvTrabajos_Empleado.TabIndex = 0;
-            this.dgvTrabajos_Empleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvServicios_Cliente_CellContentClick);
+            this.dgvTrabajos_Empleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrabajos_Empleado_CellContentClick);
             // 
             // cbFiltrarTrabajos
             // 
