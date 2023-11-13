@@ -36,10 +36,10 @@
             this.btnAgregarServicios = new System.Windows.Forms.Button();
             this.btnBorrarServicios = new System.Windows.Forms.Button();
             this.panelTablaC = new System.Windows.Forms.Panel();
+            this.dgvServicios = new System.Windows.Forms.DataGridView();
             this.cbOrdenarServicios = new System.Windows.Forms.ComboBox();
             this.btnBuscarServicio = new System.Windows.Forms.Button();
             this.tbBuscarServicio = new System.Windows.Forms.TextBox();
-            this.dgvServicios = new System.Windows.Forms.DataGridView();
             this.panelFondo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelBottom.SuspendLayout();
@@ -141,6 +141,7 @@
             this.btnBorrarServicios.Size = new System.Drawing.Size(44, 44);
             this.btnBorrarServicios.TabIndex = 4;
             this.btnBorrarServicios.UseVisualStyleBackColor = false;
+            this.btnBorrarServicios.Click += new System.EventHandler(this.btnBorrarServicios_Click);
             // 
             // panelTablaC
             // 
@@ -150,15 +151,29 @@
             this.panelTablaC.BackColor = System.Drawing.Color.Transparent;
             this.panelTablaC.BackgroundImage = global::SaRaUI.Properties.Resources.Fondo_Tablas;
             this.panelTablaC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelTablaC.Controls.Add(this.dgvServicios);
             this.panelTablaC.Controls.Add(this.cbOrdenarServicios);
             this.panelTablaC.Controls.Add(this.btnBuscarServicio);
             this.panelTablaC.Controls.Add(this.tbBuscarServicio);
-            this.panelTablaC.Controls.Add(this.dgvServicios);
             this.panelTablaC.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelTablaC.Location = new System.Drawing.Point(15, 90);
             this.panelTablaC.Name = "panelTablaC";
             this.panelTablaC.Size = new System.Drawing.Size(790, 317);
             this.panelTablaC.TabIndex = 1;
+            // 
+            // dgvServicios
+            // 
+            this.dgvServicios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvServicios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
+            this.dgvServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvServicios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(183)))), ((int)(((byte)(161)))));
+            this.dgvServicios.Location = new System.Drawing.Point(30, 61);
+            this.dgvServicios.Name = "dgvServicios";
+            this.dgvServicios.Size = new System.Drawing.Size(730, 226);
+            this.dgvServicios.TabIndex = 0;
+            this.dgvServicios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvServicios_CellClick);
             // 
             // cbOrdenarServicios
             // 
@@ -198,19 +213,6 @@
             this.tbBuscarServicio.Name = "tbBuscarServicio";
             this.tbBuscarServicio.Size = new System.Drawing.Size(187, 29);
             this.tbBuscarServicio.TabIndex = 1;
-            // 
-            // dgvServicios
-            // 
-            this.dgvServicios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvServicios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
-            this.dgvServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvServicios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(183)))), ((int)(((byte)(161)))));
-            this.dgvServicios.Location = new System.Drawing.Point(30, 61);
-            this.dgvServicios.Name = "dgvServicios";
-            this.dgvServicios.Size = new System.Drawing.Size(730, 226);
-            this.dgvServicios.TabIndex = 0;
             // 
             // Servicios
             // 

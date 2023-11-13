@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entidades;
-using Datos;
-using System.Data.SqlClient;
+using DatosOracle;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
+using System.Data;
 
 namespace Logica
 {
@@ -30,16 +30,6 @@ namespace Logica
 
         public void Agregar(Servicios servicio)
         {
-            //if (servicio.Nombre == "Alisado Permanente")
-            //    servicio.Regreso = CalcularRegresoMeses(servicio.Duracion);
-            //if (servicio.Nombre == "Diseño de Color")
-            //    servicio.Regreso = CalcularRegresoMeses(servicio.Duracion);
-            //if (servicio.Nombre == "Mantenimiento de Químicos")
-            //    servicio.Regreso = CalcularRegresoDias(servicio.Duracion);
-            //if (servicio.Nombre == "Restauración Capilar")
-            //    servicio.Regreso = CalcularRegresoDias(servicio.Duracion);
-            //if (servicio.Nombre == "Blower")
-            //    servicio.Regreso = CalcularRegresoDias(servicio.Duracion);
             repositorioServicios.Agregar(servicio);
         }
 
@@ -50,7 +40,7 @@ namespace Logica
 
         public void Actualizar(string cod, Servicios servicio)
         {
-            repositorioServicios.Actualizar(cod, servicio);
+            //repositorioServicios.Actualizar(cod, servicio);
         }
 
         //public List<Servicios> Filtrar(string nombre, int vinculo)

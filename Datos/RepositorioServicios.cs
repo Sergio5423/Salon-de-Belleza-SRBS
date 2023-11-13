@@ -1,11 +1,13 @@
 ﻿using Entidades;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OracleDataReader = System.Data.OracleClient.OracleDataReader;
 
 namespace Datos
 {
@@ -67,7 +69,7 @@ namespace Datos
                                       $"from Servicios where Nombre " +
                                       $"like '%{nombre}%'";
                 Open();
-                SqlDataReader lector = command.ExecuteReader();
+                OracleDataReader lector = command.ExecuteReader();
                 while (lector.Read())
                 {
                     servicios.Add(Mapeador(lector));
@@ -82,9 +84,9 @@ namespace Datos
             List<Servicios> servicios = new List<Servicios>();
             var command = connection.CreateCommand();
             command.CommandText = $"select Codigo,Nombre,Duracion,Valor " +
-                                  $"from Servicios";
+                                  $"from SERVICIOS";
             Open();
-            SqlDataReader lector = command.ExecuteReader();
+            OracleDataReader lector = command.ExecuteReader();
             while (lector.Read())
             {
                 servicios.Add(Mapeador(lector));
@@ -93,7 +95,7 @@ namespace Datos
             return servicios;
         }
 
-        public Servicios Mapeador(SqlDataReader dataReader)
+        public Servicios Mapeador(OracleDataReader dataReader)
         {
             if (!dataReader.HasRows)
                 return null;

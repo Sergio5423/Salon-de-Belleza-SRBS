@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaRaUI", "SaRaUI\SaRaUI.csproj", "{27DC003E-E1C5-4A8A-A3CE-F52E216962AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatosOracle", "DatosOracle\DatosOracle.csproj", "{0331CA11-81B7-4A93-B69E-9738FFB755CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{27DC003E-E1C5-4A8A-A3CE-F52E216962AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27DC003E-E1C5-4A8A-A3CE-F52E216962AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27DC003E-E1C5-4A8A-A3CE-F52E216962AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0331CA11-81B7-4A93-B69E-9738FFB755CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0331CA11-81B7-4A93-B69E-9738FFB755CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0331CA11-81B7-4A93-B69E-9738FFB755CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0331CA11-81B7-4A93-B69E-9738FFB755CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

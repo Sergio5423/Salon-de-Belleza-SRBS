@@ -14,9 +14,9 @@ namespace SaRaUI
     public partial class Clientes : Form
     {
         private Form activeForm = null;
-        System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
-        GestionClientes gestionClientes = new GestionClientes();
+        System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();        
         EditarCliente editarCliente = new EditarCliente();
+        GestionClientes gestionClientes = new GestionClientes();
         Servicios_Cliente servicios_Cliente = new Servicios_Cliente();
         string cedula;
         Entidades.Clientes cliente = new Entidades.Clientes();

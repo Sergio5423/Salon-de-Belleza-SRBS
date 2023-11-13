@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using Datos;
+using DatosOracle;
 using Entidades;
 using System.IO;
 
@@ -32,9 +32,9 @@ namespace Logica
             repositorioClientes.Borrar(cedula);
         }
 
-        public void Actualizar(string cedula, Clientes cliente)
+        public void Actualizar(string cedulaAnt, Clientes cliente)
         {
-            repositorioClientes.Actualizar(cedula, cliente);
+           repositorioClientes.Actualizar(cedulaAnt, cliente);
         }
 
         //public List<Clientes> Filtrar(string nombre)

@@ -15,10 +15,10 @@ namespace SaRaUI
     public partial class EditarCliente : Form
     {
 
-        System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
-        GestionClientes gestionClientes = new GestionClientes();
+        System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();        
         string cedula;
         Entidades.Clientes cliente = null;
+        GestionClientes gestionClientes = new GestionClientes();
 
         public EditarCliente()
         {

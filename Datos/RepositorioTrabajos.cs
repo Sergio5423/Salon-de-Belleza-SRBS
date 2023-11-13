@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OracleClient;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace Datos
 {
@@ -72,7 +74,7 @@ namespace Datos
             var command = connection.CreateCommand();
             command.CommandText = $"select * from Trabajos where Nombre like '%{nombre}%'";
             Open();
-            SqlDataReader lector = command.ExecuteReader();
+            OracleDataReader lector = command.ExecuteReader();
             while (lector.Read())
             {
                 empleados.Add(Mapeador(lector));
@@ -87,7 +89,7 @@ namespace Datos
             var command = connection.CreateCommand();
             command.CommandText = "select * from Trabajos";
             Open();
-            SqlDataReader lector = command.ExecuteReader();
+            OracleDataReader lector = command.ExecuteReader();
             while (lector.Read())
             {
                 trabajos.Add(Mapeador(lector));
@@ -103,7 +105,7 @@ namespace Datos
             command.CommandText = $"select * from Trabajos " +
                                   $"WHERE Empleado_Cedula = '{ced}'";
             Open();
-            SqlDataReader lector = command.ExecuteReader();
+            OracleDataReader lector = command.ExecuteReader();
             while (lector.Read())
             {
                 trabajos.Add(Mapeador(lector));
@@ -112,7 +114,7 @@ namespace Datos
             return trabajos;
         }
 
-        public Trabajos Mapeador(SqlDataReader dataReader)
+        public Trabajos Mapeador(OracleDataReader dataReader)
         {
             if (!dataReader.HasRows)
                 return null;

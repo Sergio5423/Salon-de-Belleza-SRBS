@@ -35,7 +35,7 @@ namespace SaRaUI
             } else
             {
                 lbNombreCliente.Text = cliente.Nombre;
-                Servicios = gestionServicios.Consultar();
+             //   Servicios = gestionServicios.Consultar();
             }
             if (Servicios == null)
             {
@@ -54,7 +54,7 @@ namespace SaRaUI
         public void LlenarGridView()
         {
             BindingSource bin = new BindingSource();
-            bin.DataSource = gestionServicios_Clientes.ConsultarClientes(Cedula);
+            bin.DataSource = gestionServicios_Clientes.ConsultarServicios(Cedula);
             dgvServicios_Cliente.DataSource = bin;
         }
 

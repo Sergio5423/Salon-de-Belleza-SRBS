@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OracleClient;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,6 @@ namespace Datos
         void Borrar(int id);
         List<T> Filtrar(string nombre);
         List<T> Consultar();
-        T Mapeador(SqlDataReader dataReader);
+        T Mapeador(OracleDataReader dataReader);
     }
 }

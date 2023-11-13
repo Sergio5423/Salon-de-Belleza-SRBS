@@ -17,6 +17,7 @@ namespace SaRaUI
         private Form activeForm = null;
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
         GestionServicios gestionServicios = new GestionServicios();
+        string codigo;
 
         public Servicios()
         {
@@ -56,7 +57,18 @@ namespace SaRaUI
 
         private void btnEditarServicios_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void btnBorrarServicios_Click(object sender, EventArgs e)
+        {
+            gestionServicios.Borrar(codigo);
+            LlenarGridView();
+        }
+
+        private void dgvServicios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            codigo = dgvServicios.Rows[e.RowIndex].Cells[0].Value.ToString();            
         }
     }
 }

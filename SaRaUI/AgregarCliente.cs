@@ -35,7 +35,8 @@ namespace SaRaUI
                 Telefono = tbTelefonoNC.Text,
                 Correo = tbCorreoNC.Text,
                 UltimaVisita = DateTime.Now,
-                Cumpleaños = dtpCumpleaños.Value
+                Cumpleaños = dtpCumpleaños.Value,
+                Empleado_Cedula = tbEmpleado_Cedula.Text                
             };            
             gestionClientes.Agregar(cliente);
         }

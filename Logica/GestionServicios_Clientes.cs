@@ -3,33 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Datos;
+using DatosOracle;
 using Entidades;
 
 namespace Logica
 {
     public class GestionServicios_Clientes
     {
-        RepositorioServicios_Cliente repositorioServicios_Cliente = new RepositorioServicios_Cliente();
+        RepositorioClientesServicios repositorioClientesServicios = new RepositorioClientesServicios();
 
         public void Agregar(Clientes_Servicios clientes_Servicios)
         {
-            repositorioServicios_Cliente.Agregar(clientes_Servicios);
+            repositorioClientesServicios.Agregar(clientes_Servicios);
         }
 
-        public List<Clientes> ConsultarClientes(string ced)
+        /*Retorna los servicios del cliente*/
+        public List<Servicios> ConsultarServicios(string ced)
         {
-            return repositorioServicios_Cliente.ConsultarServicios_Cliente(ced);
+            return repositorioClientesServicios.Consultar(ced);
         }
 
         public void BorrarCliente(string ced)
         {
-            repositorioServicios_Cliente.BorrarCliente(ced);
+            repositorioClientesServicios.BorrarCliente(ced);
         }
 
         public void BorrarServicio(string cod, string ced)
         {
-            repositorioServicios_Cliente.BorrarServicios(cod, ced);
+            repositorioClientesServicios.BorrarServicio(cod, ced);
         }
     }
 }

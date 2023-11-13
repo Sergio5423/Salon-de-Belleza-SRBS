@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.IO.Pipes;
 using System.Data;
+using System.Data.OracleClient;
 
 namespace Datos
 {
@@ -108,7 +109,7 @@ namespace Datos
                                   "Servicios s ON s.Codigo=cs.Codigo_Servicio " +
                                   $"WHERE cs.Cedula_Cliente='{cedula}'";
             Open();
-            SqlDataReader lector = command.ExecuteReader();
+            OracleDataReader lector = command.ExecuteReader();
             while (lector.Read())
             {
                 clientes.Add(Mapeador(lector));
@@ -117,7 +118,7 @@ namespace Datos
             return clientes;
         }
 
-        public Clientes Mapeador(SqlDataReader dataReader)
+        public Clientes Mapeador(OracleDataReader dataReader)
         {
             if (!dataReader.HasRows)
                 return null;

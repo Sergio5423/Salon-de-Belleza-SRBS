@@ -65,6 +65,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatosOracle\DatosOracle.csproj">
+      <Project>{0331ca11-81b7-4a93-b69e-9738ffb755ca}</Project>
+      <Name>DatosOracle</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Datos\Datos.csproj">
       <Project>{6e1c5366-2ebe-4681-b22c-670d2e7273d2}</Project>
       <Name>Datos</Name>

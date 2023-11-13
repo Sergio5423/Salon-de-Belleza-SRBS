@@ -29,7 +29,7 @@ namespace SaRaUI
             lbTrabajos.Font = new Font(privateFonts.Families[0], 35);
             lbNombreEmpleado.Font = new Font(privateFonts.Families[0], 16);
             lbNombreEmpleado.Text = empleado.Nombre;
-            Servicios = gestionServicios.Consultar();
+          //  Servicios = gestionServicios.Consultar();
             foreach (var servicio in Servicios)
             {
                 NombreServicios.Add(servicio.Nombre);
