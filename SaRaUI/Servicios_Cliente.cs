@@ -15,12 +15,10 @@ namespace SaRaUI
     {
 
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
-        //Entidades.Clientes cliente;
-        //Entidades.Clientes_Servicios clientes_servicios;
         GestionServicios gestionServicios = new GestionServicios();
         GestionEmpleados gestionEmpleados = new GestionEmpleados();
         GestionServicios_Clientes gestionServicios_Clientes = new GestionServicios_Clientes();
-        string Codigo, CedulaSel;
+        string Codigo;
         public string Cedula;
         List<Entidades.Servicios> Servicios = null;
         List<Entidades.Empleados> Empleados = null;
@@ -39,8 +37,7 @@ namespace SaRaUI
             foreach (Entidades.Empleados empleado in Empleados)
             {
                 cbEmpleados.Items.Add(empleado.Nombre);
-            }
-            //LlenarGridView();       
+            }      
         }
 
         public void LlenarGridView(string ced)
@@ -52,21 +49,18 @@ namespace SaRaUI
 
         public void Agregar()
         {
-            MessageBox.Show(Cedula);
-            MessageBox.Show(Servicios[cbServicios.SelectedIndex].Codigo);
-            MessageBox.Show(Empleados[cbEmpleados.SelectedIndex].Cedula);
             var cliente_servicio = new Entidades.Clientes_Servicios
             {
                 Cedula_Cliente = Cedula,                
                 Codigo_Servicio = Servicios[cbServicios.SelectedIndex].Codigo,
                 Empleado_Cedula = Empleados[cbEmpleados.SelectedIndex].Cedula
             };
-            gestionServicios_Clientes.Agregar(cliente_servicio);
+            gestionServicios_Clientes.Agregar(cliente_servicio);           
         }
 
         public void Borrar()
         {
-           gestionServicios_Clientes.BorrarServicio(Codigo, CedulaSel);
+           gestionServicios_Clientes.BorrarServicio(Codigo, Cedula);
         }
 
         private void btnAtrasSC_Click(object sender, EventArgs e)
@@ -77,17 +71,18 @@ namespace SaRaUI
         private void btnGuardarSC_Click(object sender, EventArgs e)
         {
             Agregar();
+            LlenarGridView(Cedula);
         }
 
         private void btnBorrarSC_Click(object sender, EventArgs e)
         {
             Borrar();
+            LlenarGridView(Cedula);
         }
 
-        private void dgvServicios_Cliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvServicios_Cliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Codigo = dgvServicios_Cliente.Rows[e.RowIndex].Cells[0].Value.ToString();
-            CedulaSel = dgvServicios_Cliente.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
     }
 }

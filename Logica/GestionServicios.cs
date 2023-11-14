@@ -12,7 +12,7 @@ using System.Data;
 
 namespace Logica
 {
-    public class GestionServicios : GestorFuentes, IOperaciones<Servicios>
+    public class GestionServicios : GestorFuentes
     {        
         RepositorioServicios repositorioServicios = new RepositorioServicios();
         Clientes clienteServicio;
@@ -23,30 +23,15 @@ namespace Logica
             clienteServicio = new Clientes();
         }
 
-        public void SetCliente(Clientes cliente)
-        {
-            clienteServicio = cliente;
-        }
-
         public void Agregar(Servicios servicio)
         {
             repositorioServicios.Agregar(servicio);
         }
 
-        public void Borrar(string id)
+        public string Borrar(string id)
         {
-            repositorioServicios.Borrar(id);
+            return repositorioServicios.Borrar(id);
         }
-
-        public void Actualizar(string cod, Servicios servicio)
-        {
-            //repositorioServicios.Actualizar(cod, servicio);
-        }
-
-        //public List<Servicios> Filtrar(string nombre, int vinculo)
-        //{
-        //    return repositorioServicios.Filtrar(nombre, vinculo);
-        //}
 
         public List<Servicios> Consultar()
         {

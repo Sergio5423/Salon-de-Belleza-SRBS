@@ -111,6 +111,7 @@
             this.btnEditarServicios.Size = new System.Drawing.Size(44, 44);
             this.btnEditarServicios.TabIndex = 8;
             this.btnEditarServicios.UseVisualStyleBackColor = false;
+            this.btnEditarServicios.Visible = false;
             this.btnEditarServicios.Click += new System.EventHandler(this.btnEditarServicios_Click);
             // 
             // btnAgregarServicios
@@ -187,6 +188,7 @@
             this.cbOrdenarServicios.Size = new System.Drawing.Size(144, 32);
             this.cbOrdenarServicios.TabIndex = 7;
             this.cbOrdenarServicios.Text = "  Ordenar por";
+            this.cbOrdenarServicios.Visible = false;
             // 
             // btnBuscarServicio
             // 
@@ -201,6 +203,7 @@
             this.btnBuscarServicio.Size = new System.Drawing.Size(37, 35);
             this.btnBuscarServicio.TabIndex = 6;
             this.btnBuscarServicio.UseVisualStyleBackColor = false;
+            this.btnBuscarServicio.Visible = false;
             // 
             // tbBuscarServicio
             // 
@@ -213,6 +216,7 @@
             this.tbBuscarServicio.Name = "tbBuscarServicio";
             this.tbBuscarServicio.Size = new System.Drawing.Size(187, 29);
             this.tbBuscarServicio.TabIndex = 1;
+            this.tbBuscarServicio.Visible = false;
             // 
             // Servicios
             // 
@@ -245,7 +249,7 @@
         private System.Windows.Forms.ComboBox cbOrdenarServicios;
         private System.Windows.Forms.Button btnBuscarServicio;
         private System.Windows.Forms.TextBox tbBuscarServicio;
-        private System.Windows.Forms.DataGridView dgvServicios;
         private System.Windows.Forms.Button btnEditarServicios;
+        public System.Windows.Forms.DataGridView dgvServicios;
     }
 }

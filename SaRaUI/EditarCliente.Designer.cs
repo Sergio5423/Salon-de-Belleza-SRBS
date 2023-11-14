@@ -52,6 +52,9 @@
             this.btnAtrasEC = new System.Windows.Forms.Button();
             this.lblEC = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblEmpleadoCed = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.cbCed_Empleado = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panelCedula.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,6 +64,7 @@
             this.panel3.SuspendLayout();
             this.panelBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -105,6 +109,8 @@
             // 
             this.panel2.BackgroundImage = global::SaRaUI.Properties.Resources.Fondo_Editar_Cliente;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Controls.Add(this.cbCed_Empleado);
+            this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.dtpCumpleañosEC);
             this.panel2.Controls.Add(this.btnGuardarEC);
             this.panel2.Controls.Add(this.tbCorreoEC);
@@ -348,6 +354,39 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // lblEmpleadoCed
+            // 
+            this.lblEmpleadoCed.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmpleadoCed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblEmpleadoCed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpleadoCed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.lblEmpleadoCed.Location = new System.Drawing.Point(0, 0);
+            this.lblEmpleadoCed.Name = "lblEmpleadoCed";
+            this.lblEmpleadoCed.Size = new System.Drawing.Size(137, 34);
+            this.lblEmpleadoCed.TabIndex = 5;
+            this.lblEmpleadoCed.Text = "Empleado ♥";
+            this.lblEmpleadoCed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.BackgroundImage = global::SaRaUI.Properties.Resources.Panel_Campos;
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel7.Controls.Add(this.lblEmpleadoCed);
+            this.panel7.Location = new System.Drawing.Point(398, 245);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(137, 34);
+            this.panel7.TabIndex = 14;
+            // 
+            // cbCed_Empleado
+            // 
+            this.cbCed_Empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCed_Empleado.FormattingEnabled = true;
+            this.cbCed_Empleado.Location = new System.Drawing.Point(554, 246);
+            this.cbCed_Empleado.Name = "cbCed_Empleado";
+            this.cbCed_Empleado.Size = new System.Drawing.Size(160, 32);
+            this.cbCed_Empleado.TabIndex = 15;
+            // 
             // EditarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,6 +412,7 @@
             this.panel3.ResumeLayout(false);
             this.panelBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,5 +443,8 @@
         public System.Windows.Forms.TextBox tbNomEC;
         public System.Windows.Forms.TextBox tbCedEC;
         public System.Windows.Forms.DateTimePicker dtpCumpleañosEC;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label lblEmpleadoCed;
+        private System.Windows.Forms.ComboBox cbCed_Empleado;
     }
 }

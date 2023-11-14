@@ -16,6 +16,7 @@ namespace SaRaUI
 
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
         GestionTrabajos gestionTrabajos = new GestionTrabajos();
+        string codigo;
 
         public Trabajos()
         {
@@ -31,6 +32,22 @@ namespace SaRaUI
             BindingSource bin = new BindingSource();
             bin.DataSource = gestionTrabajos.Consultar();
             dgvTrabajos.DataSource = bin;
+        }
+
+        public void Borrar()
+        {
+            gestionTrabajos.Borrar(codigo);
+        }
+
+        private void btnBorrarTrabajos_Click(object sender, EventArgs e)
+        {
+            Borrar();
+            LlenarGridView();
+        }
+
+        private void dgvTrabajos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            codigo = dgvTrabajos.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
     }
 }

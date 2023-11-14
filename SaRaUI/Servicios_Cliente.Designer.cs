@@ -95,7 +95,7 @@
             this.dgvServicios_Cliente.Name = "dgvServicios_Cliente";
             this.dgvServicios_Cliente.Size = new System.Drawing.Size(730, 226);
             this.dgvServicios_Cliente.TabIndex = 0;
-            this.dgvServicios_Cliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvServicios_Cliente_CellContentClick);
+            this.dgvServicios_Cliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvServicios_Cliente_CellClick);
             // 
             // cbServicios
             // 

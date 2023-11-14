@@ -90,6 +90,7 @@
             this.cbOrdenarClientes.Size = new System.Drawing.Size(144, 32);
             this.cbOrdenarClientes.TabIndex = 7;
             this.cbOrdenarClientes.Text = "  Ordenar por";
+            this.cbOrdenarClientes.Visible = false;
             // 
             // button4
             // 
@@ -104,6 +105,7 @@
             this.button4.Size = new System.Drawing.Size(37, 35);
             this.button4.TabIndex = 6;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
             // 
             // tbBuscarClientes
             // 
@@ -116,6 +118,7 @@
             this.tbBuscarClientes.Name = "tbBuscarClientes";
             this.tbBuscarClientes.Size = new System.Drawing.Size(187, 29);
             this.tbBuscarClientes.TabIndex = 1;
+            this.tbBuscarClientes.Visible = false;
             // 
             // dgvClientes
             // 
@@ -256,7 +259,6 @@
 
         private System.Windows.Forms.Label lblClientes;
         private System.Windows.Forms.Panel panelTablaC;
-        private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnServiciosClientes;
         private System.Windows.Forms.Panel panelBottom;
         private System.Windows.Forms.Button btnAgregarClientes;
@@ -267,5 +269,6 @@
         private System.Windows.Forms.ComboBox cbOrdenarClientes;
         private System.Windows.Forms.Panel panelFondo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.DataGridView dgvClientes;
     }
 }

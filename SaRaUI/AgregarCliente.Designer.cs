@@ -37,6 +37,9 @@
             this.panelCedula = new System.Windows.Forms.Panel();
             this.lbCedNC = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbCed_Empleado = new System.Windows.Forms.ComboBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblEmpleadoCed = new System.Windows.Forms.Label();
             this.dtpCumpleaños = new System.Windows.Forms.DateTimePicker();
             this.btnGuardarNC = new System.Windows.Forms.Button();
             this.tbCorreoNC = new System.Windows.Forms.TextBox();
@@ -52,19 +55,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbCedulaNC = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tbEmpleado_Cedula = new System.Windows.Forms.TextBox();
-            this.lblEmpleadoCed = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panelBottom.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelCedula.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNC
@@ -159,8 +159,8 @@
             // 
             this.panel2.BackgroundImage = global::SaRaUI.Properties.Resources.Fondo_Nuevo_Cliente;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Controls.Add(this.cbCed_Empleado);
             this.panel2.Controls.Add(this.panel7);
-            this.panel2.Controls.Add(this.tbEmpleado_Cedula);
             this.panel2.Controls.Add(this.dtpCumpleaños);
             this.panel2.Controls.Add(this.btnGuardarNC);
             this.panel2.Controls.Add(this.tbCorreoNC);
@@ -177,6 +177,39 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(776, 318);
             this.panel2.TabIndex = 7;
+            // 
+            // cbCed_Empleado
+            // 
+            this.cbCed_Empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCed_Empleado.FormattingEnabled = true;
+            this.cbCed_Empleado.Location = new System.Drawing.Point(554, 245);
+            this.cbCed_Empleado.Name = "cbCed_Empleado";
+            this.cbCed_Empleado.Size = new System.Drawing.Size(160, 32);
+            this.cbCed_Empleado.TabIndex = 14;
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.BackgroundImage = global::SaRaUI.Properties.Resources.Panel_Campos;
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel7.Controls.Add(this.lblEmpleadoCed);
+            this.panel7.Location = new System.Drawing.Point(402, 245);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(137, 34);
+            this.panel7.TabIndex = 8;
+            // 
+            // lblEmpleadoCed
+            // 
+            this.lblEmpleadoCed.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmpleadoCed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblEmpleadoCed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpleadoCed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.lblEmpleadoCed.Location = new System.Drawing.Point(0, 0);
+            this.lblEmpleadoCed.Name = "lblEmpleadoCed";
+            this.lblEmpleadoCed.Size = new System.Drawing.Size(137, 34);
+            this.lblEmpleadoCed.TabIndex = 5;
+            this.lblEmpleadoCed.Text = "Empleado ♥";
+            this.lblEmpleadoCed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtpCumpleaños
             // 
@@ -354,42 +387,6 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // tbEmpleado_Cedula
-            // 
-            this.tbEmpleado_Cedula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEmpleado_Cedula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(238)))));
-            this.tbEmpleado_Cedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbEmpleado_Cedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmpleado_Cedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.tbEmpleado_Cedula.Location = new System.Drawing.Point(554, 250);
-            this.tbEmpleado_Cedula.Name = "tbEmpleado_Cedula";
-            this.tbEmpleado_Cedula.Size = new System.Drawing.Size(160, 29);
-            this.tbEmpleado_Cedula.TabIndex = 12;
-            // 
-            // lblEmpleadoCed
-            // 
-            this.lblEmpleadoCed.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmpleadoCed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEmpleadoCed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpleadoCed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.lblEmpleadoCed.Location = new System.Drawing.Point(0, 0);
-            this.lblEmpleadoCed.Name = "lblEmpleadoCed";
-            this.lblEmpleadoCed.Size = new System.Drawing.Size(137, 34);
-            this.lblEmpleadoCed.TabIndex = 5;
-            this.lblEmpleadoCed.Text = "Cédula Empleado";
-            this.lblEmpleadoCed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackgroundImage = global::SaRaUI.Properties.Resources.Panel_Campos;
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel7.Controls.Add(this.lblEmpleadoCed);
-            this.panel7.Location = new System.Drawing.Point(402, 245);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(137, 34);
-            this.panel7.TabIndex = 8;
-            // 
             // AgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,12 +407,12 @@
             this.panelCedula.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -448,6 +445,6 @@
         private System.Windows.Forms.DateTimePicker dtpCumpleaños;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label lblEmpleadoCed;
-        private System.Windows.Forms.TextBox tbEmpleado_Cedula;
+        private System.Windows.Forms.ComboBox cbCed_Empleado;
     }
 }

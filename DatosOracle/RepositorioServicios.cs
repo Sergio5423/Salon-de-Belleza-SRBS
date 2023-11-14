@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using Entidades;
-using Oracle.ManagedDataAccess.Types;
 
 namespace DatosOracle
 {
@@ -33,19 +32,27 @@ namespace DatosOracle
             }
         }
 
-        public void Borrar(string codigo)
+        public string Borrar(string codigo)
         {
             using (OracleConnection connection = new OracleConnection(base.connection.ConnectionString))
             {
-                OracleCommand command = new OracleCommand();
-                command.Connection = connection;
-                command.CommandText = "pkg_manipular_servicios.prc_eliminar_servicio";
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("ser_codigo", OracleDbType.Int32).Value = int.Parse(codigo);                
+                try
+                {
+                    OracleCommand command = new OracleCommand();
+                    command.Connection = connection;
+                    command.CommandText = "pkg_manipular_servicios.prc_eliminar_servicio";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add("ser_codigo", OracleDbType.Int32).Value = int.Parse(codigo);
 
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    return "Eliminado";
+                } catch (Exception e)
+                {
+                    return "Error";
+                }
+                
             }
         }
 

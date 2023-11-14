@@ -12,11 +12,6 @@ namespace Logica
     {
         RepositorioTrabajos repositorioTrabajos = new RepositorioTrabajos();
 
-        //public void Agregar(Trabajos trabajo)
-        //{
-        //    repositorioTrabajos.(trabajo);
-        //}
-
         public void Borrar(string codigo)
         {
             repositorioTrabajos.Borrar(codigo);

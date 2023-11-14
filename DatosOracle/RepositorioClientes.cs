@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using Entidades;
-using Oracle.ManagedDataAccess.Types;
 using Datos;
 
 namespace DatosOracle
@@ -43,7 +42,7 @@ namespace DatosOracle
             {
                 OracleCommand command = new OracleCommand();
                 command.Connection = connection;
-                command.CommandText = "pkg_manipular_clientes.prc_eliminar_clientes";
+                command.CommandText = "pkg_manipular_clientes.prc_eliminar_cliente";
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("cl_cedula", OracleDbType.Varchar2).Value = cedula;
 
@@ -74,7 +73,13 @@ namespace DatosOracle
                     cliente.Correo = rdr.GetString(3);
                     cliente.Cumpleaños = rdr.GetDateTime(4);
                     cliente.UltimaVisita = rdr.GetDateTime(5);
-                    cliente.Empleado_Cedula = rdr.GetString(6);
+                    try
+                    {
+                        cliente.Empleado_Cedula = rdr.GetString(6);
+                    } catch
+                    {
+                        cliente.Empleado_Cedula = "No Disponible";
+                    }                    
                     clientes.Add(cliente);
                 }
                 Console.ReadLine();
@@ -96,7 +101,6 @@ namespace DatosOracle
                 command.Parameters.Add("cl_telefono", OracleDbType.Varchar2).Value = cliente.Telefono;
                 command.Parameters.Add("cl_correo", OracleDbType.Varchar2).Value = cliente.Correo;
                 command.Parameters.Add("cl_cumFecha", OracleDbType.Date).Value = cliente.Cumpleaños;
-                command.Parameters.Add("cl_ultVisita", OracleDbType.Date).Value = cliente.UltimaVisita;
                 command.Parameters.Add("emp_cedula", OracleDbType.Varchar2).Value = cliente.Empleado_Cedula;
 
                 connection.Open();

@@ -16,14 +16,12 @@ namespace SaRaUI
         private Form activeForm = null;
 
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
-        //System.Drawing.Font font;
 
         public Menu()
         {
             InitializeComponent();
 
             privateFonts.AddFontFile(@"C:\Users\starr\Source\Repos\Sergio5423\Salon-de-Belleza-SRBS\SaRaUI\Fonts\Playlist Script.ttf");
-            //font = new Font(privateFonts.Families[0], 35);
             lblHora.Font = new Font(privateFonts.Families[0], 35);
             lblFecha.Font = new Font(privateFonts.Families[0], 14);
         }

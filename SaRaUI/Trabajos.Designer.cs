@@ -38,6 +38,7 @@
             this.btnBuscarTrabajos = new System.Windows.Forms.Button();
             this.tbBuscarTrabajos = new System.Windows.Forms.TextBox();
             this.dgvTrabajos = new System.Windows.Forms.DataGridView();
+            this.btnBorrarTrabajos = new System.Windows.Forms.Button();
             this.panelFondo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelBottom.SuspendLayout();
@@ -87,6 +88,7 @@
             // 
             this.panelBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
             this.panelBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBottom.Controls.Add(this.btnBorrarTrabajos);
             this.panelBottom.Controls.Add(this.btnImprimir);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 425);
@@ -138,6 +140,7 @@
             this.cbOrdenarTrabajos.Size = new System.Drawing.Size(144, 32);
             this.cbOrdenarTrabajos.TabIndex = 7;
             this.cbOrdenarTrabajos.Text = "  Ordenar por";
+            this.cbOrdenarTrabajos.Visible = false;
             // 
             // btnBuscarTrabajos
             // 
@@ -152,6 +155,7 @@
             this.btnBuscarTrabajos.Size = new System.Drawing.Size(37, 35);
             this.btnBuscarTrabajos.TabIndex = 6;
             this.btnBuscarTrabajos.UseVisualStyleBackColor = false;
+            this.btnBuscarTrabajos.Visible = false;
             // 
             // tbBuscarTrabajos
             // 
@@ -164,6 +168,7 @@
             this.tbBuscarTrabajos.Name = "tbBuscarTrabajos";
             this.tbBuscarTrabajos.Size = new System.Drawing.Size(187, 29);
             this.tbBuscarTrabajos.TabIndex = 1;
+            this.tbBuscarTrabajos.Visible = false;
             // 
             // dgvTrabajos
             // 
@@ -177,6 +182,22 @@
             this.dgvTrabajos.Name = "dgvTrabajos";
             this.dgvTrabajos.Size = new System.Drawing.Size(730, 226);
             this.dgvTrabajos.TabIndex = 0;
+            this.dgvTrabajos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrabajos_CellClick);
+            // 
+            // btnBorrarTrabajos
+            // 
+            this.btnBorrarTrabajos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrarTrabajos.BackColor = System.Drawing.Color.Transparent;
+            this.btnBorrarTrabajos.BackgroundImage = global::SaRaUI.Properties.Resources.Icono_Borrar;
+            this.btnBorrarTrabajos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBorrarTrabajos.FlatAppearance.BorderSize = 0;
+            this.btnBorrarTrabajos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrarTrabajos.Location = new System.Drawing.Point(687, 3);
+            this.btnBorrarTrabajos.Name = "btnBorrarTrabajos";
+            this.btnBorrarTrabajos.Size = new System.Drawing.Size(44, 44);
+            this.btnBorrarTrabajos.TabIndex = 5;
+            this.btnBorrarTrabajos.UseVisualStyleBackColor = false;
+            this.btnBorrarTrabajos.Click += new System.EventHandler(this.btnBorrarTrabajos_Click);
             // 
             // Trabajos
             // 
@@ -209,5 +230,6 @@
         private System.Windows.Forms.Button btnBuscarTrabajos;
         private System.Windows.Forms.TextBox tbBuscarTrabajos;
         private System.Windows.Forms.DataGridView dgvTrabajos;
+        private System.Windows.Forms.Button btnBorrarTrabajos;
     }
 }

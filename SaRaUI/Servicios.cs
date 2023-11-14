@@ -61,8 +61,8 @@ namespace SaRaUI
         }
 
         private void btnBorrarServicios_Click(object sender, EventArgs e)
-        {
-            gestionServicios.Borrar(codigo);
+        {            
+            MessageBox.Show(gestionServicios.Borrar(codigo));
             LlenarGridView();
         }
 

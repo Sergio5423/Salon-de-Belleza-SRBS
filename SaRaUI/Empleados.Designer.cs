@@ -190,6 +190,7 @@
             this.cbOrdenarEmpleados.Size = new System.Drawing.Size(144, 32);
             this.cbOrdenarEmpleados.TabIndex = 7;
             this.cbOrdenarEmpleados.Text = "  Ordenar por";
+            this.cbOrdenarEmpleados.Visible = false;
             // 
             // btnBuscar
             // 
@@ -204,6 +205,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(37, 35);
             this.btnBuscar.TabIndex = 6;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Visible = false;
             // 
             // tbBuscarEmpleados
             // 
@@ -216,6 +218,7 @@
             this.tbBuscarEmpleados.Name = "tbBuscarEmpleados";
             this.tbBuscarEmpleados.Size = new System.Drawing.Size(187, 29);
             this.tbBuscarEmpleados.TabIndex = 1;
+            this.tbBuscarEmpleados.Visible = false;
             // 
             // dgvEmpleados
             // 
@@ -264,6 +267,6 @@
         private System.Windows.Forms.ComboBox cbOrdenarEmpleados;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox tbBuscarEmpleados;
-        private System.Windows.Forms.DataGridView dgvEmpleados;
+        public System.Windows.Forms.DataGridView dgvEmpleados;
     }
 }

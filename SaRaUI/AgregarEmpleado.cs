@@ -34,6 +34,7 @@ namespace SaRaUI
                 Telefono = tbTelefonoEm.Text
             };
             gestionEmpleados.Agregar(empleado);
+            this.Close();
         }
 
         private void btnAtrasEm_Click(object sender, EventArgs e)

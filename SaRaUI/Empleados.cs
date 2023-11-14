@@ -53,8 +53,6 @@ namespace SaRaUI
         {
             EditarEmpleado editarEmpleado = new EditarEmpleado();
             AddOwnedForm(editarEmpleado);
-            //editarEmpleado.GetCedula(cedula);
-            //editarEmpleado.GetEmpleado(empleado);
             editarEmpleado.tbCedulaEm.Text = empleado.Cedula;
             editarEmpleado.tbNombreEm.Text = empleado.Nombre;
             editarEmpleado.tbTelefonoEm.Text = empleado.Telefono;
@@ -87,14 +85,12 @@ namespace SaRaUI
         private void btnAgregarEmpleado_Click(object sender, EventArgs e)
         {
             panelBottom.Dock = DockStyle.None;
-            OpenChildForm(new AgregarEmpleado());
+            OpenChildForm(new AgregarEmpleado());            
         }
 
         private void btnEditarEmpleado_Click(object sender, EventArgs e)
         {
             EnviarEmpleadoEditar();
-            //panelBottom.Dock = DockStyle.None;
-            //OpenChildForm(new EditarEmpleado());
         }
 
         private void btnTrabajosEmpleados_Click(object sender, EventArgs e)
@@ -115,6 +111,7 @@ namespace SaRaUI
         private void btnBorrarEmpleado_Click(object sender, EventArgs e)
         {
             Borrar();
+            LlenarGridView();
         }
     }
 }

@@ -20,7 +20,6 @@ namespace SaRaUI
         GestionServicios_Clientes gestionServicios_Clientes = new GestionServicios_Clientes();
         string cedula, Nombre;
         Entidades.Clientes cliente = new Entidades.Clientes();
-        //System.Drawing.Font font;
 
         public Clientes()
         {
@@ -78,13 +77,6 @@ namespace SaRaUI
             gestionClientes.Borrar(cedula);
         }
 
-        //public void EnviarClienteEditar()
-        //{
-        //    EditarCliente editarCliente = new EditarCliente();
-        //    editarCliente.GetCedula(cedula);
-        //    editarCliente.GetCliente(cliente);            
-        //}
-
         public void EnviarNombreServicios()
         {
             Servicios_Cliente servicios_cliente = new Servicios_Cliente();
@@ -118,20 +110,17 @@ namespace SaRaUI
         private void btnEditarClientes_Click(object sender, EventArgs e)
         {
             EnviarClienteEditar();
-            //panelBottom.Dock = DockStyle.None;
-            //OpenChildForm(new EditarCliente());
         }
 
         private void btnServiciosClientes_Click(object sender, EventArgs e)
         {            
-            //panelBottom.Dock = DockStyle.None;
-            //OpenChildForm(new Servicios_Cliente());
             EnviarNombreServicios();
         }
 
         private void btnBorrarClientes_Click(object sender, EventArgs e)
         {
             Borrar();
+            LlenarGridView();
         }
 
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaRaUI", "SaRaUI\SaRaUI.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatosOracle", "DatosOracle\DatosOracle.csproj", "{0331CA11-81B7-4A93-B69E-9738FFB755CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentaciónIF", "PresentaciónIF\PresentaciónIF.csproj", "{D73707A8-9917-47D3-9AD6-43B5A92EBBA5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{0331CA11-81B7-4A93-B69E-9738FFB755CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0331CA11-81B7-4A93-B69E-9738FFB755CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0331CA11-81B7-4A93-B69E-9738FFB755CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D73707A8-9917-47D3-9AD6-43B5A92EBBA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D73707A8-9917-47D3-9AD6-43B5A92EBBA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D73707A8-9917-47D3-9AD6-43B5A92EBBA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D73707A8-9917-47D3-9AD6-43B5A92EBBA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -34,6 +34,9 @@ namespace SaRaUI
                 Valor = int.Parse(tbValorServ.Text),
             };
             gestionServicios.Agregar(servicio);
+            Servicios servicios = new Servicios();
+            servicios.LlenarGridView();
+            this.Close();
         }
 
         private void btnAtrasServ_Click(object sender, EventArgs e)

@@ -30,19 +30,13 @@ namespace Logica
 
         public void Borrar(string cedula)
         {
-            repositorioClientes.Borrar(cedula);
-            gestionServicios_Clientes.BorrarCliente(cedula);
+            repositorioClientes.Borrar(cedula);            
         }
 
         public void Actualizar(string cedulaAnt, Clientes cliente)
         {
            repositorioClientes.Actualizar(cedulaAnt, cliente);
         }
-
-        //public List<Clientes> Filtrar(string nombre)
-        //{
-        //    return repositorioClientes.Filtrar(nombre);
-        //}
 
         public List<Clientes> Consultar()
         {
