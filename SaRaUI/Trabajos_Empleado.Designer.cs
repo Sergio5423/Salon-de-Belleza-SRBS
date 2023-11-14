@@ -272,8 +272,8 @@
         private System.Windows.Forms.DataGridView dgvTrabajos_Empleado;
         private System.Windows.Forms.ComboBox cbFiltrarTrabajos;
         private System.Windows.Forms.Panel panelNombreCliente;
-        private System.Windows.Forms.Label lbNombreEmpleado;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox cbServicios;
+        public System.Windows.Forms.Label lbNombreEmpleado;
     }
 }

@@ -15,6 +15,7 @@ namespace Logica
     public class GestionClientes : GestorFuentes, IOperaciones<Clientes>
     {
         RepositorioClientes repositorioClientes = new RepositorioClientes();
+        GestionServicios_Clientes gestionServicios_Clientes = new GestionServicios_Clientes();
         List<Clientes> listaClientes = null;
 
         public GestionClientes()
@@ -30,6 +31,7 @@ namespace Logica
         public void Borrar(string cedula)
         {
             repositorioClientes.Borrar(cedula);
+            gestionServicios_Clientes.BorrarCliente(cedula);
         }
 
         public void Actualizar(string cedulaAnt, Clientes cliente)

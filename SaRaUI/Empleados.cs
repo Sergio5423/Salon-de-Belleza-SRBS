@@ -14,9 +14,7 @@ namespace SaRaUI
     public partial class Empleados : Form
     {
         private Form activeForm = null;
-        System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
-        EditarEmpleado editarEmpleado = new EditarEmpleado();
-        Trabajos_Empleado trabajos_Empleado = new Trabajos_Empleado();
+        System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();               
         GestionEmpleados gestionEmpleados = new GestionEmpleados();
         Entidades.Empleados empleado = new Entidades.Empleados();
         string cedula;
@@ -53,13 +51,21 @@ namespace SaRaUI
 
         public void EnviarEmpleadoEditar()
         {
-            editarEmpleado.GetCedula(cedula);
-            editarEmpleado.GetEmpleado(empleado);
+            EditarEmpleado editarEmpleado = new EditarEmpleado();
+            AddOwnedForm(editarEmpleado);
+            //editarEmpleado.GetCedula(cedula);
+            //editarEmpleado.GetEmpleado(empleado);
+            editarEmpleado.tbCedulaEm.Text = empleado.Cedula;
+            editarEmpleado.tbNombreEm.Text = empleado.Nombre;
+            editarEmpleado.tbTelefonoEm.Text = empleado.Telefono;
+            editarEmpleado.Show();
         }
 
         public void EnviarEmpleadoTrabajo()
         {
-            trabajos_Empleado.GetEmpleado(empleado);
+            Trabajos_Empleado trabajos_Empleado = new Trabajos_Empleado();
+            trabajos_Empleado.lbNombreEmpleado.Text = empleado.Nombre;
+            trabajos_Empleado.LlenarGridView(empleado.Cedula);
         }
 
         public Entidades.Empleados CrearEmpleado(string ced, string nomb, string tel)
@@ -87,8 +93,8 @@ namespace SaRaUI
         private void btnEditarEmpleado_Click(object sender, EventArgs e)
         {
             EnviarEmpleadoEditar();
-            panelBottom.Dock = DockStyle.None;
-            OpenChildForm(new EditarEmpleado());
+            //panelBottom.Dock = DockStyle.None;
+            //OpenChildForm(new EditarEmpleado());
         }
 
         private void btnTrabajosEmpleados_Click(object sender, EventArgs e)

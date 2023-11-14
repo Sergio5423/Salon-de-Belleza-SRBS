@@ -11,6 +11,7 @@ namespace Logica
     public class GestionServicios_Clientes
     {
         RepositorioClientesServicios repositorioClientesServicios = new RepositorioClientesServicios();
+        string cl_nombre;
 
         public void Agregar(Clientes_Servicios clientes_Servicios)
         {

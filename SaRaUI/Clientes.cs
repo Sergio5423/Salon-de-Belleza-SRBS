@@ -1,4 +1,5 @@
-﻿using Logica;
+﻿using Entidades;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,10 @@ namespace SaRaUI
     public partial class Clientes : Form
     {
         private Form activeForm = null;
-        System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();        
-        EditarCliente editarCliente = new EditarCliente();
+        System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();                
         GestionClientes gestionClientes = new GestionClientes();
-        Servicios_Cliente servicios_Cliente = new Servicios_Cliente();
-        string cedula;
+        GestionServicios_Clientes gestionServicios_Clientes = new GestionServicios_Clientes();
+        string cedula, Nombre;
         Entidades.Clientes cliente = new Entidades.Clientes();
         //System.Drawing.Font font;
 
@@ -57,7 +57,8 @@ namespace SaRaUI
                                                string telefono,
                                                string correo,
                                                DateTime cumpleaños,
-                                               DateTime ultimaVisita)
+                                               DateTime ultimaVisita,
+                                               string empleado_cedula)
         {
             var cliente = new Entidades.Clientes
             {
@@ -66,7 +67,8 @@ namespace SaRaUI
                 Telefono = telefono,
                 Correo = correo,
                 Cumpleaños = cumpleaños,
-                UltimaVisita = ultimaVisita
+                UltimaVisita = ultimaVisita,
+                Empleado_Cedula = empleado_cedula
             };
             return cliente;
         }
@@ -76,15 +78,35 @@ namespace SaRaUI
             gestionClientes.Borrar(cedula);
         }
 
-        public void EnviarClienteEditar()
+        //public void EnviarClienteEditar()
+        //{
+        //    EditarCliente editarCliente = new EditarCliente();
+        //    editarCliente.GetCedula(cedula);
+        //    editarCliente.GetCliente(cliente);            
+        //}
+
+        public void EnviarNombreServicios()
         {
-            editarCliente.GetCedula(cedula);
-            editarCliente.GetCliente(cliente);
+            Servicios_Cliente servicios_cliente = new Servicios_Cliente();
+            AddOwnedForm(servicios_cliente);
+            servicios_cliente.Cedula = cedula;
+            servicios_cliente.lbNombreCliente.Text = Nombre;
+            servicios_cliente.lbNombreCliente.Font = new Font(privateFonts.Families[0], 16);            
+            servicios_cliente.LlenarGridView(cedula);            
+            servicios_cliente.Show();
         }
 
-        public void EnviarClienteServicio()
+        public void EnviarClienteEditar()
         {
-            servicios_Cliente.GetCliente(cliente);
+            EditarCliente editarCliente = new EditarCliente();
+            AddOwnedForm(editarCliente);
+            editarCliente.tbCedEC.Text = cliente.Cedula;
+            editarCliente.tbNomEC.Text = cliente.Nombre;
+            editarCliente.tbTelEC.Text = cliente.Telefono;
+            editarCliente.tbCorreoEC.Text = cliente.Correo;
+            editarCliente.dtpCumpleañosEC.Value = cliente.Cumpleaños;
+            editarCliente.cedula = cedula;
+            editarCliente.Show();
         }
 
         private void btnAgregarClientes_Click(object sender, EventArgs e)
@@ -96,15 +118,15 @@ namespace SaRaUI
         private void btnEditarClientes_Click(object sender, EventArgs e)
         {
             EnviarClienteEditar();
-            panelBottom.Dock = DockStyle.None;
-            OpenChildForm(new EditarCliente());
+            //panelBottom.Dock = DockStyle.None;
+            //OpenChildForm(new EditarCliente());
         }
 
         private void btnServiciosClientes_Click(object sender, EventArgs e)
-        {
-            EnviarClienteServicio();
-            panelBottom.Dock = DockStyle.None;
-            OpenChildForm(new Servicios_Cliente());
+        {            
+            //panelBottom.Dock = DockStyle.None;
+            //OpenChildForm(new Servicios_Cliente());
+            EnviarNombreServicios();
         }
 
         private void btnBorrarClientes_Click(object sender, EventArgs e)
@@ -112,15 +134,17 @@ namespace SaRaUI
             Borrar();
         }
 
-        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             cedula = dgvClientes.Rows[e.RowIndex].Cells[0].Value.ToString();
             cliente = CrearCliente(dgvClientes.Rows[e.RowIndex].Cells[0].Value.ToString(),
-                                                  dgvClientes.Rows[e.RowIndex].Cells[1].Value.ToString(),
-                                                  dgvClientes.Rows[e.RowIndex].Cells[2].Value.ToString(),
-                                                  dgvClientes.Rows[e.RowIndex].Cells[3].Value.ToString(),
-                                                  DateTime.Parse(dgvClientes.Rows[e.RowIndex].Cells[4].Value.ToString()),
-                                                  DateTime.Parse(dgvClientes.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                                   dgvClientes.Rows[e.RowIndex].Cells[1].Value.ToString(),
+                                   dgvClientes.Rows[e.RowIndex].Cells[2].Value.ToString(),
+                                   dgvClientes.Rows[e.RowIndex].Cells[3].Value.ToString(),
+                                   DateTime.Parse(dgvClientes.Rows[e.RowIndex].Cells[4].Value.ToString()),
+                                   DateTime.Parse(dgvClientes.Rows[e.RowIndex].Cells[5].Value.ToString()),
+                                   dgvClientes.Rows[e.RowIndex].Cells[6].Value.ToString());
+            Nombre = dgvClientes.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
     }
 }

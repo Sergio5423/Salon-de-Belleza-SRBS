@@ -15,73 +15,58 @@ namespace SaRaUI
     {
 
         System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
-        Entidades.Clientes cliente;
-        Entidades.Clientes_Servicios clientes_servicios;
+        //Entidades.Clientes cliente;
+        //Entidades.Clientes_Servicios clientes_servicios;
         GestionServicios gestionServicios = new GestionServicios();
+        GestionEmpleados gestionEmpleados = new GestionEmpleados();
         GestionServicios_Clientes gestionServicios_Clientes = new GestionServicios_Clientes();
-        string Codigo, Cedula;
-        List<string> NombreServicios = null;
+        string Codigo, CedulaSel;
+        public string Cedula;
         List<Entidades.Servicios> Servicios = null;
+        List<Entidades.Empleados> Empleados = null;
 
         public Servicios_Cliente()
         {
             InitializeComponent();
             privateFonts.AddFontFile(@"C:\Users\starr\Source\Repos\Sergio5423\Salon-de-Belleza-SRBS\SaRaUI\Fonts\Playlist Script.ttf");
-            lbServicios_del_Cliente.Font = new Font(privateFonts.Families[0], 35);
-            lbNombreCliente.Font = new Font(privateFonts.Families[0], 16);
-            if (cliente == null)
+            lbServicios_del_Cliente.Font = new Font(privateFonts.Families[0], 35);                        
+            Servicios = gestionServicios.Consultar();
+            foreach (Entidades.Servicios servicio in Servicios)
             {
-                
-            } else
-            {
-                lbNombreCliente.Text = cliente.Nombre;
-             //   Servicios = gestionServicios.Consultar();
+                cbServicios.Items.Add(servicio.Nombre);
             }
-            if (Servicios == null)
+            Empleados = gestionEmpleados.Consultar();
+            foreach (Entidades.Empleados empleado in Empleados)
             {
-
-            } else
-            {
-                foreach (var servicio in Servicios)
-                {
-                    NombreServicios.Add(servicio.Nombre);
-                }
-                cbServicios.Items.Add(NombreServicios);
+                cbEmpleados.Items.Add(empleado.Nombre);
             }
-            LlenarGridView();
+            //LlenarGridView();       
         }
 
-        public void LlenarGridView()
+        public void LlenarGridView(string ced)
         {
             BindingSource bin = new BindingSource();
-            bin.DataSource = gestionServicios_Clientes.ConsultarServicios(Cedula);
+            bin.DataSource = gestionServicios_Clientes.ConsultarServicios(ced);
             dgvServicios_Cliente.DataSource = bin;
         }
 
         public void Agregar()
         {
-            foreach (var servicio in Servicios)
+            MessageBox.Show(Cedula);
+            MessageBox.Show(Servicios[cbServicios.SelectedIndex].Codigo);
+            MessageBox.Show(Empleados[cbEmpleados.SelectedIndex].Cedula);
+            var cliente_servicio = new Entidades.Clientes_Servicios
             {
-                if (servicio.Nombre==cbServicios.Text)
-                {
-                    var clientes_servicios = new Entidades.Clientes_Servicios
-                    {
-                        Codigo_Servicio = servicio.Codigo,
-                        Cedula_Cliente = cliente.Cedula
-                    };
-                    gestionServicios_Clientes.Agregar(clientes_servicios);
-                }
-            }            
+                Cedula_Cliente = Cedula,                
+                Codigo_Servicio = Servicios[cbServicios.SelectedIndex].Codigo,
+                Empleado_Cedula = Empleados[cbEmpleados.SelectedIndex].Cedula
+            };
+            gestionServicios_Clientes.Agregar(cliente_servicio);
         }
 
         public void Borrar()
         {
-           gestionServicios_Clientes.BorrarServicio(Codigo, Cedula);
-        }
-
-        public void GetCliente(Entidades.Clientes client)
-        {
-            cliente = client;
+           gestionServicios_Clientes.BorrarServicio(Codigo, CedulaSel);
         }
 
         private void btnAtrasSC_Click(object sender, EventArgs e)
@@ -102,7 +87,7 @@ namespace SaRaUI
         private void dgvServicios_Cliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Codigo = dgvServicios_Cliente.Rows[e.RowIndex].Cells[0].Value.ToString();
-            Cedula = dgvServicios_Cliente.Rows[e.RowIndex].Cells[1].Value.ToString();
+            CedulaSel = dgvServicios_Cliente.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
     }
 }

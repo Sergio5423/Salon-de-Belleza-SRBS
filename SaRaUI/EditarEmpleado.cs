@@ -25,9 +25,9 @@ namespace SaRaUI
             privateFonts.AddFontFile(@"C:\Users\starr\Source\Repos\Sergio5423\Salon-de-Belleza-SRBS\SaRaUI\Fonts\Playlist Script.ttf");
             lbEditarEmpleado.Font = new Font(privateFonts.Families[0], 35);
             lbIngreseDatosEm.Font = new Font(privateFonts.Families[0], 20);
-            tbCedulaEm.Text = empleado.Cedula;
-            tbNombreEm.Text = empleado.Nombre;
-            tbTelefonoEm.Text = empleado.Telefono;
+            //tbCedulaEm.Text = empleado.Cedula;
+            //tbNombreEm.Text = empleado.Nombre;
+            //tbTelefonoEm.Text = empleado.Telefono;
         }
 
         public void Editar()
@@ -39,16 +39,6 @@ namespace SaRaUI
                 Telefono = tbTelefonoEm.Text,
             };
             gestionEmpleados.Actualizar(cedula, empleado);
-        }
-
-        public void GetCedula(string ced)
-        {
-            cedula = ced;
-        }
-
-        public void GetEmpleado(Entidades.Empleados emp)
-        {
-            empleado = emp;
         }
 
         private void btnAtrasEC_Click(object sender, EventArgs e)

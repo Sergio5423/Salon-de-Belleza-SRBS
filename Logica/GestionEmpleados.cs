@@ -1,4 +1,4 @@
-﻿using Datos;
+﻿using DatosOracle;
 using Entidades;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
@@ -13,7 +13,7 @@ namespace Logica
 {
     public class GestionEmpleados : GestorFuentes, IOperaciones<Empleados>
     {
-        RepositorioEmpleados repositorioEmpleados = new RepositorioEmpleados();
+        RepositorioEnpleados repositorioEmpleados = new RepositorioEnpleados();
         List<Empleados> listaEmpleados = null;
 
         public GestionEmpleados()

@@ -33,6 +33,7 @@
             this.panelCedula = new System.Windows.Forms.Panel();
             this.lbCedEC = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dtpCumpleañosEC = new System.Windows.Forms.DateTimePicker();
             this.btnGuardarEC = new System.Windows.Forms.Button();
             this.tbCorreoEC = new System.Windows.Forms.TextBox();
             this.tbTelEC = new System.Windows.Forms.TextBox();
@@ -51,7 +52,6 @@
             this.btnAtrasEC = new System.Windows.Forms.Button();
             this.lblEC = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dtpCumpleañosEC = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panelCedula.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -121,6 +121,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(776, 318);
             this.panel2.TabIndex = 7;
+            // 
+            // dtpCumpleañosEC
+            // 
+            this.dtpCumpleañosEC.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.dtpCumpleañosEC.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(249)))), ((int)(((byte)(247)))));
+            this.dtpCumpleañosEC.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
+            this.dtpCumpleañosEC.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.dtpCumpleañosEC.Location = new System.Drawing.Point(176, 252);
+            this.dtpCumpleañosEC.Name = "dtpCumpleañosEC";
+            this.dtpCumpleañosEC.Size = new System.Drawing.Size(200, 20);
+            this.dtpCumpleañosEC.TabIndex = 13;
             // 
             // btnGuardarEC
             // 
@@ -337,17 +348,6 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // dtpCumpleañosEC
-            // 
-            this.dtpCumpleañosEC.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.dtpCumpleañosEC.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(249)))), ((int)(((byte)(247)))));
-            this.dtpCumpleañosEC.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
-            this.dtpCumpleañosEC.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.dtpCumpleañosEC.Location = new System.Drawing.Point(176, 252);
-            this.dtpCumpleañosEC.Name = "dtpCumpleañosEC";
-            this.dtpCumpleañosEC.Size = new System.Drawing.Size(200, 20);
-            this.dtpCumpleañosEC.TabIndex = 13;
-            // 
             // EditarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,9 +385,6 @@
         private System.Windows.Forms.Label lbCedEC;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnGuardarEC;
-        private System.Windows.Forms.TextBox tbCorreoEC;
-        private System.Windows.Forms.TextBox tbTelEC;
-        private System.Windows.Forms.TextBox tbNomEC;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lbCorreoEC;
         private System.Windows.Forms.Panel panel5;
@@ -396,12 +393,15 @@
         private System.Windows.Forms.Label lbCumpEC;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbNombEC;
-        private System.Windows.Forms.TextBox tbCedEC;
         private System.Windows.Forms.Label lbIngreseDatosEC;
         private System.Windows.Forms.Panel panelBottom;
         private System.Windows.Forms.Button btnAtrasEC;
         private System.Windows.Forms.Label lblEC;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DateTimePicker dtpCumpleañosEC;
+        public System.Windows.Forms.TextBox tbCorreoEC;
+        public System.Windows.Forms.TextBox tbTelEC;
+        public System.Windows.Forms.TextBox tbNomEC;
+        public System.Windows.Forms.TextBox tbCedEC;
+        public System.Windows.Forms.DateTimePicker dtpCumpleañosEC;
     }
 }

@@ -1,4 +1,4 @@
-﻿using Datos;
+﻿using DatosOracle;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -12,10 +12,10 @@ namespace Logica
     {
         RepositorioTrabajos repositorioTrabajos = new RepositorioTrabajos();
 
-        public void Agregar(Trabajos trabajo)
-        {
-            repositorioTrabajos.Agregar(trabajo);
-        }
+        //public void Agregar(Trabajos trabajo)
+        //{
+        //    repositorioTrabajos.(trabajo);
+        //}
 
         public void Borrar(string codigo)
         {

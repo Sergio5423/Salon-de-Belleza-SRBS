@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelTablaC = new System.Windows.Forms.Panel();
+            this.cbEmpleados = new System.Windows.Forms.ComboBox();
             this.dgvServicios_Cliente = new System.Windows.Forms.DataGridView();
             this.cbServicios = new System.Windows.Forms.ComboBox();
             this.panelNombreCliente = new System.Windows.Forms.Panel();
@@ -58,6 +59,7 @@
             this.panelTablaC.BackColor = System.Drawing.Color.Transparent;
             this.panelTablaC.BackgroundImage = global::SaRaUI.Properties.Resources.Panel_Nuevo_Cliente;
             this.panelTablaC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelTablaC.Controls.Add(this.cbEmpleados);
             this.panelTablaC.Controls.Add(this.dgvServicios_Cliente);
             this.panelTablaC.Controls.Add(this.cbServicios);
             this.panelTablaC.Controls.Add(this.panelNombreCliente);
@@ -67,6 +69,19 @@
             this.panelTablaC.Name = "panelTablaC";
             this.panelTablaC.Size = new System.Drawing.Size(790, 317);
             this.panelTablaC.TabIndex = 1;
+            // 
+            // cbEmpleados
+            // 
+            this.cbEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(238)))));
+            this.cbEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEmpleados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.cbEmpleados.FormattingEnabled = true;
+            this.cbEmpleados.Location = new System.Drawing.Point(640, 16);
+            this.cbEmpleados.Name = "cbEmpleados";
+            this.cbEmpleados.Size = new System.Drawing.Size(124, 32);
+            this.cbEmpleados.TabIndex = 12;
+            this.cbEmpleados.Text = "Empleados";
             // 
             // dgvServicios_Cliente
             // 
@@ -89,7 +104,7 @@
             this.cbServicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbServicios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
             this.cbServicios.FormattingEnabled = true;
-            this.cbServicios.Location = new System.Drawing.Point(636, 16);
+            this.cbServicios.Location = new System.Drawing.Point(510, 16);
             this.cbServicios.Name = "cbServicios";
             this.cbServicios.Size = new System.Drawing.Size(124, 32);
             this.cbServicios.TabIndex = 7;
@@ -102,16 +117,15 @@
             this.panelNombreCliente.Controls.Add(this.lbNombreCliente);
             this.panelNombreCliente.Location = new System.Drawing.Point(30, 9);
             this.panelNombreCliente.Name = "panelNombreCliente";
-            this.panelNombreCliente.Size = new System.Drawing.Size(543, 39);
+            this.panelNombreCliente.Size = new System.Drawing.Size(474, 39);
             this.panelNombreCliente.TabIndex = 10;
             // 
             // lbNombreCliente
             // 
             this.lbNombreCliente.AutoSize = true;
-            this.lbNombreCliente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNombreCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
-            this.lbNombreCliente.Location = new System.Drawing.Point(0, 0);
+            this.lbNombreCliente.Location = new System.Drawing.Point(3, 3);
             this.lbNombreCliente.Name = "lbNombreCliente";
             this.lbNombreCliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbNombreCliente.Size = new System.Drawing.Size(202, 31);
@@ -250,7 +264,6 @@
         private System.Windows.Forms.DataGridView dgvServicios_Cliente;
         private System.Windows.Forms.ComboBox cbServicios;
         private System.Windows.Forms.Panel panelNombreCliente;
-        private System.Windows.Forms.Label lbNombreCliente;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panelBottom;
         private System.Windows.Forms.Button btnAtrasSC;
@@ -259,5 +272,7 @@
         private System.Windows.Forms.Label lbServicios_del_Cliente;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelFondo;
+        private System.Windows.Forms.ComboBox cbEmpleados;
+        public System.Windows.Forms.Label lbNombreCliente;
     }
 }

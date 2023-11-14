@@ -15,7 +15,7 @@ namespace Entidades
 
         public Trabajos(string codigo,
                         int comision,
-                        DateTime fecha,
+                        string fecha,
                         string servicio_codigo,
                         string empleado_cedula)
         {
@@ -28,7 +28,7 @@ namespace Entidades
 
         public string Codigo { get; set; }
         public int Comision { get; set; }
-        public DateTime Fecha { get; set; }    
+        public string Fecha { get; set; }    
         public string Servicio_Codigo { get; set; }
         public string Empleado_Cedula { get; set; }
 
